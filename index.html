@@ -32,23 +32,24 @@
                 />
             </label>
         </div>
-
-        <div id="Age">
+        <div class="container">
+            <div id="Age">
                 <input type="text" name="age" placeholder="Age" value="">
-        </div>
+            </div>
 
-        <div id="Weight">
+            <div id="Weight">
                 <input type="text" name="weight" placeholder="Weight" value="">
-        </div>
+            </div>
 
-        <div id="Gender">
+            <div id="Gender">
                 <select class="form-control" id="sel1">
                   <option name="gender" value="1">Male</option>
                   <option name="gender" value="2">Female</option>
-                </select> 
+                </select>
                 <label class="checkbox-inline"><input type="checkbox" name="gender" value="0">I prefer not to say</label>
+            </div>
+            <input type="submit" value="Submit">
         </div>
-        <input type="submit" value="Submit">
     </form>
 
 
@@ -72,6 +73,7 @@
             console.log($('input[name=activity]:checked').val());
         });
     </script>
+    <script src="ux.js"></script>
     <!-- <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
     <script src="assets/lib/firedb.js"></script>
     <script src="assets/lib/heartrate.js"></script>
