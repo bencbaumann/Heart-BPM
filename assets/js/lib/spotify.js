@@ -60,7 +60,7 @@ function spotifyAuth(){
 
 }
 
-
+getToken();
 
 function getToken(){
     var hashValues = window.location.hash.split('&');
