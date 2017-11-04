@@ -1,4 +1,4 @@
-$('#submit').on('click', function(){
-
+$('#submit').on('click', function(e){
+    e.preventDefault();
     spotifyAuth();
 });
