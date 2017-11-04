@@ -56,7 +56,7 @@ function spotifyAuth(){
 
     console.log(redirect);
 
-    window.location.replace(redirect);
+    window.location.href(redirect);
     // window.location = redirect;
 
 
