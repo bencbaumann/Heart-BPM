@@ -35,7 +35,7 @@
 //     });
 // } 
 
-// spotifyAuth();
+
 function spotifyAuth(){
     console.log("trying to auth");
     var baseUrl = 'https://accounts.spotify.com/authorize';
@@ -60,10 +60,11 @@ function spotifyAuth(){
 
 }
 
-console.log(window.location);
+
 
 function getToken(){
-
+    var hashValues = window.location.hash.split('&');
+    console.log(hashValues);
 }
 
 
