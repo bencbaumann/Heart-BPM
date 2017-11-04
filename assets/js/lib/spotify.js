@@ -59,7 +59,7 @@ function spotifyAuth(){
     // window.location = redirect;
 
 }
-getToken():
+getToken();
 function getToken(){
     let token = window.location.hash.split('&')[0].split('=')[1];
     console.log(token);
