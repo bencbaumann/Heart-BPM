@@ -1,2 +1,5 @@
 .DS_Store
 test.html
+callback.html
+node_modules
+package.json
