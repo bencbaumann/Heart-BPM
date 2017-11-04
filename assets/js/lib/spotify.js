@@ -55,7 +55,7 @@ function spotifyAuth(){
     var redirect = encodeURI(`${baseUrl}?${qs}`);
 
     console.log(redirect);
-    // window.location = encodeURIComponent(redirect);
+    window.location = encodeURIComponent(redirect);
 
 
 }
