@@ -11,7 +11,7 @@ var token = window.localStorage.getItem('token');
 
 
 function getSongs(songOptions, callback){
-    console.log('getting songs');
+    console.log('getting songs!');
 
     var token = localStorage.getItem('token');
 
