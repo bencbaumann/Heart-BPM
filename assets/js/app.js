@@ -1,5 +1,6 @@
 $(document).ready(function () {
-
+    $('.tap-target').tapTarget('open');
+    $('select').material_select();
 
     var userAge = 0;
     var userWeight = 0;
@@ -10,18 +11,18 @@ $(document).ready(function () {
     
 
     // gathering input info when submit button is clicked
-    $("#form-id").submit("click", function () {
+    $("#metrics-form").submit("click", function () {
         event.preventDefault();
 
         userAge = $("#age").val().trim();
         console.log(userAge);
         userWeight = $("#weight").val().trim();
         console.log(userWeight);
-        userGender = $("input[name='gender']:checked").val();
+        userGender = $("#gender").val();
         console.log(userGender);
 
         // calculator for target heart rate based on inputs from form
-        if (gender === "male") {
+        if (userGender === "male") {
 
             // maximum heart rate calculator with 4.5 added for men - 211.415, 0.5,  0.05 and 4.5 are constants
             // formula developed by Dr. Dan Heil
