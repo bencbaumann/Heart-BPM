@@ -10,3 +10,5 @@ input{
 .input-field input[type=text].valid {
     border-bottom: 1px solid rgb(0, 167, 103);
   }
+
+  .modal { width: 40% !important ; height: 25% !important ; }

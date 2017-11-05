@@ -1,3 +1,13 @@
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyDsehiHoo9Y3zY2yzS5cdayNot4ISX7QjE",
+    authDomain: "hello-world-3b2c5.firebaseapp.com",
+    databaseURL: "https://hello-world-3b2c5.firebaseio.com",
+    projectId: "hello-world-3b2c5",
+    storageBucket: "hello-world-3b2c5.appspot.com",
+    messagingSenderId: "721569458570"
+};
+firebase.initializeApp(config);
 $(document).ready(function () {
     $('.tap-target').tapTarget('open');
     $('select').material_select();
@@ -8,7 +18,7 @@ $(document).ready(function () {
     var chosenActivity = "";
     var maximumHeartRate = 0;
     var targetHeartRate = 0;
-    
+
 
     // gathering input info when submit button is clicked
     $("#metrics-form").submit("click", function () {
@@ -23,38 +33,20 @@ $(document).ready(function () {
         console.log('userGender' + userGender);
         chosenActivity = ($('input[name=activity]:checked').val());
         console.log('userGender' + chosenActivity);
-
-        // Use Doreens heartrate calculator!
+      
+        // we will use our targetHeartrate to determine tempo of songs range to search in Spotify +-10
         var targetHeartRate = calculateTargetHeartRate(userGender, userAge, userWeight, chosenActivity);
         console.log(targetHeartRate);
 
-        // authenticate spotify => this moves us off our app page temporarily so 
-        // we should store those user variables from above into local storage I think
-        // here at some point
-        spotifyAuth();
-
-        
-        /* These values are hard coded for now */
-        var songOptions = {};
-        songOptions.genre = 'heavy+metal';
-        songOptions.hr = targetHeartRate; // except for this one!
-        songOptions.range = 10;        
-
-        /* *********************************** */
-
-        getSongs(songOptions, function(songs){
-            console.log('in the callback function');
-            console.log(songs);
-        });
-      
+        }
+                              
     }); // end form click/submit event
 
 
+/* This stuff is just here for testing */  
   
-}); // end document.ready
 
-
-$('#submit').on('click', function(e){
+$('#submit').on('click', function (e) {
     e.preventDefault();
     spotifyAuth();
 });
@@ -73,3 +65,7 @@ $('#deleteToken').on('click', function(e){
     e.preventDefault();
     deleteToken();
 });
+  
+  
+}); // end document.ready
+
