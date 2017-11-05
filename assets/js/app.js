@@ -65,7 +65,9 @@ $('#getSongs').on('click', function(e){
     songOptions.genre = 'ambient';
     songOptions.hr = 130;
     songOptions.range = 10;     
-    getSongs(songOptions);
+    getSongs(songOptions, function(res){
+        console.log(res);
+    });
 });
 $('#deleteToken').on('click', function(e){
     e.preventDefault();
