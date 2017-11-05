@@ -1,39 +1,51 @@
 // max 20 songs
 /* This is for testing only */
 
-// var genre = 'country';
-// var hb = 135;
-// var range = 10;
-
 // var targetHeartRate = targetHeartRange(34, 3);
-// getSongs(genre,targetHeartRate, 15, function({playlist: playlistObj: songs: array}){
-//     // update the dom
-//     console.log(songs);
-// });
 
+var token = window.localStorage.getItem('token');
+if(token){
+    var genre = 'heavy+metal';
+    var targetHeartRate = 150;
+    getSongs(genre,targetHeartRate, 10, function(songs){
+        // update the dom
+        console.log(songs);
+    });
+}
 
 /* This is for testing only */
 
 
 
-// function getSongs(genre, hb, range, callback){
+function getSongs(genre, hb, range, callback){
 
-//     var url = '';
+    vat token = localStorage.getItem('token');
 
-//     console.log(queryURL);
+    var minTempo = hb - range;
+    var maxTempo = hb + range;
 
-//     $.ajax({
-//         url: url,
-//         method: 'GET',
-//         success: function(res){
+    var baseurl = 'https://api.spotify.com/v1/recommendations';
+    var options = 
+    var url = `${baseurl}?min_tempo=${minTempo}&seed_genres=${'heavy+metal'}&max_tempo=${maxTempo}`;
 
-//             callback(res);
-//         },
-//         error: function(err){
-//             console.log(err);
-//         }
-//     });
-// } 
+    console.log('queryUrl: ' + queryURL);
+
+    $.ajax({
+        url: url,
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+        success: function(res){
+
+            callback(res);
+        },
+        error: function(err){
+            console.log(err);
+        }
+    });
+}
 
 
 function spotifyAuth(){
@@ -59,33 +71,12 @@ function spotifyAuth(){
     // window.location = redirect;
 
 }
+console.log(window.location);
 getToken();
-function getToken(){
+function storeToken(){
     let token = window.location.hash.split('&')[0].split('=')[1];
     localStorage.setItem('token', token);
     console.log(token);
     return token;
 }
 
-
-
-
-    
-
-    // https://accounts.spotify.com/authorize?client_id=5fe01282e94241328a84e7c5cc169164&redirect_uri=http:%2F%2Fexample.com%2Fcallback&scope=user-read-private%20user-read-email&response_type=token&state=123
-
-    // $.ajax({
-    //     url: url,
-    //     method: 'GET',
-    //     header: {
-    //         'Access-Control-Allow-Origin': '*'
-    //     },
-    //     success: function(res){
-    //         console.log("sucesss");
-    //         callback(res);
-    //     },
-    //     error: function(err){
-    //         console.log("err");
-    //         console.log(err);
-    //     }
-    // });
