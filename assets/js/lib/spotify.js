@@ -21,6 +21,7 @@ if(token){
 
 
 function getSongs(genre, hb, range, callback){
+    console.log('getting songs');
 
     var token = localStorage.getItem('token');
 
@@ -40,7 +41,7 @@ function getSongs(genre, hb, range, callback){
             'Authorization': `Bearer ${token}`
         },
         success: function(res){
-
+            console.log('got a reponse from spotify');
             callback(res);
         },
         error: function(err){
