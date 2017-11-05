@@ -38,9 +38,8 @@ $(document).ready(function () {
         var targetHeartRate = calculateTargetHeartRate(userGender, userAge, userWeight, chosenActivity);
         console.log(targetHeartRate);
 
-        }
+        }); // end form click/submit event
                               
-    }); // end form click/submit event
 
 
 /* This stuff is just here for testing */  
