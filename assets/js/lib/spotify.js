@@ -1,39 +1,56 @@
+console.log(window.location);
+
+if(window.location.hash.includes("token")){
+    console.log("There is a token in the url");
+    storeToken();
+}
+else{
+    console.log("There is not a token in the url");
+}
+
+
+var token = window.localStorage.getItem('token');
 // max 20 songs
 /* This is for testing only */
 
-// var genre = 'country';
-// var hb = 135;
-// var range = 10;
-
 // var targetHeartRate = targetHeartRange(34, 3);
-// getSongs(genre,targetHeartRate, 15, function({playlist: playlistObj: songs: array}){
-//     // update the dom
-//     console.log(songs);
-// });
 
 
 /* This is for testing only */
 
 
 
-// function getSongs(genre, hb, range, callback){
+function getSongs(songOptions, callback){
+    console.log('getting songs!');
 
-//     var url = '';
+    var token = localStorage.getItem('token');
 
-//     console.log(queryURL);
+    var minTempo = songOptions.hr - songOptions.range;
+    var maxTempo = songOptions.hr + songOptions.range;
 
-//     $.ajax({
-//         url: url,
-//         method: 'GET',
-//         success: function(res){
+    var baseurl = 'https://api.spotify.com/v1/recommendations';
+    var url = `${baseurl}?min_tempo=${minTempo}&seed_genres=${songOptions.genre}&max_tempo=${maxTempo}`;
 
-//             callback(res);
-//         },
-//         error: function(err){
-//             console.log(err);
-//         }
-//     });
-// } 
+    console.log('queryUrl: ' + url);
+
+    $.ajax({
+        url: url,
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        success: function(res){
+            console.log('got a reponse from spotify');
+            callback(res);
+        },
+        error: function(err){
+            console.log(err);
+        }
+    });
+}
+
+
 
 
 function spotifyAuth(){
@@ -44,6 +61,7 @@ function spotifyAuth(){
     options.push('client_id=e42a332f9c9044748bcf6ae097bbe29d'); //Required. The client ID provided to you by Spotify when you register your application. 
     options.push('redirect_uri=https://bencbaumann.github.io/Heart-BPM/spotifycallback.html');  // Required. The URI to redirect to after the user grants/denies permission. This URI needs to be entered in the URI whitelist that you specify when you register your application. 
     options.push('response_type=token'); // Required. Set it to “token”. 
+    options.push('show_dialog=true');
     // options.state =''; // Optional, but strongly recommended. The state can be useful for correlating requests and responses. Because your redirect_uri can be guessed, using a state value can increase your assurance that an incoming connection is the result of an authentication request. If you generate a random string or encode the hash of some client state (e.g., a cookie) in this state variable, you can validate the response to additionally ensure that the request and response originated in the same browser. This provides protection against attacks such as cross-site request forgery. See RFC-6749.
     options.push('scope=user-read-private user-read-email'); // Optional. A space-separated list of scopes: see Using Scopes. 
     // options.show_dialog = ''; //Optional. Whether or not to force the user to approve the app again if they’ve already done so. If false (default), a user who has already approved the application may be automatically redirected to the URI specified by redirect_uri. If true, the user will not be automatically redirected and will have to approve the app again.
@@ -55,37 +73,23 @@ function spotifyAuth(){
 
     console.log(redirect);
     window.location.replace(redirect);
-    // window.location.href(redirect);
-    // window.location = redirect;
-
 }
-getToken();
-function getToken(){
+
+function storeToken(){
     let token = window.location.hash.split('&')[0].split('=')[1];
-    localStorage.setItem('token', token);
-    console.log(token);
-    return token;
+    if(window.location.hash.includes('token')){
+        localStorage.setItem('token', token);
+        console.log(token);
+        window.location.replace('ben.html');
+    }
+    else {
+        console.log("there's no token in the url");
+    }
+}
+
+function deleteToken(){
+    console.log('deleting the token');
+    localStorage.clear();
 }
 
 
-
-
-    
-
-    // https://accounts.spotify.com/authorize?client_id=5fe01282e94241328a84e7c5cc169164&redirect_uri=http:%2F%2Fexample.com%2Fcallback&scope=user-read-private%20user-read-email&response_type=token&state=123
-
-    // $.ajax({
-    //     url: url,
-    //     method: 'GET',
-    //     header: {
-    //         'Access-Control-Allow-Origin': '*'
-    //     },
-    //     success: function(res){
-    //         console.log("sucesss");
-    //         callback(res);
-    //     },
-    //     error: function(err){
-    //         console.log("err");
-    //         console.log(err);
-    //     }
-    // });
