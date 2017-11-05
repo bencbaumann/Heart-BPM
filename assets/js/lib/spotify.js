@@ -75,8 +75,10 @@ function spotifyAuth(){
 }
 
 if(!token){
-    spotifyAuth();
     storeToken();
+}
+else{
+    console.log("we gotz a token");
 }
 
 function storeToken(){
