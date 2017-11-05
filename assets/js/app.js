@@ -1,3 +1,13 @@
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyDsehiHoo9Y3zY2yzS5cdayNot4ISX7QjE",
+    authDomain: "hello-world-3b2c5.firebaseapp.com",
+    databaseURL: "https://hello-world-3b2c5.firebaseio.com",
+    projectId: "hello-world-3b2c5",
+    storageBucket: "hello-world-3b2c5.appspot.com",
+    messagingSenderId: "721569458570"
+};
+firebase.initializeApp(config);
 $(document).ready(function () {
     $('.tap-target').tapTarget('open');
     $('select').material_select();
@@ -8,7 +18,7 @@ $(document).ready(function () {
     var chosenActivity = "";
     var maximumHeartRate = 0;
     var targetHeartRate = 0;
-    
+
 
     // gathering input info when submit button is clicked
     $("#metrics-form").submit("click", function () {
@@ -59,7 +69,7 @@ $(document).ready(function () {
     });
 
 
-    
+
     console.log(targetHeartRate);
 
 
@@ -74,12 +84,12 @@ $(document).ready(function () {
 })
 /* this is for debugging and will be removed from the app */
 
-console.log(window.location.href);
+// console.log(window.location.href);
 
 /* ****************************************************** */
 
 
-$('#submit').on('click', function(e){
+$('#submit').on('click', function (e) {
     e.preventDefault();
     spotifyAuth();
 });

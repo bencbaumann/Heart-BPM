@@ -2,6 +2,11 @@
 <html>
 
 <head>
+    <!--Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-database.js"></script> -->
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css CDN-->
@@ -18,6 +23,25 @@
 </head>
 
 <body class="blue-grey darken-4">
+    <!--navbar-->
+    <div class="container-fluid">
+            <nav>
+                <div class="nav-wrapper">
+                    <a class="brand-logo center">
+                        <i class="material-icons left" style="font-size:40px;">favorite</i>
+                    </a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li>
+                            <a href="sass.html">Sign Up</a>
+                        </li>
+                        <li>
+                            <a href="badges.html">Sign In</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!--end navbar-->
 
 
     <!--Begin metrics form page-->
@@ -99,14 +123,14 @@
                             <option value="female">Female</option>
                             <option value="n/a">Prefer Not to Share</option>
                         </select>
-                        <label>Genre</label>
+                        <label>Gender</label>
                     </div>
                 </div>
                 <br>
                 <br>
                 <div class="row" style="text-align:center;">
                     <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                        <i  class="material-icons right">send</i>
+                        <i class="material-icons right">send</i>
                     </button>
                 </div>
 
