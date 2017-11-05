@@ -1,8 +1,12 @@
 console.log(window.location);
 
 if(window.location.hash.includes("token"){
+    console.log("There is a token in the url");
     storeToken();
-});
+}
+else{
+    console.log("There is not a token in the url");
+}
 
 
 var token = window.localStorage.getItem('token');
