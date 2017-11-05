@@ -27,7 +27,7 @@ function getSongs(genre, hb, range, callback){
     var baseurl = 'https://api.spotify.com/v1/recommendations';
     var url = `${baseurl}?min_tempo=${minTempo}&seed_genres=${'heavy+metal'}&max_tempo=${maxTempo}`;
 
-    console.log('queryUrl: ' + queryURL);
+    console.log('queryUrl: ' + url);
 
     $.ajax({
         url: url,
