@@ -71,7 +71,7 @@ function spotifyAuth(){
 
 }
 console.log(window.location);
-getToken();
+storeToken();
 function storeToken(){
     let token = window.location.hash.split('&')[0].split('=')[1];
     localStorage.setItem('token', token);
