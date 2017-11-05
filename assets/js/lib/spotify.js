@@ -6,16 +6,6 @@ var token = window.localStorage.getItem('token');
 // var targetHeartRate = targetHeartRange(34, 3);
 
 
-
-if(token){
-    var genre = 'heavy+metal';
-    var targetHeartRate = 150;
-    getSongs(genre,targetHeartRate, 10, function(songs){
-        // update the dom
-        console.log(songs);
-    });
-}
-
 /* This is for testing only */
 
 
