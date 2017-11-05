@@ -62,14 +62,6 @@ function spotifyAuth(){
     window.location.replace(redirect);
 }
 
-if(!token){
-    console.log("storing a token");
-    storeToken();
-}
-else{
-    console.log("we gotz a token");
-}
-
 function storeToken(){
     let token = window.location.hash.split('&')[0].split('=')[1];
     if(window.location.hash.includes('token')){
