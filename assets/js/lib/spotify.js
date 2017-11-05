@@ -1,9 +1,12 @@
+console.log(window.location);
+var token = window.localStorage.getItem('token');
 // max 20 songs
 /* This is for testing only */
 
 // var targetHeartRate = targetHeartRange(34, 3);
 
-var token = window.localStorage.getItem('token');
+
+
 if(token){
     var genre = 'heavy+metal';
     var targetHeartRate = 150;
@@ -70,8 +73,12 @@ function spotifyAuth(){
     // window.location = redirect;
 
 }
-console.log(window.location);
-storeToken();
+
+if(!token){
+    spotifyAuth();
+    storeToken();
+}
+
 function storeToken(){
     let token = window.location.hash.split('&')[0].split('=')[1];
     localStorage.setItem('token', token);
