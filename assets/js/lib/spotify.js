@@ -75,6 +75,7 @@ function spotifyAuth(){
 }
 
 if(!token){
+    console.log("storing a token");
     storeToken();
 }
 else{
