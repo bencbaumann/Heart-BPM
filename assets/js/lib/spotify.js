@@ -19,7 +19,7 @@ function getSongs(songOptions, callback){
     var maxTempo = songOptions.hr + rangsongOptions.rangee;
 
     var baseurl = 'https://api.spotify.com/v1/recommendations';
-    var url = `${baseurl}?min_tempo=${minTempo}&seed_genres=${songOptions.genre}&max_tempo=${maxTempo}`;
+    var url = `${baseurl}?min_tempo=${minTempo}&seed_genres=${songOptions.genr}&max_tempo=${maxTempo}`;
 
     console.log('queryUrl: ' + url);
 
@@ -60,9 +60,6 @@ function spotifyAuth(){
 
     console.log(redirect);
     window.location.replace(redirect);
-    // window.location.href(redirect);
-    // window.location = redirect;
-
 }
 
 if(!token){
@@ -85,3 +82,6 @@ function storeToken(){
     }
 }
 
+function deleteToken(){
+    localStorage.clear();
+}
