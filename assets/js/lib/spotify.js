@@ -35,7 +35,7 @@ function getSongs(genre, hb, range, callback){
         headers: {
             'Accept': 'application/json',
             'Authorization': `Bearer ${token}`
-        }
+        },
         success: function(res){
 
             callback(res);
