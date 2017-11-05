@@ -54,16 +54,19 @@ $(document).ready(function () {
 }); // end document.ready
 
 
-$('#submit').on('click', function(){
+$('#submit').on('click', function(e){
+    e.preventDefault();
     spotifyAuth();
 });
-$('#getSongs').on('click', function(){
+$('#getSongs').on('click', function(e){
+    e.preventDefault();
     var songOptions = {};
     songOptions.genre = 'heavy+metal';
     songOptions.hr = targetHeartRate; // except for this one!
     songOptions.range = 10;     
     getSongs(songOptions);
 });
-$('#deleteToken').on('click', function(){
+$('#deleteToken').on('click', function(e){
+    e.preventDefault();
     deleteToken();
 });
