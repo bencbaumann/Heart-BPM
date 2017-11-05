@@ -19,7 +19,7 @@ if(token){
 
 function getSongs(genre, hb, range, callback){
 
-    vat token = localStorage.getItem('token');
+    var token = localStorage.getItem('token');
 
     var minTempo = hb - range;
     var maxTempo = hb + range;
