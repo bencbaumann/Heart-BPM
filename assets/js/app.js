@@ -85,10 +85,12 @@ $('#submit').on('click', function(e){
 
 $('#getSongs').on('click', function(e){
     e.preventDefault();
+    console.log('get songs button clicked');
     var genre = 'heavy+metal';
     var hb = 130;
     var range = 10;
     getSongs(genre, hb, range, function(songs){
+        console.log('in the callback function');
         console.log(songs);
     });
 });
