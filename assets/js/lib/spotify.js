@@ -83,5 +83,8 @@ function storeToken(){
 }
 
 function deleteToken(){
+    console.log('deleting the token');
     localStorage.clear();
 }
+
+
