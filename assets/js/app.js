@@ -52,3 +52,18 @@ $(document).ready(function () {
 
   
 }); // end document.ready
+
+
+$('#submit').on('click', function(){
+    spotifyAuth();
+});
+$('#getSongs').on('click', function(){
+    var songOptions = {};
+    songOptions.genre = 'heavy+metal';
+    songOptions.hr = targetHeartRate; // except for this one!
+    songOptions.range = 10;     
+    getSongs(songOptions);
+});
+$('#deleteToken').on('click', function(){
+    deleteToken();
+});
