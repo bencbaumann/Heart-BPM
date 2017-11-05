@@ -1,6 +1,6 @@
 console.log(window.location);
 
-if(window.location.hash.includes("token"){
+if(window.location.hash.includes("token")){
     console.log("There is a token in the url");
     storeToken();
 }
