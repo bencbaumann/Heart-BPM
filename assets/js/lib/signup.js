@@ -44,5 +44,24 @@ $(document).ready(function () {
     });
 
 
+    $("#signin-form").submit("click", function () { 
+        event.preventDefault();
+
+        email = $("#email").val();
+        password = $("#password").val();
+
+        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(errorCode);
+            $("#error_message").text(errorMessage);
+            $('.modal').modal('open');
+          });
+
+    });
+        
+
+
 
 });
