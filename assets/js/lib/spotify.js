@@ -84,8 +84,13 @@ else{
 
 function storeToken(){
     let token = window.location.hash.split('&')[0].split('=')[1];
-    localStorage.setItem('token', token);
-    console.log(token);
-    return token;
+    if(window.location.hash.includes('token')){
+        localStorage.setItem('token', token);
+        console.log(token);
+        return token;
+    }
+    else {
+        console.log("there's no token in the url");
+    }
 }
 
