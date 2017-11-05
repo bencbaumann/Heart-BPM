@@ -11,12 +11,12 @@ var token = window.localStorage.getItem('token');
 
 
 function getSongs(songOptions, callback){
-    console.log('getting songs');
+    console.log('getting songs!');
 
     var token = localStorage.getItem('token');
 
     var minTempo = songOptions.hr - songOptions.range;
-    var maxTempo = songOptions.hr + rangsongOptions.rangee;
+    var maxTempo = songOptions.hr + songOptions.range;
 
     var baseurl = 'https://api.spotify.com/v1/recommendations';
     var url = `${baseurl}?min_tempo=${minTempo}&seed_genres=${songOptions.genre}&max_tempo=${maxTempo}`;
