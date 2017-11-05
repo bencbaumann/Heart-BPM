@@ -1,4 +1,10 @@
 console.log(window.location);
+
+if(window.location.hash.includes("token"){
+    storeToken();
+});
+
+
 var token = window.localStorage.getItem('token');
 // max 20 songs
 /* This is for testing only */
@@ -70,7 +76,7 @@ function storeToken(){
     if(window.location.hash.includes('token')){
         localStorage.setItem('token', token);
         console.log(token);
-        return token;
+        window.location.replace('ben.html');
     }
     else {
         console.log("there's no token in the url");
