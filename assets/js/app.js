@@ -82,3 +82,13 @@ $('#submit').on('click', function(e){
     e.preventDefault();
     spotifyAuth();
 });
+
+$('#getSongs').on('click', function(e){
+    e.preventDefault();
+    var genre = 'heavy+metal';
+    var hb = 130;
+    var range = 10;
+    getSongs(genre, hb, range, function(songs){
+        console.log(songs);
+    });
+});
