@@ -19,7 +19,7 @@ function getSongs(songOptions, callback){
     var maxTempo = songOptions.hr + rangsongOptions.rangee;
 
     var baseurl = 'https://api.spotify.com/v1/recommendations';
-    var url = `${baseurl}?min_tempo=${minTempo}&seed_genres=${songOptions.genr}&max_tempo=${maxTempo}`;
+    var url = `${baseurl}?min_tempo=${minTempo}&seed_genres=${songOptions.genre}&max_tempo=${maxTempo}`;
 
     console.log('queryUrl: ' + url);
 
@@ -41,6 +41,8 @@ function getSongs(songOptions, callback){
 }
 
 
+
+
 function spotifyAuth(){
     console.log("trying to auth");
     var baseUrl = 'https://accounts.spotify.com/authorize';
@@ -60,14 +62,6 @@ function spotifyAuth(){
 
     console.log(redirect);
     window.location.replace(redirect);
-}
-
-if(!token){
-    console.log("storing a token");
-    storeToken();
-}
-else{
-    console.log("we gotz a token");
 }
 
 function storeToken(){

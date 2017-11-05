@@ -60,9 +60,10 @@ $('#submit').on('click', function(e){
 });
 $('#getSongs').on('click', function(e){
     e.preventDefault();
+    // hardcoded for now
     var songOptions = {};
-    songOptions.genre = 'heavy+metal';
-    songOptions.hr = targetHeartRate; // except for this one!
+    songOptions.genre = 'ambient';
+    songOptions.hr = 130;
     songOptions.range = 10;     
     getSongs(songOptions);
 });
