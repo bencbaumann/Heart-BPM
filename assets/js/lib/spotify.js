@@ -10,16 +10,16 @@ var token = window.localStorage.getItem('token');
 
 
 
-function getSongs(genre, hb, range, callback){
+function getSongs(songOptions, callback){
     console.log('getting songs');
 
     var token = localStorage.getItem('token');
 
-    var minTempo = hb - range;
-    var maxTempo = hb + range;
+    var minTempo = songOptions.hr - songOptions.range;
+    var maxTempo = songOptions.hr + rangsongOptions.rangee;
 
     var baseurl = 'https://api.spotify.com/v1/recommendations';
-    var url = `${baseurl}?min_tempo=${minTempo}&seed_genres=${'heavy+metal'}&max_tempo=${maxTempo}`;
+    var url = `${baseurl}?min_tempo=${minTempo}&seed_genres=${songOptions.genre}&max_tempo=${maxTempo}`;
 
     console.log('queryUrl: ' + url);
 

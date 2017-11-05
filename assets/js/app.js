@@ -14,84 +14,41 @@ $(document).ready(function () {
     $("#metrics-form").submit("click", function () {
         event.preventDefault();
 
+        // grab values from our UI
         userAge = $("#age").val().trim();
-        console.log(userAge);
+        console.log('userAge' + userAge);
         userWeight = $("#weight").val().trim();
-        console.log(userWeight);
+        console.log('userWeight' + userWeight);
         userGender = $("#gender").val();
-        console.log(userGender);
-
-        // calculator for target heart rate based on inputs from form
-        if (userGender === "male") {
-
-            // maximum heart rate calculator with 4.5 added for men - 211.415, 0.5,  0.05 and 4.5 are constants
-            // formula developed by Dr. Dan Heil
-            maximumHeartRate = 211.415 - (0.5 * userAge) - (0.05 * userWeight) + 4.5;
-
-        } else {
-            // maximum heart rate calculator for women - 211.415, 0.5 and 0.05 are constants (we are including "prefer not to say" with this group)
-            // formula developed by Dr. Dan Heil
-            maximumHeartRate = 211.415 - (0.5 * userAge) - (0.05 * userWeight);
-
-        }
-
-        console.log(maximumHeartRate);
-
-
+        console.log('userGender' + userGender);
         chosenActivity = ($('input[name=activity]:checked').val());
-        console.log(chosenActivity);
+        console.log('userGender' + chosenActivity);
 
-        // if user chooses high intensity/cardio workout then target is 85% of maximum heart rate
-        if (chosenActivity === "HIIT/Cardio") {
+        // Use Doreens heartrate calculator!
+        var targetHeartRate = calculateTargetHeartRate(userGender, userAge, userWeight, chosenActivity);
+        console.log(targetHeartRate);
 
-            targetHeartrate = maximumHeartRate * 85;
+        // authenticate spotify => this moves us off our app page temporarily so 
+        // we should store those user variables from above into local storage I think
+        // here at some point
+        spotifyAuth();
 
-            // if user chooses weightlifting/moderate workout then target is 50% of maximum heart rate
-        } else if (chosenActivity === "weights") {
+        
+        /* These values are hard coded for now */
+        var songOptions = {};
+        songOptions.genre = 'heavy+metal';
+        songOptions.hr = targetHeartRate; // except for this one!
+        songOptions.range = 10;        
 
-            targetHeartrate = maximumHeartRate * .50;
+        /* *********************************** */
 
-            // if user chooses meditation/relaxation then target is slow heart rate to 
-        } else {
-            targetHeartRate = 50;
-
-        }
-    });
-
-
-    
-    console.log(targetHeartRate);
-
-
-    // we will use our targetHeartrate to determine tempo of songs range to search in Spotify +-10
-
-
-
+        getSongs(songOptions, function(songs){
+            console.log('in the callback function');
+            console.log(songs);
+        });
+      
+    }); // end form click/submit event
 
 
-
-
-})
-/* this is for debugging and will be removed from the app */
-
-console.log(window.location.href);
-
-/* ****************************************************** */
-
-
-$('#submit').on('click', function(e){
-    e.preventDefault();
-    spotifyAuth();
-});
-
-$('#getSongs').on('click', function(e){
-    e.preventDefault();
-    console.log('get songs button clicked');
-    var genre = 'heavy+metal';
-    var hb = 130;
-    var range = 10;
-    getSongs(genre, hb, range, function(songs){
-        console.log('in the callback function');
-        console.log(songs);
-    });
-});
+  
+}); // end document.ready
