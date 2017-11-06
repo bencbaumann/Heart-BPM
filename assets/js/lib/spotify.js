@@ -156,7 +156,7 @@ function addTracksToPlaylist(spotify, callback){
         var token = localStorage.getItem('token');
     
         var data = {};
-        data.uris = "uris="+spotify.tracks.tracks.map( track => track.uri).join(',').replace(':', '%3A');
+        data.uris = "uris="+spotify.tracks.tracks.map( track => track.uri).join(',').replace(/:/g, '%3A');
         // var uris = encodeURI('uris=' + spotify.tracks.tracks.map( track => track.uri).join(','));
 
         console.log(data.uris);
