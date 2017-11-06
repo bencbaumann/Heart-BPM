@@ -1,3 +1,4 @@
+var user = {};
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyDsehiHoo9Y3zY2yzS5cdayNot4ISX7QjE",
@@ -8,6 +9,7 @@ var config = {
     messagingSenderId: "721569458570"
 };
 firebase.initializeApp(config);
+
 $(document).ready(function () {
     $('.tap-target').tapTarget('open');
     $('select').material_select();
