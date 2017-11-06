@@ -122,7 +122,7 @@ function createPlaylist(user, playlist){
         playlist.name = "Workout Playlist";
     
         var baseurl = 'https://api.spotify.com/v1/';
-        var url = `users/${user.id}/playlists`;
+        var url = `${baseurl}users/${user.id}/playlists`;
     
         console.log('queryUrl: ' + url);
 
