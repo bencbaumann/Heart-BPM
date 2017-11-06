@@ -147,9 +147,8 @@ function createPlaylist(user, playlist, callback){
 }
 
 function addTracksToPlaylist(user, playlist, tracks, callback){
-    console.log('getting songs!');
-    console.log(playlist);
-    console.log(playlist.id);
+        console.log('getting songs!');
+
         var token = localStorage.getItem('token');
     
         var data = {};
@@ -157,7 +156,9 @@ function addTracksToPlaylist(user, playlist, tracks, callback){
         data.user = user.id;
         data.tracks = tracks.tracks.map( track => track.uri).join(',');
 
-        console.log(data.tracks);
+        console.log(data);
+
+        // console.log(data.tracks);
     
         var url = `https://api.spotify.com/v1/users/${user.id}/playlists/${playlist.id}/tracks`;
     
