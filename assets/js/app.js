@@ -64,6 +64,11 @@ $('#deleteToken').on('click', function(e){
     e.preventDefault();
     deleteToken();
 });
+
+$('#getUser').on('click', function(e){
+    e.preventDefault();
+    getUser();
+});
   
   
 }); // end document.ready
