@@ -78,7 +78,7 @@ function getSongs(songOptions, callback){
                 });
 
             });
-            callback(songs);
+            callback(tracks);
         },
         error: function(err){
             console.log(err);
@@ -164,7 +164,7 @@ function addTracksToPlaylist(spotify, callback){
 
         // console.log(data.tracks);
     
-        var url = `https://api.spotify.com/v1/users/${user.id}/playlists/${playlist.id}/tracks`;
+        var url = `https://api.spotify.com/v1/users/${spotify.user.id}/playlists/${spotify.playlist.id}/tracks`;
     
         console.log('queryUrl: ' + url);
 
