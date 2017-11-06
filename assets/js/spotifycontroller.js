@@ -11,25 +11,25 @@ $(document).ready(function () {
     var targetHeartRate = 0;
 
 
-    // gathering input info when submit button is clicked
-    $("#metrics-form").submit("click", function (event) {
-        event.preventDefault();
+    // // gathering input info when submit button is clicked
+    // $("#metrics-form").submit("click", function (event) {
+    //     event.preventDefault();
 
-        // grab values from our UI
-        userAge = $("#age").val().trim();
-        console.log('userAge' + userAge);
-        userWeight = $("#weight").val().trim();
-        console.log('userWeight' + userWeight);
-        userGender = $("#gender").val();
-        console.log('userGender' + userGender);
-        chosenActivity = ($('input[name=activity]:checked').val());
-        console.log('userGender' + chosenActivity);
+    //     // grab values from our UI
+    //     userAge = $("#age").val().trim();
+    //     console.log('userAge' + userAge);
+    //     userWeight = $("#weight").val().trim();
+    //     console.log('userWeight' + userWeight);
+    //     userGender = $("#gender").val();
+    //     console.log('userGender' + userGender);
+    //     chosenActivity = ($('input[name=activity]:checked').val());
+    //     console.log('userGender' + chosenActivity);
       
-        // we will use our targetHeartrate to determine tempo of songs range to search in Spotify +-10
-        var targetHeartRate = calculateTargetHeartRate(userGender, userAge, userWeight, chosenActivity);
-        console.log(targetHeartRate);
+    //     // we will use our targetHeartrate to determine tempo of songs range to search in Spotify +-10
+    //     var targetHeartRate = calculateTargetHeartRate(userGender, userAge, userWeight, chosenActivity);
+    //     console.log(targetHeartRate);
 
-        }); // end form click/submit event
+    //     }); // end form click/submit event
                               
 
 
@@ -37,8 +37,8 @@ $(document).ready(function () {
   
 
 $('#submit').on('click', function (e) {
-    console.log('submitify');
     e.preventDefault();
+    console.log('submitify');
     spotifyAuth();
 });
 
