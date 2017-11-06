@@ -63,6 +63,9 @@ function getSongs(songOptions, callback){
         },
         success: function(songs){
             console.log('got a reponse from spotify');
+            getUser(function(user){
+                alert('user & songs both in scope and both callback ified');
+            });
             callback(songs);
         },
         error: function(err){
@@ -71,7 +74,7 @@ function getSongs(songOptions, callback){
     });
 }
 
-function getUser(){
+function getUser(callback){
     console.log('getting user!');
 
     var token = localStorage.getItem('token');
@@ -91,8 +94,7 @@ function getUser(){
         success: function(user){
             localStorage.setItem('userId', user.id);
             console.log('got a reponse from spotify user resource');
-            console.log(user);
-            // callback(user);
+            callback(user);
         },
         error: function(err){
             console.log(err);
