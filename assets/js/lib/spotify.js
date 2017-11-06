@@ -72,7 +72,7 @@ function getSongs(songOptions, callback){
                     spotify.playlist = playlist;
                     console.log(playlist);
                     console.log(spotify);
-                    addTracksToPlaylist(user, playlist, songs, function(res){
+                    addTracksToPlaylist(spotify, function(res){
                         console.log(res);
                     });
                 });
@@ -150,15 +150,15 @@ function createPlaylist(user, playlist, callback){
         });
 }
 
-function addTracksToPlaylist(user, playlist, tracks, callback){
+function addTracksToPlaylist(spotify, callback){
         console.log('getting songs!');
 
         var token = localStorage.getItem('token');
     
         var data = {};
-        data.playlist = playlist.id;
-        data.user = user.id;
-        data.tracks = tracks.tracks.map( track => track.uri).join(',');
+        data.playlist = spotify.playlist.id;
+        data.user = spotify.user.id;
+        data.tracks = spotify.tracks.tracks.map( track => track.uri).join(',');
 
         console.log(data);
 
