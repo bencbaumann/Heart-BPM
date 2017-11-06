@@ -170,7 +170,7 @@ function addTracksToPlaylist(spotify, callback){
         $.ajax({
             url: url,
             method: 'POST',
-            data: data,
+            data: JSON.stringify(data),
             dataType: 'json',
             headers: {
                 'Content-Type': 'application/json',
