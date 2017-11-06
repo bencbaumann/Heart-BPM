@@ -64,7 +64,7 @@ function getSongs(songOptions, callback){
         success: function(songs){
             console.log('got a reponse from spotify');
             getUser(function(user){
-                alert('user & songs both in scope and both callback ified');
+                console.log('user & songs both in scope and both callback ified');
                 var playlist = {};
                 createPlaylist(user, playlist, function(res){
                     console.log(res);
