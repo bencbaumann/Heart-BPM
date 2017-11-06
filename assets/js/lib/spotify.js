@@ -74,7 +74,7 @@ function getSongs(songOptions, callback){
                     console.log(spotify);
                     addTracksToPlaylist(spotify, function(res){
                         console.log(res);
-                        createPlayer(spotify.playlist.id);
+                        createPlayer(spotify);
                     });
                 });
 
