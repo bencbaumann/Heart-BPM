@@ -1,0 +1,5 @@
+var str = "uris=spotify:track:4OTN2EZQOM91H3oqtOAfYk,spotify:track:6l0LbTF2V77M3LPpcOBmqX,spotify:track:3VHybOuCYoDcDfvg0b6qc1,spotify:track:4KQyS1qem1w33Qf0OwEHNo,spotify:track:59cCr3aMohdsVwKFig5Ukf,spotify:track:09e4GqqAgTqDXSiMOUQOoz,spotify:track:11IXRdEjiH0KL8nh4G1j7d,spotify:track:3Lz6wuzRujod02vUPjTAyb,spotify:track:1ph6Bncj7s3BmYp6FkIzP8,spotify:track:2Ef5Vgw0ShuKGoNfO6Nrof,spotify:track:5O8QPnzttzPn9Wm80Ch9ks,spotify:track:2MRcpN5ofn2KicuqV1Xgsw,spotify:track:123W7snVRuONLwn2uMdJB3,spotify:track:7iXBlomquLUt8TPymUyJJW,spotify:track:0M0hWgxkzxDeejWNsJ7rwM,spotify:track:2auBuIN7gvImZfmjrm3IP2,spotify:track:1SBJ9LUxkalUVk6VmFRlma,spotify:track:1Qq3prahymiO6FlKoT7JPC,spotify:track:0m3cGW8hDGSuRTxoLtFsco,spotify:track:2pQV1J8zokISM1Ew5uSGI1";
+console.log(str);
+
+str = encodeURI(str);
+console.log(str);
