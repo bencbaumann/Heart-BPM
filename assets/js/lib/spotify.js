@@ -156,10 +156,10 @@ function addTracksToPlaylist(spotify, callback){
         var token = localStorage.getItem('token');
     
         var data = {};
-        // data.uris = spotify.tracks.tracks.map( track => track.uri).join(',');
-        var uris = encodeURI('uris=' + spotify.tracks.tracks.map( track => track.uri).join(','));
+        data.uris = spotify.tracks.tracks.map( track => track.uri).join(',');
+        // var uris = encodeURI('uris=' + spotify.tracks.tracks.map( track => track.uri).join(','));
 
-        console.log(uris);
+        // console.log(uris);
 
         // console.log(data.tracks);
     
@@ -170,7 +170,8 @@ function addTracksToPlaylist(spotify, callback){
         $.ajax({
             url: url,
             method: 'POST',
-            data: uris,
+            data: data,
+            dataType: 'json',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
