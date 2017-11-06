@@ -35,6 +35,10 @@ $(document).ready(function () {
         getUser();
     });
   
+    $('#createPlayer').on('click', function(e){
+        e.preventDefault();
+        createPlayer();
+    });
   
 }); // end document.ready
 
