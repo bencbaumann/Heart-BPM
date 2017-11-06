@@ -155,6 +155,8 @@ function addTracksToPlaylist(user, playlist, tracks, callback){
         data.playlist = playlist.id;
         data.user = user.id;
         data.tracks = tracks.tracks.map( track => track.uri).join(',');
+
+        console.log(data.tracks);
     
         var url = `https://api.spotify.com/v1/users/${user.id}/playlists/${playlist.id}/tracks`;
     
