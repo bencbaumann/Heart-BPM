@@ -88,8 +88,10 @@ function getUser(){
             'Accept': 'application/json',
             'Authorization': `Bearer ${token}`
         },
-        success: function(songs){
+        success: function(user){
+            localStorage.setItem('userId', user.id);
             console.log('got a reponse from spotify user resource');
+            console.log(user);
             // callback(user);
         },
         error: function(err){
