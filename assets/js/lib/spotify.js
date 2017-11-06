@@ -156,9 +156,6 @@ function addTracksToPlaylist(spotify, callback){
         var token = localStorage.getItem('token');
     
         var data = {};
-        data.playlist = spotify.playlist.id;
-        data.user = spotify.user.id;
-        data.position = 0;
         data.tracks = spotify.tracks.tracks.map( track => track.uri).join(',');
 
         console.log(data);
