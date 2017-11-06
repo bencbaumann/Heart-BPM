@@ -119,7 +119,7 @@ function createPlayer(spotify){
     let player = `<iframe src="https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:${spotify.playlist.id}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>`;
     console.log(player);
     $('#player').append(player);
-    $('#player').append('<iframe src="https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:29lzumRa4W7FqtwNYMMQNW" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');
+    $('#player').append('<iframe src="https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:3rgsDhGHZxZ9sB9DQWQfuf" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');
 }
 
 function createPlaylist(user, playlist, callback){
