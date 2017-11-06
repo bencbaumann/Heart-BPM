@@ -128,7 +128,7 @@ function createPlaylist(user, playlist){
         $.ajax({
             url: url,
             method: 'POST',
-            data: playlist,
+            data: JSON.stringify(playlist),
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
