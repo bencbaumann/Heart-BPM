@@ -128,7 +128,7 @@ function createPlaylist(user, playlist, callback){
         var token = localStorage.getItem('token');
     
         playlist.description = "Workout Playlist for meditation";
-        playlist.public = false;
+        playlist.public = true;
         playlist.name = "Workout Playlist";
     
         var url = `https://api.spotify.com/v1/users/${user.id}/playlists`;
