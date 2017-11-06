@@ -61,8 +61,8 @@ function getSongs(songOptions, callback){
             'Accept': 'application/json',
             'Authorization': `Bearer ${token}`
         },
-        success: function(songs){
-            spotify.songs = songs;
+        success: function(tracks){
+            spotify.tracks = tracks;
             console.log('got songs from spotify');
             getUser(function(user){
                 spotify.user = user;
