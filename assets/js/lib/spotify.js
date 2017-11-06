@@ -143,6 +143,38 @@ function createPlaylist(user, playlist, callback){
         });
 }
 
+// function addTracksToPlaylist(user, playlist, tracks){
+//     console.log('getting songs!');
+    
+//         var token = localStorage.getItem('token');
+    
+//         var data = {};
+//         data.playlist = "Workout Playlist for meditation";
+//         data.public = false;
+//         data.name = "Workout Playlist";
+    
+//         var url = `https://api.spotify.com/v1/users/${user.id}/playlists`;
+    
+//         console.log('queryUrl: ' + url);
+
+//         $.ajax({
+//             url: url,
+//             method: 'POST',
+//             data: JSON.stringify(playlist),
+//             headers: {
+//                 'Content-Type': 'application/json',
+//                 'Authorization': `Bearer ${token}`
+//             },
+//             success: function(res){
+//                 console.log('created a playlist on spotify');
+//                 callback(res);
+//             },
+//             error: function(err){
+//                 console.log(err);
+//             }
+//         });
+// }
+
 function storeToken(){
     let token = window.location.hash.split('&')[0].split('=')[1];
     if(window.location.hash.includes('token')){
