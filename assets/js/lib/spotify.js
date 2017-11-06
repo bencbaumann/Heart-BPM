@@ -167,7 +167,7 @@ function addTracksToPlaylist(user, playlist, tracks, callback){
         $.ajax({
             url: url,
             method: 'POST',
-            data: JSON.stringify(data),
+            data: data,
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
