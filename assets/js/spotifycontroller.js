@@ -37,9 +37,11 @@ $(document).ready(function () {
   
 
 $('#submit').on('click', function (e) {
+    console.log('submitify');
     e.preventDefault();
     spotifyAuth();
 });
+
 $('#getSongs').on('click', function(e){
     e.preventDefault();
     // hardcoded for now
