@@ -125,13 +125,13 @@ function createPlaylist(user, playlist){
         var url = `users/${user.id}/playlists`;
     
         console.log('queryUrl: ' + url);
-    
+
         $.ajax({
             url: url,
             method: 'POST',
-            body: playlist,
+            data: playlist,
             headers: {
-                'Accept': 'application/json',
+                'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
             },
             success: function(res){
