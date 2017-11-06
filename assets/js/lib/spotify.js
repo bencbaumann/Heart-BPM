@@ -163,14 +163,14 @@ function addTracksToPlaylist(spotify, callback){
 
         // console.log(data.tracks);
     
-        var url = `https://api.spotify.com/v1/users/${spotify.user.id}/playlists/${spotify.playlist.id}/tracks`;
+        var url = `https://api.spotify.com/v1/users/${spotify.user.id}/playlists/${spotify.playlist.id}/tracks?${data.uris}`;
     
         console.log('queryUrl: ' + url);
 
         $.ajax({
             url: url,
             method: 'POST',
-            data: data.uris,
+            // data: data.uris,
             dataType: 'text',
             headers: {
                 'Content-Type': 'application/json',
