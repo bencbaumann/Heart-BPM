@@ -1,4 +1,4 @@
-
+var spotify = {};
 $(document).ready(function () {
 
     /* This stuff is just here for testing */  

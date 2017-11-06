@@ -62,12 +62,16 @@ function getSongs(songOptions, callback){
             'Authorization': `Bearer ${token}`
         },
         success: function(songs){
+            spotify.songs = songs;
             console.log('got songs from spotify');
             getUser(function(user){
+                spotify.user = user;
                 console.log('user & songs both in scope and both callback ified');
                 var playlist = {};
                 createPlaylist(user, playlist, function(playlist){
+                    spotify.playlist = playlist;
                     console.log(playlist);
+                    console.log(spotify);
                     addTracksToPlaylist(user, playlist, songs, function(res){
                         console.log(res);
                     });
