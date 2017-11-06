@@ -116,10 +116,13 @@ function getUser(callback){
 }
 
 function createPlayer(spotify){
-    let player = `<iframe src="https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:${spotify.playlist.id}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>`;
+    let player = `<iframe src="https://open.spotify.com/embed?uri=${spotify.playlist.uri}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>`;
     console.log(player);
     $('#player').append(player);
+    // spotify example
     $('#player').append('<iframe src="https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:3rgsDhGHZxZ9sB9DQWQfuf" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');
+    $('#player').append('<iframe src="https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:7Evt4MDHQ6jlYuoRAJkI3x" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');
+
 }
 
 function createPlaylist(user, playlist, callback){
