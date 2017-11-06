@@ -200,7 +200,3 @@ function deleteToken(){
     console.log('deleting the token');
     localStorage.clear();
 }
-
-
-curl -X POST 
-"https://api.spotify.com/v1/users/2153bez2q2kcl5ytexfpl5bwy/playlists/534cTcbOJhmc2XeHxWxjaf/tracks?position=0&uris=spotify%3Atrack%3A4iV5W9uYEdYUVa79Axb7Rh,spotify%3Atrack%3A1301WleyT98MSxVHPZCA6M" -H "Accept: application/json" -H "Authorization: Bearer BQDdipp2NoGlMg8bQm59W9OTEnrQ5JM6xJNdA0qlIvagR30R-oOg0Oj0WHL1qdqjtD4w1SWNcN7K64yDhOPMbOF_vXimqjNrVANT1rt0B05dWBv-SgtdVQT7UGZ1z6lDpOghAs-1S6usk12df2h1J6XaX-8ccwuSytILvY8SLY7cV7WnzLWmxNy5eDA3C007u5mMBk9lFbwUm5Z-td09Qs0CRfjMpj-BGjfNTDSnlL_OdGDWgVb1iDYIZNU"
