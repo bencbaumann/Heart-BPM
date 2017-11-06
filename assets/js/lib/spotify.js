@@ -62,12 +62,15 @@ function getSongs(songOptions, callback){
             'Authorization': `Bearer ${token}`
         },
         success: function(songs){
-            console.log('got a reponse from spotify');
+            console.log('got songs from spotify');
             getUser(function(user){
                 console.log('user & songs both in scope and both callback ified');
                 var playlist = {};
-                createPlaylist(user, playlist, function(res){
-                    console.log(res);
+                createPlaylist(user, playlist, function(playlist){
+                    console.log(playlist);
+                    addTracksToPlaylist(user, playlist, songs, function(res){
+                        console.log(res);
+                    });
                 });
 
             });
@@ -133,9 +136,9 @@ function createPlaylist(user, playlist, callback){
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
             },
-            success: function(res){
+            success: function(playlist){
                 console.log('created a playlist on spotify');
-                callback(res);
+                callback(playlist);
             },
             error: function(err){
                 console.log(err);
@@ -143,37 +146,37 @@ function createPlaylist(user, playlist, callback){
         });
 }
 
-// function addTracksToPlaylist(user, playlist, tracks){
-//     console.log('getting songs!');
+function addTracksToPlaylist(user, playlist, tracks, callback){
+    console.log('getting songs!');
     
-//         var token = localStorage.getItem('token');
+        var token = localStorage.getItem('token');
     
-//         var data = {};
-//         data.playlist = "Workout Playlist for meditation";
-//         data.public = false;
-//         data.name = "Workout Playlist";
+        var data = {};
+        data.playlist = playlist.id;
+        data.user = user.id;
+        data.tracks = tracks.tracks.map( track => track.uri).join(',');
     
-//         var url = `https://api.spotify.com/v1/users/${user.id}/playlists`;
+        var url = `https://api.spotify.com/v1/users/${user.id}/playlists/${playlist.id}/tracks`;
     
-//         console.log('queryUrl: ' + url);
+        console.log('queryUrl: ' + url);
 
-//         $.ajax({
-//             url: url,
-//             method: 'POST',
-//             data: JSON.stringify(playlist),
-//             headers: {
-//                 'Content-Type': 'application/json',
-//                 'Authorization': `Bearer ${token}`
-//             },
-//             success: function(res){
-//                 console.log('created a playlist on spotify');
-//                 callback(res);
-//             },
-//             error: function(err){
-//                 console.log(err);
-//             }
-//         });
-// }
+        $.ajax({
+            url: url,
+            method: 'POST',
+            data: JSON.stringify(playlist),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            success: function(res){
+                console.log('added songs to playlist on spotify');
+                callback(res);
+            },
+            error: function(err){
+                console.log(err);
+            }
+        });
+}
 
 function storeToken(){
     let token = window.location.hash.split('&')[0].split('=')[1];
