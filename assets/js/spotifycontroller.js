@@ -34,6 +34,10 @@ $(document).ready(function () {
 
 
 /* This stuff is just here for testing */  
+
+$( "#target" ).submit(function( event ) {
+    event.preventDefault();
+  });
   
 
 $('#submit').on('click', function (e) {
