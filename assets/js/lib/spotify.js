@@ -66,7 +66,9 @@ function getSongs(songOptions, callback){
             getUser(function(user){
                 alert('user & songs both in scope and both callback ified');
                 var playlist = {};
-                createPlaylist(user, playlist);
+                createPlaylist(user, playlist, function(res){
+                    console.log(res);
+                });
 
             });
             callback(songs);
