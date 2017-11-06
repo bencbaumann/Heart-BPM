@@ -65,6 +65,9 @@ function getSongs(songOptions, callback){
             console.log('got a reponse from spotify');
             getUser(function(user){
                 alert('user & songs both in scope and both callback ified');
+                var playlist = {};
+                createPlaylist(user, playlist);
+
             });
             callback(songs);
         },
@@ -107,28 +110,24 @@ function createPlayer(){
     $('#player').append(player);
 }
 
-function createPlaylist(args){
+function createPlaylist(user, playlist){
     console.log('getting songs!');
     
         var token = localStorage.getItem('token');
     
-        args.description = "Workout Playlist for meditation";
-        args.public = false;
-        args.name = "Workout Playlist";
+        playlist.description = "Workout Playlist for meditation";
+        playlist.public = false;
+        playlist.name = "Workout Playlist";
     
-        var baseurl = 'https://api.spotify.com/v1/recommendations';
-        var url = `${baseurl}?min_tempo=${minTempo}&seed_genres=${songOptions.genre}&max_tempo=${maxTempo}`;
+        var baseurl = 'https://api.spotify.com/v1/';
+        var url = `users/${user.id}/playlists`;
     
         console.log('queryUrl: ' + url);
     
         $.ajax({
             url: url,
             method: 'POST',
-            body: {
-                    "description": args.description,
-                    "public": args.public,
-                    "name": args.name
-            },
+            body: playlist,
             headers: {
                 'Accept': 'application/json',
                 'Authorization': `Bearer ${token}`
