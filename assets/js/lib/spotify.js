@@ -148,7 +148,8 @@ function createPlaylist(user, playlist, callback){
 
 function addTracksToPlaylist(user, playlist, tracks, callback){
     console.log('getting songs!');
-    
+    console.log(playlist);
+    console.log(playlist.id);
         var token = localStorage.getItem('token');
     
         var data = {};
