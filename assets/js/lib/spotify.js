@@ -74,6 +74,7 @@ function getSongs(songOptions, callback){
                     console.log(spotify);
                     addTracksToPlaylist(spotify, function(res){
                         console.log(res);
+                        createPlayer(spotify.playlist.id);
                     });
                 });
 
@@ -114,8 +115,8 @@ function getUser(callback){
     });
 }
 
-function createPlayer(){
-    let player = `<iframe src="https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:3rgsDhGHZxZ9sB9DQWQfuf" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>`;
+function createPlayer(spotify){
+    let player = `<iframe src="https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:${spotify.playlist.id}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>`;
     $('#player').append(player);
 }
 
