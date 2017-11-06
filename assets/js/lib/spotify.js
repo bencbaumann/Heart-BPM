@@ -40,9 +40,9 @@ function getSongs(songOptions, callback){
             'Accept': 'application/json',
             'Authorization': `Bearer ${token}`
         },
-        success: function(res){
+        success: function(songs){
             console.log('got a reponse from spotify');
-            callback(res);
+            callback(songs);
         },
         error: function(err){
             console.log(err);
