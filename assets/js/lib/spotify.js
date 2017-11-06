@@ -112,7 +112,7 @@ function createPlayer(){
     $('#player').append(player);
 }
 
-function createPlaylist(user, playlist){
+function createPlaylist(user, playlist, callback){
     console.log('getting songs!');
     
         var token = localStorage.getItem('token');
