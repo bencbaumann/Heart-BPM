@@ -11,7 +11,7 @@ var config = {
 firebase.initializeApp(config);
 
 $(document).ready(function () {
-    $('.tap-target').tapTarget('open');
+    // $('.tap-target').tapTarget('open');
     $('select').material_select();
 
     var userAge = 0;
