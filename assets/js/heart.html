@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+    <!-- Views go here -->
+    <form id="form-id">
+        <div id="activity">
+            <input type="radio" class="radio-button" name="activity" id="HIIT/Cardio" value="HIIT/Cardio" />
+            <label for="HIIT/Cardio" id="HIITlabel" value="meditation">
+                <img class="form-image" value="meditation" src="https://hiset.ets.org/rsc/img/icons/icon-tt-checklist.svg" alt="HIIT/Cardio"
+                />
+            </label>
+
+            <input type="radio" class="radio-button" name="activity" id="Weights" value="weights" />
+            <label for="Weights" id="weightslabel" value="meditation">
+                <img class="form-image" value="meditation" src="https://hiset.ets.org/rsc/img/icons/icon-tt-checklist.svg" alt="Weights"
+                />
+            </label>
+
+            <input type="radio" class="radio-button" name="activity" id="Meditation" value="meditation" />
+            <label for="Meditation" id="meditationlabel" value="meditation">
+                <img class="form-image" value="meditation" src="https://hiset.ets.org/rsc/img/icons/icon-tt-checklist.svg" alt="Meditation"
+                />
+            </label>
+        </div>
+
+        <div id="Age">
+                <input type="text" name="age" placeholder="Age" value="">
+        </div>
+
+        <div id="Weight">
+                <input type="text" name="weight" placeholder="Weight" value="">
+        </div>
+
+        <div id="Gender">
+                <select class="form-control" id="sel1">
+                  <option name="gender" value="1">Male</option>
+                  <option name="gender" value="2">Female</option>
+                </select> 
+                <label class="checkbox-inline"><input type="checkbox" name="gender" value="0">I prefer not to say</label>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+
+
+    <!-- End Views here -->
+
+
+    <!-- js includes here -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $("#activity").on("click", "input", function () {
+            console.log($('input[name=activity]:checked').val());
+        });
+        $("#age").on("click", "input", function () {
+            console.log($('input[name=activity]:checked').val());
+        });
+        $("#weight").on("click", "input", function () {
+            console.log($('input[name=activity]:checked').val());
+        });
+        $("#gender").on("click", "input", function () {
+            console.log($('input[name=activity]:checked').val());
+        });
+    </script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script src="assets/lib/firedb.js"></script>
+    <script src="assets/lib/heartrate.js"></script>
+    <script src="assets/lib/spotify.js"></script>
+    <script src="assets/lib/facebook.js"></script>
+    <script src="app.js"></script> -->
+
+</body>
+
+</html>

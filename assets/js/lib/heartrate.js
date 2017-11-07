@@ -32,9 +32,9 @@ function calculateTargetHeartRate(userGender, userAge, userWeight, chosenActivit
     
                 targetHeartrate = maximumHeartRate * .50;
     
-                // if user chooses meditation/relaxation then target is slow heart rate to 
+                // if user chooses meditation/relaxation then target is relaxed heart rate 70 BPM 
             } else {
-                targetHeartRate = 50;
+                targetHeartRate = 70;
     
             }
 

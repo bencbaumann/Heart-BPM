@@ -1,0 +1,10 @@
+Pseudocode for Heart Beatz
+
+User selects exercise type
+User selects gender
+
+User enters age and weight
+
+Values are taken when user clicks submit
+
+Calculator returns value of 
