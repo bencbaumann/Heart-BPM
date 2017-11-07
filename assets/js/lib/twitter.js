@@ -1,6 +1,6 @@
 var twitter = {
   apikey: "xl82tzCBkcTPLjYWt7Dmxdq7q",
-  secret: "3DpiW6nbTUqU1Rqt4YUjEoL8oEO7tN0d3lPOWm5BbgcL7yjBmp",
+  secret: "3DpiW6nbTUqU1Rqt4YUjEoL8oEO7tN0d3lPOWm5BbgcL7yjBmp?927691832217276417-tsInkA3kuN9NyMsugVKyKaeoO1ShNpm",
   callback: "https://bencbaumann.github.io/Heart-BPM/twittercallback.html",
   auth: "https://api.twitter.com/oauth/authorize",
   authorize: callback => {
