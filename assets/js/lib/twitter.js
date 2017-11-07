@@ -4,6 +4,7 @@ var twitter = {
   callback: "https://bencbaumann.github.io/Heart-BPM/twittercallback.html",
   auth: "https://api.twitter.com/oauth/authorize",
   authorize: callback => {
+      console.log('authorizing twitter');
     $.ajax({
       url: twitter.auth,
       method: "GET",
@@ -19,6 +20,7 @@ var twitter = {
     });
   },
   tweet: callback => {
+    console.log('posting a tweet');
     $.ajax({
       url: twitter.auth,
       method: "GET",
