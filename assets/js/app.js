@@ -11,8 +11,12 @@ var config = {
 firebase.initializeApp(config);
 
 $(document).ready(function () {
-    $('.tap-target').tapTarget('open');
-    $('select').material_select();
+    if($('.tap-target')){
+        $('.tap-target').tapTarget('open');
+    }
+    if($('select')){
+        $('select').material_select();
+    }
 
     var userAge = 0;
     var userWeight = 0;
