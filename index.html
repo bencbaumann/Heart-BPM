@@ -2,11 +2,6 @@
 <html>
 
 <head>
-    <!--Firebase-->
-    <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
-    <!-- <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-database.js"></script> -->
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css CDN-->
@@ -19,27 +14,28 @@
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 
 </head>
+
 <body class="blue-grey darken-4">
-        
+
     <!--navbar-->
     <div class="container-fluid">
-            <nav>
-                <div class="nav-wrapper">
-                    <a class="brand-logo center">
-                        <i class="material-icons left" style="font-size:40px;">favorite</i>
-                    </a>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li>
-                            <a href="signup.html">Sign Up</a>
-                        </li>
-                        <li>
-                            <a href="signin.html">Sign In</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-        <!--end navbar-->
+        <nav>
+            <div class="nav-wrapper">
+                <a class="brand-logo center">
+                    <i class="material-icons left" style="font-size:40px;">favorite</i>
+                </a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li>
+                        <a href="signup.html">Sign Up</a>
+                    </li>
+                    <li>
+                        <a href="signin.html">Sign In</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!--end navbar-->
 
 
     <!--Begin metrics form page-->
@@ -159,10 +155,13 @@
 
 
     <!-- materialize.css JS CDN -->
+    <!--Firebase-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <!-- <script src="ux.js"></script> -->
     <script src="assets/js/lib/heartrate.js"></script>
     <script src="assets/js/lib/spotify.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+    <script src="assets/js/lib/firedb.js"></script>
     <script src="assets/js/app.js"></script>
 
 </body>
