@@ -1,29 +1,18 @@
 var user = {};
-// Initialize Firebase
-var config = {
-    apiKey: "AIzaSyDsehiHoo9Y3zY2yzS5cdayNot4ISX7QjE",
-    authDomain: "hello-world-3b2c5.firebaseapp.com",
-    databaseURL: "https://hello-world-3b2c5.firebaseio.com",
-    projectId: "hello-world-3b2c5",
-    storageBucket: "hello-world-3b2c5.appspot.com",
-    messagingSenderId: "721569458570"
-};
-firebase.initializeApp(config);
+
+
 
 $(document).ready(function () {
-    if($('.tap-target')){
-        $('.tap-target').tapTarget('open');
-    }
-    if($('select')){
-        $('select').material_select();
-    }
 
-    var userAge = 0;
-    var userWeight = 0;
-    var userGender = "";
-    var chosenActivity = "";
-    var maximumHeartRate = 0;
-    var targetHeartRate = 0;
+
+    $('.activity').on('click', function(){
+        user.activity = $(this).attr('data-activity')
+    })
+
+
+    $('.tap-target').tapTarget('open');
+
+    $('select').material_select();
 
 
     // gathering input info when submit button is clicked
@@ -31,17 +20,17 @@ $(document).ready(function () {
         event.preventDefault();
 
         // grab values from our UI
-        userAge = $("#age").val().trim();
-        console.log('userAge' + userAge);
-        userWeight = $("#weight").val().trim();
-        console.log('userWeight' + userWeight);
-        userGender = $("#gender").val();
-        console.log('userGender' + userGender);
-        chosenActivity = ($('input[name=activity]:checked').val());
-        console.log('userGender' + chosenActivity);
+        user.age = $("#age").val().trim();
+        console.log('userAge' + user.age);
+        user.weight = $("#weight").val().trim();
+        console.log('userWeight' + user.weight);
+        user.gender = $("#gender").val();
+        console.log('userGender' + user.gender);
+        
+        console.log('userGender' + user.activity);
       
         // we will use our targetHeartrate to determine tempo of songs range to search in Spotify +-10
-        var targetHeartRate = calculateTargetHeartRate(userGender, userAge, userWeight, chosenActivity);
+        var targetHeartRate = calculateTargetHeartRate(user.gender, user.age, user.weight, user.activity);
         console.log(targetHeartRate);
 
         }); // end form click/submit event
