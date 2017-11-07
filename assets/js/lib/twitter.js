@@ -25,6 +25,7 @@ var twitter = {
       url: twitter.auth,
       method: "GET",
       headers: {
+        'Access-Control-Allow-Origin': '*',
         Accept: "application/json"
       },
       success: function(reponse) {
