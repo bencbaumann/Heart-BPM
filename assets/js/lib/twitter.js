@@ -8,6 +8,9 @@ var twitter = {
     $.ajax({
       url: twitter.auth,
       method: "GET",
+      xhrFields: {
+        withCredentials: false
+      },
       headers: {
         Accept: "application/json"
       },
