@@ -71,6 +71,20 @@ $('#getUser').on('click', function(e){
     e.preventDefault();
     getUser();
 });
+
+$('#twitterauth').on('click', function(e){
+    e.preventDefault();
+    twitter.authorize(function(res){
+        console.log(res);
+    });
+});
+
+$('#tweet').on('click', function(e){
+    e.preventDefault();
+    twitter.tweet(function(res){
+        console.log(res);
+    });
+});
   
   
 }); // end document.ready
