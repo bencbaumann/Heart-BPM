@@ -2,8 +2,6 @@ if(window.location.href.includes('spotifycallback')){
     window.sessionStorage.setItem('view', 'heartbeat');
 };
 
-console.log(window.location);
-
 if(window.location.hash.includes("token")){
     console.log("There is a token in the url");
     storeToken();
