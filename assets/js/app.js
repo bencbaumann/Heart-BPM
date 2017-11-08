@@ -39,12 +39,30 @@ $(document).ready(function () {
         spotifyAuth();
         return false;
 
-    }); // end form click/submit event
+    }); // end form click/submit even
 
-    if (window.sessionStorage.getItem("view") === "heartview") {
-        user.targetHeartRate = $("user.targetHeartRate");
+    // functionality for target heartrate + and - buttons
+
+        var adjustedHeartRate = 0;
+
+    $("#increaseHeartRate").on('click', function () {
+        adjustedHeartRate = adjustedHeartRate + 1;
+        $("#adjustedHeartRate").text(adjustedHeartRate);
+    });
+
+
+    $("#decreaseHeartRate").on('click', function () {
+        adjustedHeartRate = adjustedHeartRate--;
+        $("#adjustedHeartRate").text(adjustedHeartRate);
+    });
+
+// get the final heart rate from heartview page
+    if (sessionStorage.getitem("#view") === ("#heartview")) {
+        user.targetHeartRate = $("#adjustedHeartRate");
+  
     }
 
+    
     /* This stuff is just here for testing */
 
 
