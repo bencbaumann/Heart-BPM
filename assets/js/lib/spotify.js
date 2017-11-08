@@ -1,3 +1,4 @@
+console.log(window.location);
 if(window.location.includes('spotifycallback')){
     window.sessionStorage.setItem('view', 'heartbeat');
 };
