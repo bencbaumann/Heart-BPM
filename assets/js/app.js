@@ -37,6 +37,7 @@ $(document).ready(function () {
         var storeuser = JSON.stringify(user);
 
         localStorage.setItem("storeuser", storeuser);
+        spotifyAuth();
 
     }); // end form click/submit event
 
@@ -47,10 +48,10 @@ $(document).ready(function () {
     /* This stuff is just here for testing */
 
 
-    $('#submit').on('click', function (e) {
-        e.preventDefault();
-        spotifyAuth();
-    });
+    // $('#submit').on('click', function (e) {
+    //     e.preventDefault();
+    //     spotifyAuth();
+    // });
     $('#getSongs').on('click', function (e) {
         e.preventDefault();
         // hardcoded for now
