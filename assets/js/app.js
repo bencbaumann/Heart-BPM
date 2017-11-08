@@ -1,5 +1,15 @@
 var user = {};
 
+window.onbeforeunload = function(){
+    sessionStorage.setItem("origin", window.location.href);
+}
+
+window.onload = function(){
+    if(window.location.href == sessionStorage.getItem("origin")){
+        sessionStorage.clear();
+    }
+}
+
 if(window.sessionStorage.getItem('view')==='heartbeat'){
     console.log("show the heartbeats view, hide the other view");
     $('#metrics').hide();
