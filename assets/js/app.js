@@ -36,7 +36,9 @@ $(document).ready(function () {
         console.log(user);
 
         window.localStorage.setItem("user", JSON.stringify(user));
-        spotifyAuth();
+
+        // temporarily disabling spotifyAuth();
+        // spotifyAuth();
         return false;
 
     }); // end form click/submit even
