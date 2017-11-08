@@ -57,7 +57,7 @@ $(document).ready(function () {
     });
 
     // get the final heart rate from heartview page
-    if (sessionStorage.getitem("#view") === ("#heartview")) {
+    if (sessionStorage.getItem("#view") === ("#heartview")) {
         user.targetHeartRate = $("#adjustedHeartRate");
     }
 
