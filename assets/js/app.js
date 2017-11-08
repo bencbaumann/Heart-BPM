@@ -20,24 +20,16 @@ $(document).ready(function () {
 
         // grab values from our UI
         user.age = $("#age").val().trim();
-        console.log('userAge' + user.age);
         user.weight = $("#weight").val().trim();
-        console.log('userWeight' + user.weight);
-        // this is not getting selected correctly
         user.gender = $("#gender option:selected").text();
-        console.log('gender' + user.gender);
         user.genre = $("#genre option:selected").text();
-        console.log('genre' + user.genre);
-
 
         // we will use our targetHeartrate to determine tempo of songs range to search in Spotify +-10
-        var targetHeartRate = calculateTargetHeartRate(user.gender, user.age, user.weight, user.activity);
-        console.log(targetHeartRate);
+        user.targetHeartRate = calculateTargetHeartRate(user.gender, user.age, user.weight, user.activity);
 
+        console.log(user);
 
-        var storeuser = JSON.stringify(user);
-
-        window.localStorage.setItem("storeuser", storeuser);
+        window.localStorage.setItem("user", JSON.stringify(user););
         spotifyAuth();
         return false;
 
