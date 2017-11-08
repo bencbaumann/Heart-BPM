@@ -33,14 +33,16 @@ $(document).ready(function () {
         var targetHeartRate = calculateTargetHeartRate(user.gender, user.age, user.weight, user.activity);
         console.log(targetHeartRate);
 
-        
+
         var storeuser = JSON.stringify(user);
-        
+
         localStorage.setItem("storeuser", storeuser);
-        
+
     }); // end form click/submit event
 
-
+    if (sessionStorage.getitem("#view") === "#heartview") {
+        user.targetHeartRate = $("#adjustedHeartRate");
+    }
 
     /* This stuff is just here for testing */
 
