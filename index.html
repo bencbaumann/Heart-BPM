@@ -1,16 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!--Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+
 </head>
 
 <body>
@@ -23,78 +31,153 @@
                 </div>
         </div>
     </div>
-    <div class="row">
-        <form id="form-id">
-            <div id="activity">
-                <input type="radio" class="radio-button" name="activity" id="HIIT/Cardio" value="HIIT/Cardio" />
-                <label for="HIIT/Cardio" id="HIITlabel" value="meditation">
-                <img class="form-image" value="meditation" src="https://hiset.ets.org/rsc/img/icons/icon-tt-checklist.svg" alt="HIIT/Cardio"
-                />
-            </label>
-
-                <input type="radio" class="radio-button" name="activity" id="Weights" value="weights" />
-                <label for="Weights" id="weightslabel" value="meditation">
-                <img class="form-image" value="meditation" src="https://hiset.ets.org/rsc/img/icons/icon-tt-checklist.svg" alt="Weights"
-                />
-            </label>
-
-                <input type="radio" class="radio-button" name="activity" id="Meditation" value="meditation" />
-                <label for="Meditation" id="meditationlabel" value="meditation">
-                <img class="form-image" value="meditation" src="https://hiset.ets.org/rsc/img/icons/icon-tt-checklist.svg" alt="Meditation"
-                />
-            </label>
-            </div>
     </div>
-    </div>
+
+
     <div class="container">
-        <div class="group2">
-            <div id="Age">
-                <input type="text" name="age" placeholder="Age" value="">
+        <form id="form-id">
+            <!--navbar-->
+            <div class="container-fluid">
+                <nav>
+                    <div class="nav-wrapper">
+                        <a class="brand-logo center">
+                    <i class="material-icons left" style="font-size:40px;">favorite</i>
+                </a>
+                        <ul id="nav-mobile" class="right hide-on-med-and-down">
+                            <li>
+                                <a href="signup.html">Sign Up</a>
+                            </li>
+                            <li>
+                                <a href="signin.html">Sign In</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
 
-            <div id="Weight">
-                <input type="text" name="weight" placeholder="Weight" value="">
+            <!--end navbar-->
+
+
+            <!--Begin metrics form page-->
+            <div class="container metrics-page" style="margin-top:10%;">
+                <div id="formView">
+
+                    <!--Select Exercise-->
+                    <div class="row">
+                        <div class="col s4 left" style="text-align:center;">
+                            <a class="btn btn-floating waves-effect waves-light btn-large">
+                    <i class="material-icons tooltipped activity" data-activity='run' data-position="bottom" data-delay="50" data-tooltip="Run" value="run" style="font-size:30px;">directions_run</i>
+                </a>
+                        </div>
+                        <div class="col s4 left" style="text-align:center;">
+                            <a class="btn btn-floating waves-effect waves-light btn-large">
+                    <i id="target" class="material-icons tooltipped activity" data-activity='weightLifting' data-position="bottom" data-delay="50" data-tooltip="Weight Lifting" value="weight lifting"
+                        style="font-size:30px;">accessibility</i>
+                </a>
+                        </div>
+                        <div class="col s4 left" style="text-align:center;">
+                            <a class="btn btn-floating waves-effect waves-light btn-large">
+                    <i class="material-icons tooltipped activity" data-activity='meditate' data-position="bottom" data-delay="50" data-tooltip="Meditate" value="meditate"
+                        style="font-size:30px;">music_note</i>
+                </a>
+                        </div>
+                        <div class="tap-target" data-activates="target">
+                            <div class="tap-target-content">
+                                <p>Select an activity to get started</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div id="Gender">
-                <select class="form-control" id="sel1">
-                  <option name="gender" value="1">Male</option>
-                  <option name="gender" value="2">Female</option>
-                </select>
-                <label class="checkbox-inline"><input type="checkbox" name="gender" value="0">I prefer not to say</label>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <!--Form-->
+            <div class="container">
+                <form id="metrics-form">
+                    <br>
+                    <div class="row">
+                        <div class="range-field">
+                            <input type="range" id="age" min="0" max="100" />
+                            <label for="age">Age</label>
+                        </div>
+                        <div class="range-field">
+                            <input type="range" id="weight" min="0" max="350" />
+                            <label for="weight">Weight</label>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <select id="gender">
+                                <option value="" disabled selected>Choose a Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="n/a">Prefer Not to Share</option>
+                            </select>
+                            <label>Gender</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <select id="genre">
+                            <option value="" disabled selected>Choose a Genre</option>
+                            <option value="alt-rock">Alt-Rock</option>
+                            <option value="blues">Blues</option>
+                            <option value="chill">Chill</option>
+                            <option value="country">Country</option>
+                            <option value="fold">Folk</option>
+                            <option value="funk">Funk</option>
+                            <option value="garage">Garage</option>
+                            <option value="groove">Groove</option>
+                            <option value="grunge">Grunge</option>
+                            <option value="hard-rock">Hard-Rock</option>
+                            <option value="heavy-metal">Heavy-Metal</option>
+                            <option value="hip-hop">Hip-Hop</option>
+                            <option value="latino">Latino</option>
+                            <option value="new age">New-Age</option>
+                            <option value="pop">Pop</option>
+                            <option value="punk-rock">Punk-Rock</option>
+                            <option value="rock">Rock</option>
+                            <option value="rock-n-roll">Rock-N-Roll</option>
+                            <option value="sleep">Sleep</option>
+                            <option value="work-out">Work-Out</option>
+                        </select>
+                            <label>Genre</label>
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+                    <div class="row" style="text-align:center;">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                    </div>
+
             </div>
-            <input type="submit" value="Submit">
-        </div>
+            </form>
     </div>
-    </form>
-    <!-- End Views here -->
 
 
-    <!-- js includes here -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-        $("#activity").on("click", "input", function () {
-            console.log($('input[name=activity]:checked').val());
-        });
-        $("#age").on("click", "input", function () {
-            console.log($('input[name=activity]:checked').val());
-        });
-        $("#weight").on("click", "input", function () {
-            console.log($('input[name=activity]:checked').val());
-        });
-        $("#gender").on("click", "input", function () {
-            console.log($('input[name=activity]:checked').val());
-        });
-    </script>
-    <script src="ux.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
-    <script src="assets/lib/firedb.js"></script>
-    <script src="assets/lib/heartrate.js"></script>
-    <script src="assets/lib/spotify.js"></script>
-    <script src="assets/lib/facebook.js"></script>
-    <script src="app.js"></script> -->
+
+
+    <!-- materialize.css JS CDN -->
+    <!--Firebase-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!-- <script src="ux.js"></script> -->
+    <script src="assets/js/lib/heartrate.js"></script>
+    <script src="assets/js/lib/spotify.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+    <script src="assets/js/lib/firedb.js"></script>
+    <script src="assets/js/app.js"></script>
 
 </body>
 

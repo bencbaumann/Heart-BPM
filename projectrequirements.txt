@@ -1,0 +1,37 @@
+-------------------------------------------------------------------------
+
+Metrics Considered in Grading
+-Concept
+-Design
+-Functionality
+-Collaboration
+-Presentation
+
+-------------------------------------------------------------------------
+
+Project Requirements
+-at least 2 API's
+-Ajax to pull data
+-use at least 1 new library or technology
+-polished front end/UI
+-meets good quality coding standards (indentation, naming, scoping)
+-NOT use alerts, comfirms, or prompts (look into modals instead)
+-has some sort of repeating element (table, columns, etc)
+-use Bootstrap or alternative CSS framework
+-must be deployed to GitHub
+-must have User Input Validation
+
+--------------------------------------------------------------------------
+
+Presentation (10 minute formal)
+Explain in detail....
+-Your overall application concept
+-The motivation for it's development
+-Your design process
+-The technologies used and briefly how they work
+-A demonstration of its functionality
+-Directions for future development
+(Treat the presentation seriously!)
+(Talking intelligently about tech > doing tech sometimes.)
+
+---------------------------------------------------------------------------

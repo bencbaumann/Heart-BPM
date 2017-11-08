@@ -1,27 +1,14 @@
-.form-image {
-    height:250px;
-    width:250px;
+
+.spash-image{
+    height:30%;
 }
 
-.radio-button {
-    display:none;
+input{
+    color:white;
 }
 
+.input-field input[type=text].valid {
+    border-bottom: 1px solid rgb(0, 167, 103);
+  }
 
-/* #HIITlabel {
-    background-image: url("https://hiset.ets.org/rsc/img/icons/icon-tt-checklist.svg");
-    height: 25px;
-    width: 25px;
-}
-
-#HIITlabel {
-    background-image: url("https://hiset.ets.org/rsc/img/icons/icon-tt-checklist.svg");
-    height: 25px;
-    width: 25px;
-}
-
-#HIITlabel {
-    background-image: url("https://hiset.ets.org/rsc/img/icons/icon-tt-checklist.svg");
-    height: 25px;
-    width: 25px;
-} */
+  .modal { width: 40% !important ; height: 25% !important ; }
