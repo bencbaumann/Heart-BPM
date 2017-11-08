@@ -24,7 +24,7 @@ function calculateTargetHeartRate(userGender, userAge, userWeight, chosenActivit
             // if user chooses high intensity/cardio workout then target is 85% of maximum heart rate
             if (chosenActivity === "HIIT/Cardio") {
     
-                targetHeartrate = maximumHeartRate * 85;
+                targetHeartrate = maximumHeartRate * .85;
     
                 // if user chooses weightlifting/moderate workout then target is 50% of maximum heart rate
             } else if (chosenActivity === "weights") {
