@@ -2,6 +2,7 @@
 var user = JSON.parse(window.localStorage.getItem('user')) || {};
 console.log(user);
 
+// get the final heart rate from heartview page
 if(ui.state ==='heartbeat'){
     $('#adjustedHeartBeat').html(user.targetHeartRate);
 }
@@ -29,7 +30,7 @@ $(document).ready(function () {
         user.gender = $("#gender option:selected").text();
         user.genre = $("#genre option:selected").text();
 
-        // we will use our targetHeartrate to determine tempo of songs range to search in Spotify +-10
+        // we will use our targetHeartrate
         user.targetHeartRate = calculateTargetHeartRate(user.gender, user.age, user.weight, user.activity);
 
         console.log(user);
@@ -45,20 +46,15 @@ $(document).ready(function () {
     var adjustedHeartRate = 0;
 
     $("#increaseHeartRate").on('click', function () {
-        adjustedHeartRate = adjustedHeartRate + 1;
-        $("#adjustedHeartRate").text(adjustedHeartRate);
+        user.targetHeartRate++;
+        $("#adjustedHeartRate").text(user.targetHeartRate);
     });
 
 
     $("#decreaseHeartRate").on('click', function () {
-        adjustedHeartRate = adjustedHeartRate--;
-        $("#adjustedHeartRate").text(adjustedHeartRate);
+        user.targetHeartRate--;
+        $("#adjustedHeartRate").text(user.targetHeartRate);
     });
-
-    // get the final heart rate from heartview page
-    if (sessionStorage.getItem("#view") === ("#heartview")) {
-        user.targetHeartRate = $("#adjustedHeartRate");
-    }
 
 
     /* This stuff is just here for testing */
