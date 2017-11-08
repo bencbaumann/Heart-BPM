@@ -24,7 +24,9 @@ $(document).ready(function () {
         console.log('userAge' + user.age);
         user.weight = $("#weight").val().trim();
         console.log('userWeight' + user.weight);
+        // this is not getting selected correctly
         user.gender = $("#gender").val();
+        console.log($("#gender").val());
         console.log('userGender' + user.gender);
         
         console.log('userGender' + user.activity);
