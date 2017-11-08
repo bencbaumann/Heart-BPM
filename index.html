@@ -19,27 +19,28 @@
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 
 </head>
+
 <body class="blue-grey darken-4">
-        
+
     <!--navbar-->
     <div class="container-fluid">
-            <nav>
-                <div class="nav-wrapper">
-                    <a class="brand-logo center">
-                        <i class="material-icons left" style="font-size:40px;">favorite</i>
-                    </a>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li>
-                            <a href="signup.html">Sign Up</a>
-                        </li>
-                        <li>
-                            <a href="signin.html">Sign In</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-        <!--end navbar-->
+        <nav>
+            <div class="nav-wrapper teal accent-3">
+                <a class="brand-logo center">
+                    <i class="material-icons left" style="font-size:40px;">favorite</i>
+                </a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li>
+                        <a href="signup.html">Sign Up</a>
+                    </li>
+                    <li>
+                        <a href="signin.html">Sign In</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!--end navbar-->
 
 
     <!--Begin metrics form page-->
@@ -47,20 +48,20 @@
 
         <!--Select Exercise-->
         <div class="row">
-            <div class="col s4 left" style="text-align:center;">
-                <a class="btn btn-floating waves-effect waves-light btn-large">
-                    <i class="material-icons tooltipped" data-position="bottom" data-delay="50" data-tooltip="Run" value="run" style="font-size:30px;">directions_run</i>
+            <div class="col s4 left" style="text-align:center;" >
+                <a class="btn btn-floating pulse btn-large" class="pulsefeature">
+                    <i class="material-icons tooltipped" data-position="bottom" data-delay="50" data-tooltip="High Intensity" value="High Intensity" style="font-size:30px;">directions_run</i>
                 </a>
             </div>
             <div class="col s4 left" style="text-align:center;">
-                <a class="btn btn-floating waves-effect waves-light btn-large">
-                    <i class="material-icons tooltipped" data-position="bottom" data-delay="50" data-tooltip="Weight Lifting" value="weight lifting"
-                        style="font-size:50px;">music_note</i>
+                <a class="btn btn-floating pulse btn-large" class="pulsefeature">
+                    <i class="material-icons tooltipped" data-position="bottom" data-delay="50" data-tooltip="Medium Intensity" value="Medium Intensity"
+                        style="font-size:50px;">directions_walk</i>
                 </a>
             </div>
             <div class="col s4 left" style="text-align:center;">
-                <a class="btn btn-floating waves-effect waves-light btn-large">
-                    <i id="target" class="material-icons tooltipped" data-position="bottom" data-delay="50" data-tooltip="Meditate" value="meditate"
+                <a class="btn btn-floating pulse btn-large" class="pulsefeature">
+                    <i id="target" class="material-icons tooltipped" data-position="bottom" data-delay="50" data-tooltip="Low Intensity" value="Low Intensity"
                         style="font-size:30px;">accessibility</i>
                 </a>
             </div>
@@ -101,6 +102,18 @@
                     </div>
                 </div>
                 <br>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select>
+                            <option value="" disabled selected>Choose a Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="n/a">Prefer Not to Share</option>
+                        </select>
+                        <label>Gender</label>
+                    </div>
+                </div>
+                <br>
                 <br>
                 <div class="row">
                     <div class="input-field col s12">
@@ -132,18 +145,6 @@
                         <label>Genre</label>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <select>
-                            <option value="" disabled selected>Choose a Gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="n/a">Prefer Not to Share</option>
-                        </select>
-                        <label>Gender</label>
-                    </div>
-                </div>
-                <br>
                 <br>
                 <div class="row" style="text-align:center;">
                     <button class="btn waves-effect waves-light" type="submit" name="action">Submit
