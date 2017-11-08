@@ -16,7 +16,7 @@ $(document).ready(function () {
 
     // gathering input info when submit button is clicked
     $("#metrics-form").submit(function (event) {
-        event.preventDefault();
+        event.preventDefault();        
 
         // grab values from our UI
         user.age = $("#age").val().trim();
