@@ -24,9 +24,9 @@ $(document).ready(function () {
         user.weight = $("#weight").val().trim();
         console.log('userWeight' + user.weight);
         // this is not getting selected correctly
-        user.gender = $("#gender").val();
+        user.gender = $("#gender option:selected").text();
         console.log('gender' + user.gender);
-        user.gender = $("#genre").val();
+        user.genre = $("#genr option:selected").text();
         console.log('genre' + user.genre);
 
 
