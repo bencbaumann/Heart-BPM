@@ -1,6 +1,6 @@
 var user = {};
 
-if(window.sessionStorage.getItem('view')==='heartbeat')
+if(window.sessionStorage.getItem('view')==='heartbeat');
 
 
 $(document).ready(function () {
