@@ -40,8 +40,8 @@ $(document).ready(function () {
 
     }); // end form click/submit event
 
-    if (window.sessionStorage.getitem("#view") === "#heartview") {
-        user.targetHeartRate = $("#adjustedHeartRate");
+    if (window.sessionStorage.getItem("view") === "heartview") {
+        user.targetHeartRate = $("user.targetHeartRate");
     }
 
     /* This stuff is just here for testing */
