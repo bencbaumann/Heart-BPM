@@ -8,6 +8,11 @@ window.onload = function(){
     }
 }
 
+if(!window.sessionStorage.getItem('view')){
+    $('#heartbeat').hide();
+    $('#players').hide();
+    $('#metrics').show();
+}
 if(window.sessionStorage.getItem('view')==='heartbeat'){
     console.log("show the heartbeats view, hide the other view");
     console.log($);
@@ -20,9 +25,4 @@ if(window.sessionStorage.getItem('view')==='players'){
     $('#metrics').hide();
     $('#heartbeat').hide();
     $('#players').show();
-}
-if(window.sessionStorage.getItem('view')==='metrics'){
-    $('#heartbeat').hide();
-    $('#players').hide();
-    $('#metrics').show();
 }
