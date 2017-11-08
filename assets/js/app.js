@@ -1,7 +1,6 @@
 var user = {};
 
 
-
 $(document).ready(function () {
 
 
@@ -16,7 +15,7 @@ $(document).ready(function () {
 
 
     // gathering input info when submit button is clicked
-    $("#metrics-form").submit("click", function () {
+    $("#metrics-form").on('submit', function (event) {
         event.preventDefault();
 
         // grab values from our UI
@@ -36,21 +35,40 @@ $(document).ready(function () {
 
         var storeuser = JSON.stringify(user);
 
-        localStorage.setItem("storeuser", storeuser);
+        window.localStorage.setItem("storeuser", storeuser);
+        spotifyAuth();
+        return false;
 
-    }); // end form click/submit event
+    }); // end form click/submit even
 
-    if (sessionStorage.getitem("#view") === "#heartview") {
+    // functionality for target heartrate + and - buttons
+
+    var adjustedHeartRate = 0;
+
+    $("#increaseHeartRate").on('click', function () {
+        adjustedHeartRate = adjustedHeartRate + 1;
+        $("#adjustedHeartRate").text(adjustedHeartRate);
+    });
+
+
+    $("#decreaseHeartRate").on('click', function () {
+        adjustedHeartRate = adjustedHeartRate--;
+        $("#adjustedHeartRate").text(adjustedHeartRate);
+    });
+
+    // get the final heart rate from heartview page
+    if (sessionStorage.getitem("#view") === ("#heartview")) {
         user.targetHeartRate = $("#adjustedHeartRate");
     }
+
 
     /* This stuff is just here for testing */
 
 
-    $('#submit').on('click', function (e) {
-        e.preventDefault();
-        spotifyAuth();
-    });
+    // $('#submit').on('click', function (e) {
+    //     e.preventDefault();
+    //     spotifyAuth();
+    // });
     $('#getSongs').on('click', function (e) {
         e.preventDefault();
         // hardcoded for now
