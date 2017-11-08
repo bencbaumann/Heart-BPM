@@ -15,7 +15,7 @@ $(document).ready(function () {
 
 
     // gathering input info when submit button is clicked
-    $("#metrics-form").submit("click", function (event) {
+    $("#metrics-form").submit(function (event) {
         event.preventDefault();
 
         // grab values from our UI
