@@ -1,5 +1,7 @@
 var user = {};
 
+if(window.sessionStorage.getItem('view')==='heartbeat')
+
 
 $(document).ready(function () {
 
@@ -29,7 +31,7 @@ $(document).ready(function () {
 
         console.log(user);
 
-        window.localStorage.setItem("user", JSON.stringify(user););
+        window.localStorage.setItem("user", JSON.stringify(user));
         spotifyAuth();
         return false;
 
