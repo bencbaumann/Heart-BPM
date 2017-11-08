@@ -25,7 +25,9 @@ $(document).ready(function () {
         console.log('userWeight' + user.weight);
         // this is not getting selected correctly
         user.gender = $("#gender").val();
-        console.log('userGender' + user.gender);
+        console.log('gender' + user.gender);
+        user.gender = $("#genre").val();
+        console.log('genre' + user.genre);
 
 
         // we will use our targetHeartrate to determine tempo of songs range to search in Spotify +-10
