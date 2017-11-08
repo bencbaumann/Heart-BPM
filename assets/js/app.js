@@ -26,7 +26,7 @@ $(document).ready(function () {
         // this is not getting selected correctly
         user.gender = $("#gender option:selected").text();
         console.log('gender' + user.gender);
-        user.genre = $("#genr option:selected").text();
+        user.genre = $("#genre option:selected").text();
         console.log('genre' + user.genre);
 
 
