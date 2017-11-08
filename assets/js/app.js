@@ -1,7 +1,6 @@
 var user = {};
 
 
-
 $(document).ready(function () {
 
 
@@ -36,12 +35,12 @@ $(document).ready(function () {
 
         var storeuser = JSON.stringify(user);
 
-        localStorage.setItem("storeuser", storeuser);
+        window.localStorage.setItem("storeuser", storeuser);
         spotifyAuth();
 
     }); // end form click/submit event
 
-    if (sessionStorage.getitem("#view") === "#heartview") {
+    if (window.sessionStorage.getitem("#view") === "#heartview") {
         user.targetHeartRate = $("#adjustedHeartRate");
     }
 
