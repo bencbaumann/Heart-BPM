@@ -43,7 +43,7 @@ $(document).ready(function () {
 
     // functionality for target heartrate + and - buttons
 
-        var adjustedHeartRate = 0;
+    var adjustedHeartRate = 0;
 
     $("#increaseHeartRate").on('click', function () {
         adjustedHeartRate = adjustedHeartRate + 1;
@@ -56,13 +56,12 @@ $(document).ready(function () {
         $("#adjustedHeartRate").text(adjustedHeartRate);
     });
 
-// get the final heart rate from heartview page
+    // get the final heart rate from heartview page
     if (sessionStorage.getitem("#view") === ("#heartview")) {
         user.targetHeartRate = $("#adjustedHeartRate");
-  
     }
 
-    
+
     /* This stuff is just here for testing */
 
 
