@@ -196,7 +196,7 @@ function storeToken(){
     if(window.location.hash.includes('token')){
         localStorage.setItem('token', token);
         console.log(token);
-        window.location.replace('spotify.html');
+        window.location.replace('index.html');
     }
     else {
         console.log("there's no token in the url");
