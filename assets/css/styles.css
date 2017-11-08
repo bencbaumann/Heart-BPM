@@ -8,7 +8,153 @@ input{
 }
 
 .input-field input[type=text].valid {
-    border-bottom: 1px solid rgb(0, 167, 103);
+    /* border-bottom: 1px solid rgb(0, 167, 103) !important; */
+    color:white;
+
   }
 
+
   .modal { width: 40% !important ; height: 25% !important ; }
+
+  
+ .btn:hover {
+   background-color: white;
+   color:grey;
+ }
+
+ .material-icons:hover {
+   color:grey;
+ }
+
+input.valid:not([type]), input.valid:not([type]):focus, input[type=text].valid:not(.browser-default), input[type=text].valid:not(.browser-default):focus, input[type=password].valid:not(.browser-default), input[type=password].valid:not(.browser-default):focus, input[type=email].valid:not(.browser-default), input[type=email].valid:not(.browser-default):focus, input[type=url].valid:not(.browser-default), input[type=url].valid:not(.browser-default):focus, input[type=time].valid:not(.browser-default), input[type=time].valid:not(.browser-default):focus, input[type=date].valid:not(.browser-default), input[type=date].valid:not(.browser-default):focus, input[type=datetime].valid:not(.browser-default), input[type=datetime].valid:not(.browser-default):focus, input[type=datetime-local].valid:not(.browser-default), input[type=datetime-local].valid:not(.browser-default):focus, input[type=tel].valid:not(.browser-default), input[type=tel].valid:not(.browser-default):focus, input[type=number].valid:not(.browser-default), input[type=number].valid:not(.browser-default):focus, input[type=search].valid:not(.browser-default), input[type=search].valid:not(.browser-default):focus, textarea.materialize-textarea.valid, textarea.materialize-textarea.valid:focus, .select-wrapper.valid>input.select-dropdown {
+    border-bottom: 3px solid teal !important;
+    box-shadow: none;
+}
+
+label {
+  font-size: 1em;
+  background-color: none;
+}
+  
+  .tap-target {
+    position: absolute;
+    font-size: 1rem;
+    border-radius: 50%;
+    background-color: teal;
+    -webkit-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.14), 0 10px 50px 0 rgba(0, 0, 0, 0.12), 0 30px 10px -20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.14), 0 10px 50px 0 rgba(0, 0, 0, 0.12), 0 30px 10px -20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transition: opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1), -webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+    transition: opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1), -webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+    transition: transform 0.3s cubic-bezier(0.42, 0, 0.58, 1), opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+    transition: transform 0.3s cubic-bezier(0.42, 0, 0.58, 1), opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1), -webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+  }
+  
+  .tap-target-content {
+    position: relative;
+    display: table-cell;
+    color:white;
+  }
+  
+  .tap-target-wave {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 10001;
+  }
+  
+  .tap-target-wave::before, .tap-target-wave::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #ffffff;
+  }
+  
+ 
+  
+  .pulse {
+    overflow: initial;
+    position: relative;
+  }
+  
+  .pulse::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: inherit;
+    border-radius: inherit;
+    -webkit-transition: opacity .3s, -webkit-transform .3s;
+    transition: opacity .3s, -webkit-transform .3s;
+    transition: opacity .3s, transform .3s;
+    transition: opacity .3s, transform .3s, -webkit-transform .3s;
+    -webkit-animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) 8s;
+            animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) 8s;
+    z-index: -1;
+  }
+
+  .pulse::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: inherit;
+    border-radius: inherit;
+    -webkit-transition: opacity .3s, -webkit-transform .3s;
+    transition: opacity .3s, -webkit-transform .3s;
+    transition: opacity .3s, transform .3s;
+    transition: opacity .3s, transform .3s, -webkit-transform .3s;
+    -webkit-animation: pulse-animation 0s cubic-bezier(0.24, 0, 0.38, 1) 0s;
+            animation: pulse-animation 0s cubic-bezier(0.24, 0, 0.38, 1) 0s;
+    z-index: -1;
+  }
+  
+  
+  @-webkit-keyframes pulse-animation {
+    0% {
+      opacity: 1;
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    50% {
+      opacity: 0;
+      -webkit-transform: scale(1.5);
+              transform: scale(1.5);
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: scale(1.5);
+              transform: scale(1.5);
+    }
+  }
+  
+  @keyframes pulse-animation {
+    0% {
+      opacity: 1;
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    50% {
+      opacity: 0;
+      -webkit-transform: scale(1.5);
+              transform: scale(1.5);
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: scale(1.5);
+              transform: scale(1.5);
+    }
+  }
+  
