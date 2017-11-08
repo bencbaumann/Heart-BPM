@@ -1,5 +1,7 @@
 var user = {};
-
+if(ui.state ==='heartbeat'){
+    $('#adjustedHeartBeat').html(user.targetHeartRate);
+}
 
 $(document).ready(function () {
 
