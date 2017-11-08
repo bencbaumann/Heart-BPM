@@ -47,13 +47,13 @@ $(document).ready(function () {
 
     $("#increaseHeartRate").on('click', function () {
         user.targetHeartRate++;
-        $("#adjustedHeartRate").text(user.targetHeartRate);
+        $("#adjustedHeartBeat").text(user.targetHeartRate);
     });
 
 
     $("#decreaseHeartRate").on('click', function () {
         user.targetHeartRate--;
-        $("#adjustedHeartRate").text(user.targetHeartRate);
+        $("#adjustedHeartBeat").text(user.targetHeartRate);
     });
 
 
