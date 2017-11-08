@@ -10,6 +10,8 @@ window.onload = function(){
 
 if(window.sessionStorage.getItem('view')==='heartbeat'){
     console.log("show the heartbeats view, hide the other view");
+    console.log($);
+    console.log($('#metrics'));
     $('#metrics').hide();
     $('#players').hide();
     $('#heartbeat').show();
