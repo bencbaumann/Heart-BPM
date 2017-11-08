@@ -1,7 +1,8 @@
+var ui.state = {};
+
 window.onbeforeunload = function(){
     sessionStorage.setItem("origin", window.location.href);
 }
-
 window.onload = function(){
     if(window.location.href == sessionStorage.getItem("origin")){
         sessionStorage.clear();
@@ -9,19 +10,19 @@ window.onload = function(){
 }
 
 if(!window.sessionStorage.getItem('view')){
+    ui.state = 'home';
     $('#heartbeat').hide();
     $('#players').hide();
     $('#metrics').show();
 }
 if(window.sessionStorage.getItem('view')==='heartbeat'){
-    console.log("show the heartbeats view, hide the other view");
-    console.log($);
-    console.log($('#metrics'));
+    ui.state = 'heartbeat';
     $('#metrics').hide();
     $('#players').hide();
     $('#heartbeat').show();
 }
 if(window.sessionStorage.getItem('view')==='players'){
+    ui.state = 'players';
     $('#metrics').hide();
     $('#heartbeat').hide();
     $('#players').show();
