@@ -1,7 +1,8 @@
 $(document).ready(function () {
     
             $("#activity").show();
-            $(".container").hide();
+            $(".group2").hide();
+            $(".topheart").show();
     
             //If Statement
     
@@ -11,7 +12,7 @@ $(document).ready(function () {
                 //On click resets the timer
     
                 $("#activity").hide();
-                $(".container").show();
+                $(".group2").show();
     
                 //IF Statement.
     

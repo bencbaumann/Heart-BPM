@@ -1,7 +1,6 @@
 function calculateTargetHeartRate(userGender, userAge, userWeight, chosenActivity){
     var targetHeartrate = 0;
 
-
 // calculator for target heart rate based on inputs from form
   if (userGender === "male") {
     

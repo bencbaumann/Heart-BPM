@@ -2,11 +2,12 @@
 <html>
 
 <head>
-    <!--Firebase-->
-    <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
-    <!-- <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-database.js"></script> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Latest compiled and minified JavaScript -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css CDN-->
@@ -42,32 +43,66 @@
     </div>
     <!--end navbar-->
 
+<!-- Views go here -->
+<div class="container">
+    <div class="topheart">
+        <div="row">
+            <div class="col-lg-12 text-center">
+                <img="images/images.png">
+            </div>
+    </div>
+</div>
+<!--navbar-->
+<div class="container">
+    <form id="form-id">
+        <div class="container-fluid">
+            <nav>
+                <div class="nav-wrapper">
+                    <a class="brand-logo center">
+                            <i class="material-icons left" style="font-size:40px;">favorite</i>
+                        </a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li>
+                            <a href="signup.html">Sign Up</a>
+                        </li>
+                        <li>
+                            <a href="signin.html">Sign In</a>
+                        </li>
 
-    <!--Begin metrics form page-->
-    <div class="container metrics-page" style="margin-top:10%;">
+                    </ul>
+                </div>
+            </nav>
+        </div>
 
-        <!--Select Exercise-->
-        <div class="row">
+        <!--end navbar-->
+      
+        <!--Begin metrics form page-->
+        <div class="container metrics-page" style="margin-top:10%;">
+            <div id="formView">
+                <!--Select Exercise-->
+                <div class="row">
             <div class="col s4 left" style="text-align:center;" >
                 <a class="btn btn-floating pulse btn-large" class="pulsefeature">
-                    <i class="material-icons tooltipped" data-position="bottom" data-delay="50" data-tooltip="High Intensity" value="High Intensity" style="font-size:30px;">directions_run</i>
+                    <i class="material-icons tooltipped activity" data-activity='run' data-position="bottom" data-delay="50" data-tooltip="Run" value="run" style="font-size:30px;">directions_run</i>
                 </a>
-            </div>
+                    </div>
             <div class="col s4 left" style="text-align:center;">
                 <a class="btn btn-floating pulse btn-large" class="pulsefeature">
-                    <i class="material-icons tooltipped" data-position="bottom" data-delay="50" data-tooltip="Medium Intensity" value="Medium Intensity"
-                        style="font-size:50px;">directions_walk</i>
-                </a>
-            </div>
-            <div class="col s4 left" style="text-align:center;">
-                <a class="btn btn-floating pulse btn-large" class="pulsefeature">
-                    <i id="target" class="material-icons tooltipped" data-position="bottom" data-delay="50" data-tooltip="Low Intensity" value="Low Intensity"
+                    <i id="target" class="material-icons tooltipped activity" data-activity='weightLifting' data-position="bottom" data-delay="50" data-tooltip="Weight Lifting" value="weight lifting"
                         style="font-size:30px;">accessibility</i>
                 </a>
-            </div>
-            <div class="tap-target" data-activates="target">
-                <div class="tap-target-content">
-                    <p>Select an activity to get started</p>
+                    </div>
+            <div class="col s4 left" style="text-align:center;">
+                <a class="btn btn-floating pulse btn-large" class="pulsefeature">
+                    <i class="material-icons tooltipped activity" data-activity='meditate' data-position="bottom" data-delay="50" data-tooltip="Meditate" value="meditate"
+                        style="font-size:30px;">music_note</i>
+                </a>
+                    </div>
+                    <div class="tap-target" data-activates="target">
+                        <div class="tap-target-content">
+                            <p>Select an activity to get started</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -80,16 +115,6 @@
         <!--Form-->
         <div class="container">
             <form id="metrics-form">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="first_name" type="text" class="validate">
-                        <label for="first_name">First Name</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="last_name" type="text" class="validate">
-                        <label for="last_name">Last Name</label>
-                    </div>
-                </div>
                 <br>
                 <div class="row">
                     <div class="range-field">
@@ -115,56 +140,114 @@
                 </div>
                 <br>
                 <br>
+
                 <div class="row">
                     <div class="input-field col s12">
-                        <select>
+                        <select id="gender">
+                                <option value="" disabled selected>Choose a Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="n/a">Prefer Not to Share</option>
+                            </select>
+                        <label>Gender</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select id="genre">
                             <option value="" disabled selected>Choose a Genre</option>
-                            <option value="1">alt-rock</option>
-                            <option value="2">blues</option>
-                            <option value="3">chill</option>
-                            <option value="4">country</option>
-                            <option value="5">folk</option>
-                            <option value="6">funk</option>
-                            <option value="7">garage</option>
-                            <option value="8">groove</option>
-                            <option value="9">grunge</option>
-                            <option value="10">hard-rock</option>
-                            <option value="11">heavy-metal</option>
-                            <option value="12">hip-hop</option>
-                            <option value="13">latino</option>
-                            <option value="14">new-age</option>
-                            <option value="15">pop</option>
-                            <option value="16">punk-rock</option>
-                            <option value="17">rock</option>
-                            <option value="18">rock-n-roll</option>
-                            <option value="19">sleep</option>
-                            <option value="20">work-out</option>
-
-
+                            <option value="alt-rock">Alt-Rock</option>
+                            <option value="blues">Blues</option>
+                            <option value="chill">Chill</option>
+                            <option value="country">Country</option>
+                            <option value="fold">Folk</option>
+                            <option value="funk">Funk</option>
+                            <option value="garage">Garage</option>
+                            <option value="groove">Groove</option>
+                            <option value="grunge">Grunge</option>
+                            <option value="hard-rock">Hard-Rock</option>
+                            <option value="heavy-metal">Heavy-Metal</option>
+                            <option value="hip-hop">Hip-Hop</option>
+                            <option value="latino">Latino</option>
+                            <option value="new age">New-Age</option>
+                            <option value="pop">Pop</option>
+                            <option value="punk-rock">Punk-Rock</option>
+                            <option value="rock">Rock</option>
+                            <option value="rock-n-roll">Rock-N-Roll</option>
+                            <option value="sleep">Sleep</option>
+                            <option value="work-out">Work-Out</option>
                         </select>
                         <label>Genre</label>
                     </div>
                 </div>
+
+                <br>
+          
                 <br>
                 <div class="row" style="text-align:center;">
                     <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                         <i class="material-icons right">send</i>
                     </button>
                 </div>
-
             </form>
-
         </div>
+        <div class="container customize-bpm-page" style="margin-top:10%;">
+
+            <div class="row">
+                <div class="col s12" style="text-align:center;">
+                    <a id="decreaseHR" class="btn btn-floating waves-effect waves-light btn-large">
+                                    <i class="material-icons" style="font-size:30px;">add</i>
+                                </a>
+                    <h3 style="color:white;">100</h3>
+                    <a id="increaseHR" class="btn btn-floating waves-effect waves-light btn-large">
+                                    <i class="material-icons" style="font-size:30px;">remove</i>
+                                </a>
+                </div>
+
+            </div>
+
+            <br>
+            <br>
+
+            <!--Form-->
+            <div class="row">
+                <div class="col s12" style="text-align:center;">
+                    <a id="getSongs" class="btn btn-floating waves-effect waves-light btn-large">
+                                    <i class="material-icons" style="font-size:30px;">music_note</i>
+                                </a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div id="container">
+    <div id="playlist">
 
     </div>
+</div>
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            </div>
+            <div class="btn col l4 offset-l2 s12">
+            </div>
+        </div>
+    </div>
+</footer>
 
-
-    <!-- materialize.css JS CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <!-- <script src="ux.js"></script> -->
-    <script src="assets/js/lib/heartrate.js"></script>
-    <script src="assets/js/lib/spotify.js"></script>
-    <script src="assets/js/app.js"></script>
+<!-- materialize.css JS CDN -->
+<!--Firebase-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<!-- <script src="ux.js"></script> -->
+<script src="assets/js/lib/heartrate.js"></script>
+<script src="assets/js/lib/spotify.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+<script src="assets/js/lib/firedb.js"></script>
+<script src="assets/js/app.js"></script>
 
 </body>
 
