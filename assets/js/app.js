@@ -1,4 +1,6 @@
-var user = {};
+// if a user exist in session storage grab it, else create an empty object.
+var user = window.sessionStorage.getItem('user') || {};
+
 if(ui.state ==='heartbeat'){
     $('#adjustedHeartBeat').html(user.targetHeartRate);
 }
