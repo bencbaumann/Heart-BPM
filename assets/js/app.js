@@ -1,6 +1,7 @@
 var user = {};
 
 if(window.sessionStorage.getItem('view')==='heartbeat'){
+    console.log("show the heartbeats view, hide the other view");
     $('#metrics').hide();
     $('#players').hide();
     $('#heartbeat').show();
