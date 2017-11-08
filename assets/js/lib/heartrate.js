@@ -15,11 +15,11 @@ function calculateTargetHeartRate(userGender, userAge, userWeight, chosenActivit
     
             }
     
-            console.log(maximumHeartRate);
+            console.log("maximumHeartRate: " + maximumHeartRate);
     
     
             
-            console.log(chosenActivity);
+            console.log("chosenActivity: " + chosenActivity);
     
             // if user chooses high intensity/cardio workout then target is 85% of maximum heart rate
             if (chosenActivity === "HIIT/Cardio") {
