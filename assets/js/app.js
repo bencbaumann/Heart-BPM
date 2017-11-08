@@ -1,5 +1,5 @@
 // if a user exist in session storage grab it, else create an empty object.
-var user = window.sessionStorage.getItem('user') || {};
+var user = JSON.parse(window.sessionStorage.getItem('user')) || {};
 console.log(user);
 
 if(ui.state ==='heartbeat'){
