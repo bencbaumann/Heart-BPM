@@ -1,6 +1,21 @@
 var user = {};
 
-if(window.sessionStorage.getItem('view')==='heartbeat');
+if(window.sessionStorage.getItem('view')==='heartbeat'){
+    $('#metrics').hide();
+    $('#players').hide();
+    $('#heartbeat').show();
+}
+if(window.sessionStorage.getItem('view')==='players'){
+    $('#metrics').hide();
+    $('#heartbeat').hide();
+    $('#players').show();
+}
+if(window.sessionStorage.getItem('view')==='metrics'){
+    $('#heartbeat').hide();
+    $('#players').hide();
+    $('#metrics').show();
+}
+
 
 
 $(document).ready(function () {
