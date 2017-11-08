@@ -1,4 +1,4 @@
-var ui.state = {};
+var ui = {};
 
 window.onbeforeunload = function(){
     sessionStorage.setItem("origin", window.location.href);
