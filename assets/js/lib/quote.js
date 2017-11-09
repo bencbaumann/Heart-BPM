@@ -36,6 +36,7 @@ $(document).ready(function () {
                 var author = result.quoteAuthor;
                 console.log(author);
             });
+            
             // the below is for Connor to use to show the quote on the landing page as he sees fit
 
             // create a div for the quote and author
