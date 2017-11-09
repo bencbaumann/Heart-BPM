@@ -61,6 +61,7 @@ ui.showHome = () => {
 }
 
 ui.show = view => {
+    console.log(`Updating the view to ${view}`);
     window.sessionStorage.setItem('view', view);
         ui.states.filter(function(state){
             state === view ? $(`#${view}`).show() : $(`#${view}`).hide();
