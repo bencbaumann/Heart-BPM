@@ -126,7 +126,7 @@ function createPlayer(spotify, appuser){
     let player = `<iframe src="https://open.spotify.com/embed?uri=${spotify.playlist.uri}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>`;
     $('#playlist').append(player);
     let obj = {};
-    obj.player = spotify.playlist.url;
+    obj.player = spotify.playlist.uri;
     obj.genre = appuser.genre;
     obj.activity = appuser.activity;
     db.ref('/playlist').push(obj);
