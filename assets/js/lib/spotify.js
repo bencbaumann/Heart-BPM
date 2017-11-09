@@ -1,7 +1,7 @@
 var spotify = {};
 
 if(window.location.href.includes('spotifycallback')){
-    window.sessionStorage.setItem('view', 'heartbeat');
+    ui.showHeartbeat();
 };
 
 if(window.location.hash.includes("token")){
