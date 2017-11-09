@@ -72,7 +72,9 @@ $(document).ready(function () {
     $('#recent').on('click', function (){
         ui.showPlayers();
     });
-
+    $('#home').on('click', function(){
+        ui.showHome();
+    });
 
     /* This stuff is just here for testing */
 

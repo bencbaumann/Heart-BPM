@@ -35,3 +35,11 @@ ui.showPlayers = () => {
         $('#heartbeat').hide();
         $('#players').show();        
 }
+
+ui.showHome = () => {
+    window.sessionStorage.setItem('view', 'home');
+    ui.state = 'home';
+    $('#metrics').show();
+    $('#heartbeat').hide();
+    $('#players').hide();        
+}
