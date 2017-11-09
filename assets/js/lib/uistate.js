@@ -31,7 +31,7 @@ if(window.sessionStorage.getItem('view')==='players'){
 
 ui.showHeartbeat = () => {
     window.sessionStorage.setItem('view', 'heartbeat');
-    window.location = '\';
+    window.location = '/Heart-BPM';
     ui.state = 'heartbeat';
     $('#metrics').hide();
     $('#players').hide();
