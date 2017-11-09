@@ -24,12 +24,12 @@ function calculateTargetHeartRate(userGender, userAge, userWeight, chosenActivit
             // if user chooses high intensity/cardio workout then target is 85% of maximum heart rate
             if (chosenActivity === "HIIT/Cardio") {
     
-                targetHeartRate = maximumHeartRate * .85;
+                targetHeartRate = Math.round(maximumHeartRate * .85);
     
                 // if user chooses weightlifting/moderate workout then target is 50% of maximum heart rate
             } else if (chosenActivity === "weights") {
     
-                targetHeartRate = maximumHeartRate * .50;
+                targetHeartRate = Math.round(maximumHeartRate * .50);
     
                 // if user chooses meditation/relaxation then target is relaxed heart rate 70 BPM 
             } else {
