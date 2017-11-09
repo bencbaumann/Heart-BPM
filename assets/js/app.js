@@ -3,7 +3,7 @@ var user = JSON.parse(window.localStorage.getItem('user')) || {};
 console.log(user);
 
 // get the final heart rate from heartview page
-if(ui.state ==='heartbeat'){
+if(ui.view ==='heartbeat'){
     $('#adjustedHeartBeat').html(user.targetHeartRate);
 }
 

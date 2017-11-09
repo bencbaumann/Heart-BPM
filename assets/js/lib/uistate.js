@@ -15,16 +15,16 @@ window.onload = function(){
     }
 }
 
-ui.show = view => {
-    console.log(`Updating the view to ${view}`);
+ui.show = ui.view => {
+    console.log(`Updating the view to ${ui.view}`);
     if(window.location.href.includes('spotifycallback')){
         window.location = '/Heart-BPM';
-        view = 'heartbeat';
+        ui.view = 'heartbeat';
     };
     
-    window.sessionStorage.setItem('view', view);
+    window.sessionStorage.setItem('view', ui.view);
         ui.states.filter(function(state){
-            console.log('state: ' + state + ' view: ' + view);
-            state === view ? $(`#${state}`).show() : $(`#${state}`).hide();
+            console.log('state: ' + state + ' view: ' + ui.view);
+            state === ui.view ? $(`#${state}`).show() : $(`#${state}`).hide();
         });
 }
