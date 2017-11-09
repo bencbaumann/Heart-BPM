@@ -205,7 +205,7 @@ function storeToken(){
         localStorage.setItem('token', token);
         console.log(token);
         // window.location.replace('/Heart-BPM');
-        ui.show('metrics');
+        ui.show('heartbeat');
     }
     else {
         console.log("there's no token in the url");
