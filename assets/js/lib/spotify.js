@@ -54,7 +54,7 @@ function getSongs(appuser, callback){
     var maxTempo = Math.round(appuser.targetHeartRate + appuser.range);
 
     var baseurl = 'https://api.spotify.com/v1/recommendations';
-    var url = `${baseurl}?min_tempo=${minTempo}&seed_genres=${appuser.genre}&max_tempo=${maxTempo}`;
+    var url = `${baseurl}?min_tempo=${minTempo}&seed_genres=${appuser.genre.toLowerCase()}&max_tempo=${maxTempo}`;
 
     console.log('queryUrl: ' + url);
 
