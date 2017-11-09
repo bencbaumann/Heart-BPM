@@ -79,7 +79,7 @@ function getSongs(appuser, callback){
                     console.log(spotify);
                     addTracksToPlaylist(spotify, function(res){
                         console.log(res);
-                        createPlayer(spotify);
+                        createPlayer(spotify, appuser);
                     });
                 });
 
@@ -120,10 +120,14 @@ function getUser(callback){
     });
 }
 
-function createPlayer(spotify){
+function createPlayer(spotify, appuser){
     let player = `<iframe src="https://open.spotify.com/embed?uri=${spotify.playlist.uri}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>`;
     $('#playlist').append(player);
-    db.ref('/playlist').push(spotify.playlist.uri);
+    let obj = {};
+    obj.player = spotify.playlist.url;
+    obj.genre = appuser.genre;
+    obj.activity = appuser.activity;
+    db.ref('/playlist').push(obj);
 }
 
 function createPlaylist(user, playlist, appuser, callback){
