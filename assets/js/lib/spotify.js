@@ -16,11 +16,6 @@ else{
 
 
 var token = window.localStorage.getItem('token');
-// max 20 songs
-/* This is for testing only */
-
-// var targetHeartRate = targetHeartRange(34, 3);
-
 
 /* This is for testing only */
 

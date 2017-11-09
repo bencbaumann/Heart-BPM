@@ -25,6 +25,6 @@ ui.show = view => {
     window.sessionStorage.setItem('view', view);
         ui.states.filter(function(state){
             console.log('state: ' + state + ' view: ' + view);
-            state === view ? $(`#${view}`).show() : $(`#${view}`).hide();
+            state === view ? $(`#${state}`).show() : $(`#${state}`).hide();
         });
 }
