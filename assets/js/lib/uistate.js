@@ -21,6 +21,7 @@ ui.show = view => {
     if(window.location.href.includes('spotifycallback')){
         window.location = '/Heart-BPM';
     };
+    console.log('state: ' + state + ' view: ' + view)
     window.sessionStorage.setItem('view', view);
         ui.states.filter(function(state){
             state === view ? $(`#${view}`).show() : $(`#${view}`).hide();
