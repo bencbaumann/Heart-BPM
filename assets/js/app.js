@@ -2,9 +2,8 @@
 var user = JSON.parse(window.localStorage.getItem('user')) || {};
 console.log(user);
 console.log(ui);
-
+console.log(ui.states);
 console.log(ui.view);
-console.log(ui);
 console.log(ui.view === 'heartbeat');
 // get the final heart rate from heartview page
 if(ui.view ==='heartbeat'){
