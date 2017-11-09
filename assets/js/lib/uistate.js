@@ -19,6 +19,7 @@ ui.show = view => {
     console.log(`Updating the view to ${view}`);
     if(window.location.href.includes('spotifycallback')){
         window.location = '/Heart-BPM';
+        ui.show('heartbeat');
     };
     
     window.sessionStorage.setItem('view', view);
