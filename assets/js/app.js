@@ -8,7 +8,7 @@ if(ui.state ==='heartbeat'){
 }
 
 // Firebase watcher + initial loader HINT: This code behaves similarly to .on("value")
-db.ref().on("value", function (childSnapshot) {
+db.ref('/playlist').on("value", function (childSnapshot) {
     console.log("got a resource from the DB!");
     console.log(childSnapshot.val().playlist);
     console.log(childSnapshot.val());
