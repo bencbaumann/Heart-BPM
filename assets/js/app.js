@@ -71,10 +71,10 @@ $(document).ready(function () {
     });
 
     $('#recent').on('click', function (){
-        ui.showPlayers();
+        ui.show('players');
     });
     $('#home').on('click', function(){
-        ui.showHome();
+        ui.show('metrics');
     });
 
     /* This stuff is just here for testing */
