@@ -61,9 +61,8 @@ ui.showHome = () => {
 }
 
 ui.show = view => {
-    window.sessionStorage.setItem('view', view){
+    window.sessionStorage.setItem('view', view);
         ui.states.filter(function(state){
             state === view ? $(`#${view}`).show() : $(`#${view}`).hide();
         });
-    }
 }
