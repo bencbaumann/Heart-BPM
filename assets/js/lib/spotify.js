@@ -123,7 +123,7 @@ function getUser(callback){
 function createPlayer(spotify){
     let player = `<iframe src="https://open.spotify.com/embed?uri=${spotify.playlist.uri}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>`;
     $('#player').append(player);
-    db.ref('/playlist').push(spotify.playlist.uri);
+    db.ref('playlist').push(spotify.playlist.uri);
 }
 
 function createPlaylist(user, playlist, appuser, callback){
