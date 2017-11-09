@@ -14,11 +14,14 @@ if(ui.view ==='heartbeat'){
 // Firebase watcher + initial loader HINT: This code behaves similarly to .on("value")
 db.ref('/playlist').on("value", function (snapshot) {
     console.log("got a resource from the DB!");
-    var players = snapshotToArray(snapshot);
+    let players = snapshotToArray(snapshot);
     players.forEach(function(playerObj) {
         console.log(playerObj);
-        var player = `<iframe src="https://open.spotify.com/embed?uri=${playerObj.player}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>`;
-        $('#players').append(player);
+        let player = `<iframe src="https://open.spotify.com/embed?uri=${playerObj.player}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>`;
+        let div =$('<div>');
+        div.append(`<h3>${playerObj.genre} playlist for ${playerObj.activity}`);
+        div.append(player);
+        $('#players').append(div);
     });
 }, function (errorObject) {
     console.log("Errors handled: " + errorObject.code);
