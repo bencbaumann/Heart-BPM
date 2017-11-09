@@ -50,8 +50,8 @@ function getSongs(appuser, callback){
 
     var token = localStorage.getItem('token');
 
-    var minTempo = appuser.targetHeartRate - appuser.range;
-    var maxTempo = appuser.targetHeartRate + appuser.range;
+    var minTempo = Math.round(appuser.targetHeartRate - appuser.range);
+    var maxTempo = Math.round(appuser.targetHeartRate + appuser.range);
 
     var baseurl = 'https://api.spotify.com/v1/recommendations';
     var url = `${baseurl}?min_tempo=${minTempo}&seed_genres=${appuser.genre}&max_tempo=${maxTempo}`;
