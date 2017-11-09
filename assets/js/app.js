@@ -12,7 +12,7 @@ if(ui.view ==='heartbeat'){
 }
 
 // Firebase watcher + initial loader HINT: This code behaves similarly to .on("value")
-db.ref('/playlist').on("value", function (snapshot) {
+db.ref('/playlist').limitToLast(3).on("value", function (snapshot) {
     console.log("got a resource from the DB!");
     let players = snapshotToArray(snapshot);
     players.forEach(function(playerObj) {
@@ -32,6 +32,7 @@ $(document).ready(function () {
 
     $('.activity').on('click', function () {
         user.activity = $(this).attr('data-activity');
+        $(this).attr('style', 'background: red');
     });
 
 
