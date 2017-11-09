@@ -12,7 +12,7 @@ db.ref('/playlist').on("value", function (snapshot) {
     console.log("got a resource from the DB!");
     ui.players = snapshotToArray(snapshot);
     ui.players.forEach(function(player) {
-        $('#players').append(`<iframe src="https://open.spotify.com/embed?uri=${player}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>`;)
+        $('#players').append(`<iframe src="https://open.spotify.com/embed?uri=${player}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>`);
     });
 }, function (errorObject) {
     console.log("Errors handled: " + errorObject.code);
