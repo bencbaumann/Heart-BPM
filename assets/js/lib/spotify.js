@@ -68,6 +68,7 @@ function getSongs(appuser, callback){
         success: function(tracks){
             spotify.tracks = tracks;
             console.log('got songs from spotify');
+            console.log(tracks);
             getUser(function(user){
                 spotify.user = user;
                 console.log('user & songs both in scope and both callback ified');
