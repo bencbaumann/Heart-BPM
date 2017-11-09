@@ -4,6 +4,7 @@ console.log(user);
 console.log(ui);
 
 console.log(ui.view);
+console.log(ui);
 console.log(ui.view === 'heartbeat');
 // get the final heart rate from heartview page
 if(ui.view ==='heartbeat'){
