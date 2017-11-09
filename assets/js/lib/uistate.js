@@ -27,3 +27,12 @@ if(window.sessionStorage.getItem('view')==='players'){
     $('#heartbeat').hide();
     $('#players').show();
 }
+
+ui.showPlayers = () => {
+    if(window.sessionStorage.getItem('view')==='players'){
+        ui.state = 'players';
+        $('#metrics').hide();
+        $('#heartbeat').hide();
+        $('#players').show();
+    }
+}
