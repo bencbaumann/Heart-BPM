@@ -16,50 +16,6 @@ window.onload = function(){
     }
 }
 
-if(!window.sessionStorage.getItem('view')){
-    ui.state = 'metrics';
-    $('#heartbeat').hide();
-    $('#players').hide();
-    $('#metrics').show();
-}
-if(window.sessionStorage.getItem('view')==='heartbeat'){
-    ui.state = 'heartbeat';
-    $('#metrics').hide();
-    $('#players').hide();
-    $('#heartbeat').show();
-}
-if(window.sessionStorage.getItem('view')==='players'){
-    ui.state = 'players';
-    $('#metrics').hide();
-    $('#heartbeat').hide();
-    $('#players').show();
-}
-
-ui.showHeartbeat = () => {
-    window.sessionStorage.setItem('view', 'heartbeat');
-    window.location = '/Heart-BPM';
-    ui.state = 'heartbeat';
-    $('#metrics').hide();
-    $('#players').hide();
-    $('#heartbeat').show();    
-}
-
-ui.showPlayers = () => {
-    window.sessionStorage.setItem('view', 'players');
-    ui.state = 'players';
-    $('#metrics').hide();
-    $('#heartbeat').hide();
-    $('#players').show();        
-}
-
-ui.showHome = () => {
-    window.sessionStorage.setItem('view', 'metrics');
-    ui.state = 'metrics';
-    $('#metrics').show();
-    $('#heartbeat').hide();
-    $('#players').hide();        
-}
-
 ui.show = view => {
     console.log(`Updating the view to ${view}`);
     if(window.location.href.includes('spotifycallback')){
