@@ -38,11 +38,11 @@ ui.showHeartbeat = () => {
 }
 
 ui.showPlayers = () => {
-        window.sessionStorage.setItem('view', 'players');
-        ui.state = 'players';
-        $('#metrics').hide();
-        $('#heartbeat').hide();
-        $('#players').show();        
+    window.sessionStorage.setItem('view', 'players');
+    ui.state = 'players';
+    $('#metrics').hide();
+    $('#heartbeat').hide();
+    $('#players').show();        
 }
 
 ui.showHome = () => {
