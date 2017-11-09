@@ -13,6 +13,11 @@ window.onload = function(){
         sessionStorage.clear();
         ui.show('metrics');
     }
+    else{
+        ui.view = sessionStorage.getItem('view') || 'metrics';
+        ui.show(ui.view);
+    }
+
 }
 
 ui.show = view => {
