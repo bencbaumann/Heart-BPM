@@ -4,6 +4,7 @@ ui.states.push('metrics');
 ui.states.push('heartbeat');
 ui.states.push('players');
 ui.states.push('landing');
+ui.view = sessionStorage.getItem('view') || 'metrics';
 
 window.onbeforeunload = function(){
     sessionStorage.setItem("origin", window.location.href);
@@ -13,12 +14,6 @@ window.onload = function(){
         sessionStorage.clear();
         ui.show('metrics');
     }
-    else{
-        console.log('setting the ui view');
-        ui.view = sessionStorage.getItem('view') || 'metrics';
-        ui.show(ui.view);
-    }
-
 }
 
 ui.show = view => {
