@@ -6,6 +6,7 @@ window.onbeforeunload = function(){
 window.onload = function(){
     if(window.location.href == sessionStorage.getItem("origin")){
         sessionStorage.clear();
+        ui.showHome();
     }
 }
 
