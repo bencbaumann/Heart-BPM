@@ -14,6 +14,7 @@ window.onload = function(){
         ui.show('metrics');
     }
     else{
+        console.log('setting the ui view');
         ui.view = sessionStorage.getItem('view') || 'metrics';
         ui.show(ui.view);
     }
