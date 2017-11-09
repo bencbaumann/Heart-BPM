@@ -10,9 +10,10 @@ if(ui.state ==='heartbeat'){
 // Firebase watcher + initial loader HINT: This code behaves similarly to .on("value")
 db.ref('/playlist').on("value", function (snapshot) {
     console.log("got a resource from the DB!");
-    ui.players = snapshotToArray(snapshot);
-    ui.players.forEach(function(player) {
-        $('#players').append(`<iframe src="https://open.spotify.com/embed?uri=${player}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>`);
+    var players = snapshotToArray(snapshot);
+    players.forEach(function(playerObj) {
+        var player = `<iframe src="https://open.spotify.com/embed?uri=${playerObj.player}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>`;
+        $('#players').append();
     });
 }, function (errorObject) {
     console.log("Errors handled: " + errorObject.code);
