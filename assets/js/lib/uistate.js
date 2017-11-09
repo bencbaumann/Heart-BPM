@@ -29,6 +29,14 @@ if(window.sessionStorage.getItem('view')==='players'){
     $('#players').show();
 }
 
+ui.showHeartbeat = () => {
+    window.sessionStorage.setItem('view', 'heartbeat');
+    ui.state = 'heartbeat';
+    $('#metrics').hide();
+    $('#players').hide();
+    $('#heartbeat').show();    
+}
+
 ui.showPlayers = () => {
         window.sessionStorage.setItem('view', 'players');
         ui.state = 'players';
