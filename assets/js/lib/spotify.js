@@ -50,8 +50,8 @@ function getSongs(appuser, callback){
 
     var token = localStorage.getItem('token');
 
-    var minTempo = appuser.targetHeartRate - appuser.range;
-    var maxTempo = appuser.targetHeartRate + appuser.range;
+    var minTempo = Math.round(appuser.targetHeartRate - appuser.range);
+    var maxTempo = Math.round(appuser.targetHeartRate + appuser.range);
 
     var baseurl = 'https://api.spotify.com/v1/recommendations';
     var url = `${baseurl}?min_tempo=${minTempo}&seed_genres=${appuser.genre}&max_tempo=${maxTempo}`;
@@ -163,7 +163,6 @@ function addTracksToPlaylist(spotify, callback){
         var token = localStorage.getItem('token');
     
         var data = {};
-        console.log(spotify.tracks);
         data.uris = "uris="+spotify.tracks.tracks.map( track => track.uri).join(',').replace(/:/g, '%3A');
         // var uris = encodeURI('uris=' + spotify.tracks.tracks.map( track => track.uri).join(','));
 
