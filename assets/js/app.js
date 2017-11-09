@@ -16,6 +16,7 @@ db.ref('/playlist').on("value", function (snapshot) {
     console.log("got a resource from the DB!");
     var players = snapshotToArray(snapshot);
     players.forEach(function(playerObj) {
+        console.log(playerObj);
         var player = `<iframe src="https://open.spotify.com/embed?uri=${playerObj.player}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>`;
         $('#players').append();
     });
