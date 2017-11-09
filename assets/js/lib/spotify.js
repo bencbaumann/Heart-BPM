@@ -133,7 +133,7 @@ function createPlaylist(user, playlist, appuser, callback){
     
         playlist.description = `Workout Playlist for ${appuser.activity}`;
         playlist.public = true;
-        playlist.name = `${user.genre} Workout Playlist by Heart Beatz`;
+        playlist.name = `${appuser.genre} Workout Playlist by Heart Beatz`;
     
         var url = `https://api.spotify.com/v1/users/${user.id}/playlists`;
     
