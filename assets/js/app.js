@@ -7,9 +7,8 @@ console.log(ui.view);
 console.log(ui.view === 'heartbeat');
 // get the final heart rate from heartview page
 if(ui.view ==='heartbeat'){
-    console.log('heartbeat view match');
-    console.log(user.targetHeartRate);
     $('#adjustedHeartBeat').html(user.targetHeartRate);
+    ui.show('heartbeat');
 }
 
 // Firebase watcher + initial loader HINT: This code behaves similarly to .on("value")
