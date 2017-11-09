@@ -18,7 +18,7 @@ db.ref('/playlist').on("value", function (snapshot) {
     players.forEach(function(playerObj) {
         console.log(playerObj);
         var player = `<iframe src="https://open.spotify.com/embed?uri=${playerObj.player}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>`;
-        $('#players').append();
+        $('#players').append(player);
     });
 }, function (errorObject) {
     console.log("Errors handled: " + errorObject.code);
