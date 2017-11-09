@@ -1,6 +1,5 @@
 var ui = {};
 ui.states = [];
-ui.states.push('home');
 ui.states.push('metrics');
 ui.states.push('heartbeat');
 ui.states.push('players');
