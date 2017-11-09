@@ -72,7 +72,7 @@ function getSongs(appuser, callback){
                 spotify.user = user;
                 console.log('user & songs both in scope and both callback ified');
                 var playlist = {};
-                createPlaylist(user, playlist, function(playlist){
+                createPlaylist(user, playlist, appuser, function(playlist){
                     spotify.playlist = playlist;
                     console.log(playlist);
                     console.log(spotify);
@@ -126,7 +126,7 @@ function createPlayer(spotify){
 
 }
 
-function createPlaylist(user, playlist, callback){
+function createPlaylist(user, playlist, appuser, callback){
     console.log('getting songs!');
     
         var token = localStorage.getItem('token');
