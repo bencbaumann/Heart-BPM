@@ -8,3 +8,5 @@ var config = {
   messagingSenderId: "721569458570"
 };
 firebase.initializeApp(config);
+
+var db = firebase.database();
