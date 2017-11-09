@@ -4,6 +4,8 @@ console.log(user);
 
 // get the final heart rate from heartview page
 if(ui.view ==='heartbeat'){
+    console.log('heartbeat view match');
+    console.log(user.targetHeartRate);
     $('#adjustedHeartBeat').html(user.targetHeartRate);
 }
 
