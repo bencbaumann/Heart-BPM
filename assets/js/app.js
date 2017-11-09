@@ -7,6 +7,14 @@ if(ui.state ==='heartbeat'){
     $('#adjustedHeartBeat').html(user.targetHeartRate);
 }
 
+// Firebase watcher + initial loader HINT: This code behaves similarly to .on("value")
+db.ref('/player').on("child_added", function (childSnapshot) {
+    console.log("got a resource from the DB!");
+    console.log(childSnapshot.val());
+}, function (errorObject) {
+    console.log("Errors handled: " + errorObject.code);
+});
+
 $(document).ready(function () {
 
 
