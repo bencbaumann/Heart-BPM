@@ -1,3 +1,5 @@
+var spotify = {};
+
 if(window.location.href.includes('spotifycallback')){
     window.sessionStorage.setItem('view', 'heartbeat');
 };
