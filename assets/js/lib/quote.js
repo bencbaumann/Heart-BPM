@@ -9,29 +9,33 @@ $(document).ready(function () {
 
         console.log("loaded");
 
+
         var queryURL = "http://api.forismatic.com/api/1.0/getQuote&key=457653&format=jsonp&lang=en";
 
 
-        // ajax uses queryURL to get random quote
-        $.ajax({
-            url: queryURL,
-            method: "GET"
+        // function to get quote and show it on the page
+        function showQuote(data) {
 
-            // promise to return quote as response
-        }).done(function (response) {
+            // ajax uses queryURL to get random quote
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+    
+                // promise to return quote as response
+            }).done(function (response) {
 
-            // use var result to store the data object returned by response
-            var result = response.data;
-            console.log(result);
+                // use var result to store the data object returned by response
+                var result = response.data;
+                console.log(result);
 
-            // capture the quote in a variable called quote
-            var quote = result.quoteText;
-            console.log(quote);
+                // capture the quote in a variable called quote
+                var quote = result.quoteText;
+                console.log(quote);
 
-            // capture the author in a variable called author
-            var author = result.quoteAuthor;
-            console.log(author);
-
+                // capture the author in a variable called author
+                var author = result.quoteAuthor;
+                console.log(author);
+            });
             // the below is for Connor to use to show the quote on the landing page as he sees fit
 
             // create a div for the quote and author
@@ -46,7 +50,7 @@ $(document).ready(function () {
             // put the quote box on the landing page 
             // $("#landingpage").append(quotebox);
 
-        });
+        }
 
 
     });
