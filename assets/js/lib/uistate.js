@@ -62,6 +62,9 @@ ui.showHome = () => {
 
 ui.show = view => {
     console.log(`Updating the view to ${view}`);
+    if(window.location.href.includes('spotifycallback')){
+        window.location = '/Heart-BPM';
+    }):
     window.sessionStorage.setItem('view', view);
         ui.states.filter(function(state){
             state === view ? $(`#${view}`).show() : $(`#${view}`).hide();
