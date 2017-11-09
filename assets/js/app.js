@@ -11,6 +11,7 @@ if(ui.state ==='heartbeat'){
 db.ref().on("child_added", function (childSnapshot) {
     console.log("got a resource from the DB!");
     console.log(childSnapshot.val().playlist);
+    console.log(childSnapshot.val());
 }, function (errorObject) {
     console.log("Errors handled: " + errorObject.code);
 });
