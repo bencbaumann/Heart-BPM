@@ -1,4 +1,10 @@
 var ui = {};
+ui.states = [];
+ui.states.push('home');
+ui.states.push('metrics');
+ui.states.push('heartbeat');
+ui.states.push('players');
+ui.states.push('landing');
 
 window.onbeforeunload = function(){
     sessionStorage.setItem("origin", window.location.href);
@@ -11,7 +17,7 @@ window.onload = function(){
 }
 
 if(!window.sessionStorage.getItem('view')){
-    ui.state = 'home';
+    ui.state = 'metrics';
     $('#heartbeat').hide();
     $('#players').hide();
     $('#metrics').show();
@@ -47,9 +53,17 @@ ui.showPlayers = () => {
 }
 
 ui.showHome = () => {
-    window.sessionStorage.setItem('view', 'home');
-    ui.state = 'home';
+    window.sessionStorage.setItem('view', 'metrics');
+    ui.state = 'metrics';
     $('#metrics').show();
     $('#heartbeat').hide();
     $('#players').hide();        
+}
+
+ui.show = view => {
+    window.sessionStorage.setItem('view', view){
+        ui.states.filter(function(state){
+            state === view ? $(`#${view}`).show() : $(`#${view}`).hide();
+        });
+    }
 }

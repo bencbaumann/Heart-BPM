@@ -1,8 +1,6 @@
 var spotify = {};
 
-if(window.location.href.includes('spotifycallback')){
-    ui.showHeartbeat();
-};
+
 
 if(window.location.hash.includes("token")){
     console.log("There is a token in the url");
@@ -11,6 +9,10 @@ if(window.location.hash.includes("token")){
 else{
     console.log("There is not a token in the url");
 }
+
+// if(window.location.href.includes('spotifycallback')){
+//     ui.showHeartbeat();
+// };
 
 
 var token = window.localStorage.getItem('token');
@@ -202,7 +204,8 @@ function storeToken(){
     if(window.location.hash.includes('token')){
         localStorage.setItem('token', token);
         console.log(token);
-        window.location.replace('index.html');
+        // window.location.replace('/Heart-BPM');
+        ui.show('metrics');
     }
     else {
         console.log("there's no token in the url");
