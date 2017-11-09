@@ -68,19 +68,16 @@ $(document).ready(function () {
     // });
     $('#getSongs').on('click', function (e) {
         e.preventDefault();
-        // hardcoded for now
-        var songOptions = {};
-        songOptions.genre = 'ambient';
-        songOptions.hr = 130;
-        songOptions.range = 10;
-        getSongs(songOptions, function (res) {
+        /* this is +/- for Tempo */
+        user.range = 10;
+        getSongs(user, function (res) {
             console.log(res);
         });
     });
-    $('#deleteToken').on('click', function (e) {
-        e.preventDefault();
-        deleteToken();
-    });
+    // $('#deleteToken').on('click', function (e) {
+    //     e.preventDefault();
+    //     deleteToken();
+    // });
 
     $('#getUser').on('click', function (e) {
         e.preventDefault();
