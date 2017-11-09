@@ -10,10 +10,10 @@ if(ui.state ==='heartbeat'){
 // Firebase watcher + initial loader HINT: This code behaves similarly to .on("value")
 db.ref('/playlist').on("value", function (snapshot) {
     console.log("got a resource from the DB!");
-    console.log(snapshot.val().playlist);
-    console.log(snapshot.val());
-    var results = snapshotToArray(snapshot);
-    console.log(results);
+    ui.players = snapshotToArray(snapshot);
+    ui.players.forEach(function(player) {
+        $('#players').append(`<iframe src="https://open.spotify.com/embed?uri=${player}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>`;)
+    });
 }, function (errorObject) {
     console.log("Errors handled: " + errorObject.code);
 });
@@ -67,6 +67,10 @@ $(document).ready(function () {
     $("#decreaseHeartRate").on('click', function () {
         user.targetHeartRate--;
         $("#adjustedHeartBeat").text(user.targetHeartRate);
+    });
+
+    $('#recent').on('click', function (){
+        ui.showPlayers();
     });
 
 
