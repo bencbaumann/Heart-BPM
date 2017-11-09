@@ -15,7 +15,8 @@ window.onload = function(){
     }
 }
 
-ui.show = ui.view => {
+ui.show = view => {
+    ui.view = view;
     console.log(`Updating the view to ${ui.view}`);
     if(window.location.href.includes('spotifycallback')){
         window.location = '/Heart-BPM';
