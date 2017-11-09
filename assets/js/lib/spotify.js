@@ -45,16 +45,16 @@ function spotifyAuth(){
 }
 
 
-function getSongs(user, callback){
+function getSongs(appuser, callback){
     console.log('getting songs!');
 
     var token = localStorage.getItem('token');
 
-    var minTempo = user.targetHeartRate - user.range;
-    var maxTempo = user.targetHeartRate + user.range;
+    var minTempo = appuser.targetHeartRate - appuser.range;
+    var maxTempo = appuser.targetHeartRate + appuser.range;
 
     var baseurl = 'https://api.spotify.com/v1/recommendations';
-    var url = `${baseurl}?min_tempo=${minTempo}&seed_genres=${user.genre}&max_tempo=${maxTempo}`;
+    var url = `${baseurl}?min_tempo=${minTempo}&seed_genres=${appuser.genre}&max_tempo=${maxTempo}`;
 
     console.log('queryUrl: ' + url);
 
@@ -131,7 +131,7 @@ function createPlaylist(user, playlist, callback){
     
         var token = localStorage.getItem('token');
     
-        playlist.description = "Workout Playlist for meditation";
+        playlist.description = `Workout Playlist for ${appuser.activity}`;
         playlist.public = true;
         playlist.name = "Workout Playlist";
     
