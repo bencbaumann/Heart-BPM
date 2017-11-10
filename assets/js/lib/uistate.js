@@ -14,10 +14,10 @@ ui.hide();
 
 ui.view = sessionStorage.getItem('view') || 'metrics';
 
-window.onbeforeunload = function(){
+window.onbeforeunload = ()=>{
     sessionStorage.setItem("origin", window.location.href);
 }
-window.onload = function(){
+window.onload = ()=>{
     if(window.location.href == sessionStorage.getItem("origin")){
         sessionStorage.clear();
         ui.show('metrics');
@@ -46,7 +46,7 @@ ui.show = view => {
 
 if(window.location.href.includes('access_denied')){
     window.sessionStorage.setItem('view', 'metrics');
-    window.location = '/Heart-BPM';
+    // window.location = '/Heart-BPM';
 }
 
 if(window.location.href.includes('token')){
