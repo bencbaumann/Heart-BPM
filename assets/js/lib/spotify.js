@@ -200,7 +200,7 @@ function storeToken(){
     if(window.location.hash.includes('token')){
         window.localStorage.setItem('token', token);
         console.log(token);
-ui.show('heartbeat');
+        ui.show('heartbeat');
     }
     else {
         console.log("there's no token in the url");
