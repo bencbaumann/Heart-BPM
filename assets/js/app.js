@@ -32,7 +32,6 @@ $(document).ready(function () {
 
     $('.activity').on('click', function () {
         user.activity = $(this).attr('data-activity');
-        $(this).attr('style', 'background: red');
     });
 
 
