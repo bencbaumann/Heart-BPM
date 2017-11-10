@@ -40,10 +40,10 @@ if(window.location.href.includes('access_denied')){
 }
 
 if(window.location.href.includes('token')){
-    let token = window.location.hash.split('&')[0].split('=')[1];
     window.sessionStorage.setItem('view', 'heartbeat');
+    let token = window.location.hash.split('&')[0].split('=')[1];
     window.sessionStorage.setItem('token', token);
-    window.location = '/Heart-BPM';
+    // window.location = '/Heart-BPM';
 }
 
 if(ui.view==='metrics'){
