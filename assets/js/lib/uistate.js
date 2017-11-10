@@ -6,6 +6,10 @@ ui.states.push('players');
 ui.states.push('landing');
 ui.view = sessionStorage.getItem('view') || 'metrics';
 
+if(window.location.href.includes('access_denied')){
+    ui.show('metrics');
+}
+
 window.onbeforeunload = function(){
     sessionStorage.setItem("origin", window.location.href);
 }
