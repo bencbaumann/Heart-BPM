@@ -49,7 +49,17 @@ if(window.location.href.includes('access_denied')){
     window.location = '/Heart-BPM';
 }
 
+if(window.location.href.includes('token')){
+    window.sessionStorage.setItem('view', 'heartbeat');
+    window.location = '/Heart-BPM';
+}
+
 if(ui.view==='metrics'){
     console.log('show the default view');
     ui.show('metrics');
+}
+
+if(ui.view==='heartbeat'){
+    console.log('show the default view');
+    ui.show('heartbeat');
 }
