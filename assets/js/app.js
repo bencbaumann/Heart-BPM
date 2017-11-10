@@ -63,8 +63,6 @@ $(document).ready(function () {
 
     // functionality for target heartrate + and - buttons
 
-    var adjustedHeartRate = 0;
-
     $("#increaseHeartRate").on('click', function () {
         user.targetHeartRate++;
         $("#adjustedHeartBeat").text(user.targetHeartRate);
@@ -76,48 +74,22 @@ $(document).ready(function () {
         $("#adjustedHeartBeat").text(user.targetHeartRate);
     });
 
+    // this shows the repeating players view
     $('#recent').on('click', function (){
         ui.show('players');
     });
+
+    // returns us to the home view, needs to be updated to landing page.
     $('#home').on('click', function(){
         ui.show('metrics');
     });
 
-    /* This stuff is just here for testing */
-
-
-    // $('#submit').on('click', function (e) {
-    //     e.preventDefault();
-    //     spotifyAuth();
-    // });
+    //This happens when we click the music icon
     $('#getSongs').on('click', function (e) {
         e.preventDefault();
         /* this is +/- for Tempo */
         user.range = 10;
         getSongs(user, function (res) {
-            console.log(res);
-        });
-    });
-    // $('#deleteToken').on('click', function (e) {
-    //     e.preventDefault();
-    //     deleteToken();
-    // });
-
-    $('#getUser').on('click', function (e) {
-        e.preventDefault();
-        getUser();
-    });
-
-    $('#twitterauth').on('click', function (e) {
-        e.preventDefault();
-        twitter.authorize(function (res) {
-            console.log(res);
-        });
-    });
-
-    $('#tweet').on('click', function (e) {
-        e.preventDefault();
-        twitter.tweet(function (res) {
             console.log(res);
         });
     });
