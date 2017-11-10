@@ -42,5 +42,6 @@ if(window.location.href.includes('access_denied')){
 }
 
 if(ui.view==='metrics'){
+    console.log('show the default view');
     ui.show('metrics');
 }
