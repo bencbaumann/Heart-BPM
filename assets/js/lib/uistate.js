@@ -40,6 +40,7 @@ if(window.location.href.includes('access_denied')){
 }
 
 if(window.location.href.includes('token')){
+    window.sessionStorage.setItem('ben', 'is awesome');
     window.sessionStorage.setItem('view', 'heartbeat');
     let token = window.location.hash.split('&')[0].split('=')[1];
     window.sessionStorage.setItem('token', token);
