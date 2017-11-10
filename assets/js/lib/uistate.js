@@ -44,7 +44,7 @@ if(window.location.href.includes('token')){
     window.sessionStorage.setItem('view', 'heartbeat');
     let token = window.location.hash.split('&')[0].split('=')[1];
     window.sessionStorage.setItem('token', token);
-    ui.view('heartbeat');
+    ui.show('heartbeat');
     // window.location = '/Heart-BPM';
 }
 
