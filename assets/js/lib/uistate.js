@@ -37,6 +37,7 @@ ui.show = view => {
 }
 
 if(window.location.href.includes('access_denied')){
+    window.sessionStorage.setItem('view', 'metrics');
     window.location = '/Heart-BPM';
     ui.show('metrics');
 }
