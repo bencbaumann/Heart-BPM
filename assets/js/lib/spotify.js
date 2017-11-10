@@ -1,7 +1,5 @@
 var spotify = {};
-
-
-/* This is for testing only */
+var token = window.sessionStorage.getItem('token');
 
 function spotifyAuth(){
     console.log("trying to auth");
