@@ -1,17 +1,28 @@
 // if a user exist in session storage grab it, else create an empty object.
 var user = JSON.parse(window.localStorage.getItem('user')) || {};
 console.log(user);
-
+console.log(JSON.stringify(ui));
+console.log(ui.states);
+console.log(ui.view);
+console.log(ui.view === 'heartbeat');
 // get the final heart rate from heartview page
-if(ui.state ==='heartbeat'){
+if(ui.view ==='heartbeat'){
     $('#adjustedHeartBeat').html(user.targetHeartRate);
+    ui.show('heartbeat');
 }
 
 // Firebase watcher + initial loader HINT: This code behaves similarly to .on("value")
-db.ref().on("value", function (childSnapshot) {
+db.ref('/playlist').limitToLast(3).on("value", function (snapshot) {
     console.log("got a resource from the DB!");
-    console.log(childSnapshot.val().playlist);
-    console.log(childSnapshot.val());
+    let players = snapshotToArray(snapshot);
+    players.forEach(function(playerObj) {
+        console.log(playerObj);
+        let player = `<iframe src="https://open.spotify.com/embed?uri=${playerObj.player}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>`;
+        let div =$('<div>');
+        div.append(`<h3>${playerObj.genre} playlist for ${playerObj.activity}`);
+        div.append(player);
+        $('#players').append(div);
+    });
 }, function (errorObject) {
     console.log("Errors handled: " + errorObject.code);
 });
@@ -21,6 +32,7 @@ $(document).ready(function () {
 
     $('.activity').on('click', function () {
         user.activity = $(this).attr('data-activity');
+        $(this).attr('style', 'background: red');
     });
 
 
@@ -67,6 +79,12 @@ $(document).ready(function () {
         $("#adjustedHeartBeat").text(user.targetHeartRate);
     });
 
+    $('#recent').on('click', function (){
+        ui.show('players');
+    });
+    $('#home').on('click', function(){
+        ui.show('metrics');
+    });
 
     /* This stuff is just here for testing */
 

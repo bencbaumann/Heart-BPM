@@ -1,8 +1,6 @@
 var spotify = {};
 
-if(window.location.href.includes('spotifycallback')){
-    window.sessionStorage.setItem('view', 'heartbeat');
-};
+
 
 if(window.location.hash.includes("token")){
     console.log("There is a token in the url");
@@ -12,13 +10,12 @@ else{
     console.log("There is not a token in the url");
 }
 
+// if(window.location.href.includes('spotifycallback')){
+//     ui.showHeartbeat();
+// };
+
 
 var token = window.localStorage.getItem('token');
-// max 20 songs
-/* This is for testing only */
-
-// var targetHeartRate = targetHeartRange(34, 3);
-
 
 /* This is for testing only */
 
@@ -79,7 +76,7 @@ function getSongs(appuser, callback){
                     console.log(spotify);
                     addTracksToPlaylist(spotify, function(res){
                         console.log(res);
-                        createPlayer(spotify);
+                        createPlayer(spotify, appuser);
                     });
                 });
 
@@ -120,10 +117,14 @@ function getUser(callback){
     });
 }
 
-function createPlayer(spotify){
+function createPlayer(spotify, appuser){
     let player = `<iframe src="https://open.spotify.com/embed?uri=${spotify.playlist.uri}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>`;
-    $('#player').append(player);
-    db.ref('/playlist').push(spotify.playlist.uri);
+    $('#playlist').append(player);
+    let obj = {};
+    obj.player = spotify.playlist.uri;
+    obj.genre = appuser.genre;
+    obj.activity = appuser.activity;
+    db.ref('/playlist').push(obj);
 }
 
 function createPlaylist(user, playlist, appuser, callback){
@@ -133,7 +134,7 @@ function createPlaylist(user, playlist, appuser, callback){
     
         playlist.description = `Workout Playlist for ${appuser.activity}`;
         playlist.public = true;
-        playlist.name = `${user.genre} Workout Playlist by Heart Beatz`;
+        playlist.name = `${appuser.genre} Workout Playlist by Heart Beatz`;
     
         var url = `https://api.spotify.com/v1/users/${user.id}/playlists`;
     
@@ -198,7 +199,8 @@ function storeToken(){
     if(window.location.hash.includes('token')){
         localStorage.setItem('token', token);
         console.log(token);
-        window.location.replace('index.html');
+        // window.location.replace('/Heart-BPM');
+        ui.show('heartbeat');
     }
     else {
         console.log("there's no token in the url");

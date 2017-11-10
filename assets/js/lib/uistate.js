@@ -1,4 +1,10 @@
 var ui = {};
+ui.states = [];
+ui.states.push('metrics');
+ui.states.push('heartbeat');
+ui.states.push('players');
+ui.states.push('landing');
+ui.view = sessionStorage.getItem('view') || 'metrics';
 
 window.onbeforeunload = function(){
     sessionStorage.setItem("origin", window.location.href);
@@ -6,24 +12,26 @@ window.onbeforeunload = function(){
 window.onload = function(){
     if(window.location.href == sessionStorage.getItem("origin")){
         sessionStorage.clear();
+        ui.show('metrics');
     }
 }
 
-if(!window.sessionStorage.getItem('view')){
-    ui.state = 'home';
-    $('#heartbeat').hide();
-    $('#players').hide();
-    $('#metrics').show();
-}
-if(window.sessionStorage.getItem('view')==='heartbeat'){
-    ui.state = 'heartbeat';
-    $('#metrics').hide();
-    $('#players').hide();
-    $('#heartbeat').show();
-}
-if(window.sessionStorage.getItem('view')==='players'){
-    ui.state = 'players';
-    $('#metrics').hide();
-    $('#heartbeat').hide();
-    $('#players').show();
+ui.show = view => {
+    ui.view = view;
+    window.sessionStorage.setItem('view', ui.view);
+    console.log(`Updating the view to ${ui.view}`);
+    if(window.location.href.includes('spotifycallback')){
+        window.location = '/Heart-BPM';
+        ui.view = 'heartbeat';
+        ui.states.filter(function(state){
+            console.log('state: ' + state + ' view: ' + ui.view);
+            state === ui.view ? $(`#${state}`).show() : $(`#${state}`).hide();
+        });
+    }
+    else{
+        ui.states.filter(function(state){
+            console.log('state: ' + state + ' view: ' + ui.view);
+            state === ui.view ? $(`#${state}`).show() : $(`#${state}`).hide();
+        });
+    }
 }
