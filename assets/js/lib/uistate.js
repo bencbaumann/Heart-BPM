@@ -25,13 +25,13 @@ ui.show = view => {
         ui.view = 'heartbeat';
         ui.states.filter(function(state){
             console.log('state: ' + state + ' view: ' + ui.view);
-            state === ui.view ? $(`#${state}`).show() : $(`#${state}`).hide();
+            state === ui.view ? $(`#${state}`).fadeIn() : $(`#${state}`).fadeOut();
         });
     }
     else{
         ui.states.filter(function(state){
             console.log('state: ' + state + ' view: ' + ui.view);
-            state === ui.view ? $(`#${state}`).show() : $(`#${state}`).hide();
+            state === ui.view ? $(`#${state}`).fadeIn() : $(`#${state}`).fadeOut();
         });
     }
 }
