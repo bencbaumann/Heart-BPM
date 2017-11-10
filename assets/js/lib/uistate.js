@@ -37,5 +37,6 @@ ui.show = view => {
 }
 
 if(window.location.href.includes('access_denied')){
+    window.location = '/Heart-BPM';
     ui.show('metrics');
 }
