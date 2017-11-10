@@ -1,23 +1,6 @@
 var spotify = {};
 
 
-
-if(window.location.hash.includes("token")){
-    console.log("There is a token in the url");
-    sessionStorage.setItem('view', 'heartbeat');
-    storeToken();
-}
-else{
-    console.log("There is not a token in the url");
-}
-
-// if(window.location.href.includes('spotifycallback')){
-//     ui.showHeartbeat();
-// };
-
-
-var token = window.localStorage.getItem('token');
-
 /* This is for testing only */
 
 function spotifyAuth(){
@@ -46,7 +29,8 @@ function spotifyAuth(){
 function getSongs(appuser, callback){
     console.log('getting songs!');
 
-    var token = window.localStorage.getItem('token');
+    var token = window.sessionStorage.getItem('token');
+    console.log(token);
 
     var minTempo = Math.round(appuser.targetHeartRate - appuser.range);
     var maxTempo = Math.round(appuser.targetHeartRate + appuser.range);
@@ -193,18 +177,6 @@ function addTracksToPlaylist(spotify, callback){
                 console.log(err);
             }
         });
-}
-
-function storeToken(){
-    let token = window.location.hash.split('&')[0].split('=')[1];
-    if(window.location.hash.includes('token')){
-        window.localStorage.setItem('token', token);
-        console.log(token);
-        ui.show('heartbeat');
-    }
-    else {
-        console.log("there's no token in the url");
-    }
 }
 
 function deleteToken(){
