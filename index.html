@@ -2,6 +2,12 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Latest compiled and minified JavaScript -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css CDN-->
@@ -19,54 +25,60 @@
 
     <!--navbar-->
     <div class="container-fluid">
-        <div id ="formView">
         <nav>
-            <div class="nav-wrapper">
-                <a class="brand-logo center">
+            <div class="nav-wrapper teal accent-3">
+                <a id="home" href='#' class="brand-logo center">
                     <i class="material-icons left" style="font-size:40px;">favorite</i>
                 </a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li>
-                        <a href="signup.html">Sign Up</a>
-                    </li>
-                    <li>
-                        <a href="signin.html">Sign In</a>
-                    </li>
-                </ul>
             </div>
         </nav>
     </div>
     <!--end navbar-->
 
+    <!-- Views go here -->
+    <div class="container">
+        <div class="topheart">
+            <div="row">
+                <div class="col-lg-12 text-center">
+                    <img="images/images.png">
+                </div>
+        </div>
+    </div>
 
-    <!--Begin metrics form page-->
-    <div class="container metrics-page" style="margin-top:10%;">
 
-        <!--Select Exercise-->
-        <div class="row">
-            <div class="col s4 left" style="text-align:center;">
-                <a class="btn btn-floating waves-effect waves-light btn-large">
-                    <i class="material-icons tooltipped activity" data-activity='run' data-position="bottom" data-delay="50" data-tooltip="Run" value="run" style="font-size:30px;">directions_run</i>
-                </a>
-            </div>
-            <div class="col s4 left" style="text-align:center;">
-                <a class="btn btn-floating waves-effect waves-light btn-large">
-                    <i id="target" class="material-icons tooltipped activity" data-activity='weightLifting' data-position="bottom" data-delay="50" data-tooltip="Weight Lifting" value="weight lifting"
-                        style="font-size:30px;">accessibility</i>
-                </a>
-            </div>
-            <div class="col s4 left" style="text-align:center;">
-                <a class="btn btn-floating waves-effect waves-light btn-large">
-                    <i class="material-icons tooltipped activity" data-activity='meditate' data-position="bottom" data-delay="50" data-tooltip="Meditate" value="meditate"
-                        style="font-size:30px;">music_note</i>
-                </a>
-            </div>
-            <div class="tap-target" data-activates="target">
-                <div class="tap-target-content">
-                    <p>Select an activity to get started</p>
+    <div id="metrics">
+        <!--Begin metrics form page-->
+        <div class="container metrics-page" style="margin-top:10%;">
+            <div id="formView">
+                <!--Select Exercise-->
+                <div class="row">
+                    <div class="col s4 left" style="text-align:center;">
+                        <a class="btn btn-floating pulse btn-large" class="pulsefeature">
+                            <i class="material-icons tooltipped activity" data-activity='HIIT/Cardio' data-position="bottom" data-delay="50" data-tooltip="Run"
+                                value="HIIT/Cardio" style="font-size:30px;">directions_run</i>
+                        </a>
+                    </div>
+                    <div class="col s4 left" style="text-align:center;">
+                        <a class="btn btn-floating pulse btn-large" class="pulsefeature">
+                            <i id="target" class="material-icons tooltipped activity" data-activity='weights' data-position="bottom" data-delay="50"
+                                data-tooltip="Weight Lifting" value="weights" style="font-size:30px;">accessibility</i>
+                        </a>
+                    </div>
+                    <div class="col s4 left" style="text-align:center;">
+                        <a class="btn btn-floating pulse btn-large" class="pulsefeature">
+                            <i class="material-icons tooltipped activity" data-activity='meditate' data-position="bottom" data-delay="50" data-tooltip="Meditate"
+                                value="meditate" style="font-size:30px;">music_note</i>
+                        </a>
+                    </div>
+                    <div class="tap-target" data-activates="target">
+                        <div class="tap-target-content" style="width:100px; height:100px; top:100px">
+                            <p>Select an activity to get started</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
 
         <br>
         <br>
@@ -76,45 +88,36 @@
         <!--Form-->
         <div class="container">
             <form id="metrics-form">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="first_name" type="text" class="validate">
-                        <label for="first_name">First Name</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="last_name" type="text" class="validate">
-                        <label for="last_name">Last Name</label>
-                    </div>
-                </div>
                 <br>
                 <div class="row">
                     <div class="range-field">
-                        <input type="range" id="age" min="0" max="100" />
+                        <input type="range" id="age" min="16" max="100" />
                         <label for="age">Age</label>
                     </div>
                     <div class="range-field">
-                        <input type="range" id="weight" min="0" max="350" />
+                        <input type="range" id="weight" min="100" max="350" />
                         <label for="weight">Weight</label>
                     </div>
                 </div>
                 <br>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select id="gender" name="gender">
+                            <option value="" disabled selected>Choose a Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="n/a">Prefer Not to Share</option>
+                        </select>
+                        <label>Gender</label>
+                    </div>
+                </div>
+                <br>
                 <br>
 
-                <div class="row">
-                        <div class="input-field col s12">
-                            <select id="gender">
-                                <option value="" disabled selected>Choose a Gender</option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                                <option value="n/a">Prefer Not to Share</option>
-                            </select>
-                            <label>Gender</label>
-                        </div>
-                    </div>
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <select id="genre">
+                        <select id="genre" name="genre">
                             <option value="" disabled selected>Choose a Genre</option>
                             <option value="alt-rock">Alt-Rock</option>
                             <option value="blues">Blues</option>
@@ -139,31 +142,98 @@
                         </select>
                         <label>Genre</label>
                     </div>
+                    <!-- end select -->
                 </div>
- 
+                <!-- end div.row -->
+
                 <br>
+
                 <br>
                 <div class="row" style="text-align:center;">
                     <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                         <i class="material-icons right">send</i>
                     </button>
                 </div>
-
             </form>
-
         </div>
 
-    </div>
-</div>
+
+`
+
+
+
+    </div>        <!-- end metrics -->
+
+
+    <div id="heartbeat">
+        <div class="container customize-bpm-page" style="margin-top:10%;">
+            <div class="row">
+                <div class="col s4 left" style="text-align:center;">
+                    <a id="increaseHeartRate" class="btn btn-floating waves-effect waves-light btn-large">
+                        <i class="material-icons" style="font-size:30px;">add</i>
+                    </a>
+                </div>
+                <div class="col s4 left" style="text-align:center;">
+                    <h3 id="adjustedHeartBeat" style="color:white;">100</h3>
+                </div>
+                <div class="col s4 left" style="text-align:center;">
+                    <a id="decreaseHeartRate" class="btn btn-floating waves-effect waves-light btn-large">
+                        <i class="material-icons" style="font-size:30px;">remove</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="row">
+            <div class="col s12" style="text-align:center;">
+                <a id="getSongs" class="btn btn-floating waves-effect waves-light btn-large">
+                    <i class="material-icons" style="font-size:30px;">music_note</i>
+                </a>
+            </div>
+            <div class="row">
+                <div class="col s12" style="text-align:center;">
+                    <div id="playlist"></div>
+                </div>
+            </div>
+        </div>
+ </div><!-- end heartbeat view -->
+
+ <div class="row">
+        <div class="col s12" style="text-align:center;">
+                <div id="players">
+                    <h3>"Check out Playlist other Fitness Buffs have made...</h3>
+                </div>
+        </div>
+ </div>
+
+
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Footer Content</h5>
+                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+                <div id="recent" class="btn col l4 offset-l2 s12">
+                    Recent Playlists
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- materialize.css JS CDN -->
     <!--Firebase-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+    <script src="assets/js/lib/firedb.js"></script>
     <!-- <script src="ux.js"></script> -->
     <script src="assets/js/lib/heartrate.js"></script>
     <script src="assets/js/lib/spotify.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
-    <script src="assets/js/lib/firedb.js"></script>
+    <script src="assets/js/lib/uistate.js"></script>
     <script src="assets/js/app.js"></script>
 
 </body>

@@ -1,4 +1,6 @@
-console.log(window.location);
+var spotify = {};
+
+
 
 if(window.location.hash.includes("token")){
     console.log("There is a token in the url");
@@ -8,13 +10,12 @@ else{
     console.log("There is not a token in the url");
 }
 
+// if(window.location.href.includes('spotifycallback')){
+//     ui.showHeartbeat();
+// };
+
 
 var token = window.localStorage.getItem('token');
-// max 20 songs
-/* This is for testing only */
-
-// var targetHeartRate = targetHeartRange(34, 3);
-
 
 /* This is for testing only */
 
@@ -41,16 +42,16 @@ function spotifyAuth(){
 }
 
 
-function getSongs(songOptions, callback){
+function getSongs(appuser, callback){
     console.log('getting songs!');
 
     var token = localStorage.getItem('token');
 
-    var minTempo = songOptions.hr - songOptions.range;
-    var maxTempo = songOptions.hr + songOptions.range;
+    var minTempo = Math.round(appuser.targetHeartRate - appuser.range);
+    var maxTempo = Math.round(appuser.targetHeartRate + appuser.range);
 
     var baseurl = 'https://api.spotify.com/v1/recommendations';
-    var url = `${baseurl}?min_tempo=${minTempo}&seed_genres=${songOptions.genre}&max_tempo=${maxTempo}`;
+    var url = `${baseurl}?min_tempo=${minTempo}&seed_genres=${appuser.genre.toLowerCase()}&max_tempo=${maxTempo}`;
 
     console.log('queryUrl: ' + url);
 
@@ -64,17 +65,18 @@ function getSongs(songOptions, callback){
         success: function(tracks){
             spotify.tracks = tracks;
             console.log('got songs from spotify');
+            console.log(tracks);
             getUser(function(user){
                 spotify.user = user;
                 console.log('user & songs both in scope and both callback ified');
                 var playlist = {};
-                createPlaylist(user, playlist, function(playlist){
+                createPlaylist(user, playlist, appuser, function(playlist){
                     spotify.playlist = playlist;
                     console.log(playlist);
                     console.log(spotify);
                     addTracksToPlaylist(spotify, function(res){
                         console.log(res);
-                        createPlayer(spotify);
+                        createPlayer(spotify, appuser);
                     });
                 });
 
@@ -115,21 +117,24 @@ function getUser(callback){
     });
 }
 
-function createPlayer(spotify){
+function createPlayer(spotify, appuser){
     let player = `<iframe src="https://open.spotify.com/embed?uri=${spotify.playlist.uri}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>`;
-    $('#player').append(player);
-    
-
+    $('#playlist').append(player);
+    let obj = {};
+    obj.player = spotify.playlist.uri;
+    obj.genre = appuser.genre;
+    obj.activity = appuser.activity;
+    db.ref('/playlist').push(obj);
 }
 
-function createPlaylist(user, playlist, callback){
+function createPlaylist(user, playlist, appuser, callback){
     console.log('getting songs!');
     
         var token = localStorage.getItem('token');
     
-        playlist.description = "Workout Playlist for meditation";
+        playlist.description = `Workout Playlist for ${appuser.activity}`;
         playlist.public = true;
-        playlist.name = "Workout Playlist";
+        playlist.name = `${appuser.genre} Workout Playlist by Heart Beatz`;
     
         var url = `https://api.spotify.com/v1/users/${user.id}/playlists`;
     
@@ -194,7 +199,8 @@ function storeToken(){
     if(window.location.hash.includes('token')){
         localStorage.setItem('token', token);
         console.log(token);
-        window.location.replace('spotify.html');
+        // window.location.replace('/Heart-BPM');
+        ui.show('heartbeat');
     }
     else {
         console.log("there's no token in the url");
