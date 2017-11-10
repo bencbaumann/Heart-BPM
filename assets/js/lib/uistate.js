@@ -4,6 +4,13 @@ ui.states.push('metrics');
 ui.states.push('heartbeat');
 ui.states.push('players');
 ui.states.push('landing');
+
+ui.hide = view => {
+    ui.states.map((state)=>{
+        $(`${state}`).hide();
+    });
+}
+
 ui.view = sessionStorage.getItem('view') || 'metrics';
 
 window.onbeforeunload = function(){
@@ -25,13 +32,13 @@ ui.show = view => {
         ui.view = 'heartbeat';
         ui.states.filter(function(state){
             console.log('state: ' + state + ' view: ' + ui.view);
-            state === ui.view ? $(`#${state}`).fadeIn() : $(`#${state}`).fadeOut();
+            state === ui.view ? $(`#${state}`).show() : $(`#${state}`).hide();
         });
     }
     else{
         ui.states.filter(function(state){
             console.log('state: ' + state + ' view: ' + ui.view);
-            state === ui.view ? $(`#${state}`).fadeIn() : $(`#${state}`).fadeOut();
+            state === ui.view ? $(`#${state}`).show() : $(`#${state}`).hide();
         });
     }
 }
