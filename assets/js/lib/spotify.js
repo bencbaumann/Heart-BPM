@@ -75,7 +75,7 @@ function getSongs(appuser, callback){
 function getUser(callback){
     console.log('getting user!');
 
-    var token = window.localStorage.getItem('token');
+    var token = window.sessionStorage.getItem('token');
 
     var baseurl = 'https://api.spotify.com/v1/';
     var url = `${baseurl}me`;
@@ -113,7 +113,7 @@ function createPlayer(spotify, appuser){
 function createPlaylist(user, playlist, appuser, callback){
     console.log('getting songs!');
     
-        var token = window.localStorage.getItem('token');
+        var token = window.sessionStorage.getItem('token');
     
         playlist.description = `Workout Playlist for ${appuser.activity}`;
         playlist.public = true;
@@ -144,7 +144,7 @@ function createPlaylist(user, playlist, appuser, callback){
 function addTracksToPlaylist(spotify, callback){
         console.log('getting songs!');
 
-        var token = window.localStorage.getItem('token');
+        var token = window.sessionStorage.getItem('token');
     
         var data = {};
         data.uris = "uris="+spotify.tracks.tracks.map( track => track.uri).join(',').replace(/:/g, '%3A');
@@ -179,5 +179,5 @@ function addTracksToPlaylist(spotify, callback){
 
 function deleteToken(){
     console.log('deleting the token');
-    window.localStorage.clear();
+    window.sessionStorage.clear();
 }
