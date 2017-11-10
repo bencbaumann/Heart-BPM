@@ -5,11 +5,12 @@ ui.states.push('heartbeat');
 ui.states.push('players');
 ui.states.push('landing');
 
-ui.hide = view => {
+ui.hide = () => {
     ui.states.map((state)=>{
         $(`${state}`).hide();
     });
 }
+ui.hide();
 
 ui.view = sessionStorage.getItem('view') || 'metrics';
 
