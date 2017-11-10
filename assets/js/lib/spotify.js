@@ -46,7 +46,7 @@ function spotifyAuth(){
 function getSongs(appuser, callback){
     console.log('getting songs!');
 
-    var token = localStorage.getItem('token');
+    var token = window.localStorage.getItem('token');
 
     var minTempo = Math.round(appuser.targetHeartRate - appuser.range);
     var maxTempo = Math.round(appuser.targetHeartRate + appuser.range);
@@ -93,7 +93,7 @@ function getSongs(appuser, callback){
 function getUser(callback){
     console.log('getting user!');
 
-    var token = localStorage.getItem('token');
+    var token = window.localStorage.getItem('token');
 
     var baseurl = 'https://api.spotify.com/v1/';
     var url = `${baseurl}me`;
@@ -108,7 +108,7 @@ function getUser(callback){
             'Authorization': `Bearer ${token}`
         },
         success: function(user){
-            localStorage.setItem('userId', user.id);
+            window.localStorage.setItem('userId', user.id);
             console.log('got a reponse from spotify user resource');
             callback(user);
         },
@@ -131,7 +131,7 @@ function createPlayer(spotify, appuser){
 function createPlaylist(user, playlist, appuser, callback){
     console.log('getting songs!');
     
-        var token = localStorage.getItem('token');
+        var token = window.localStorage.getItem('token');
     
         playlist.description = `Workout Playlist for ${appuser.activity}`;
         playlist.public = true;
@@ -162,7 +162,7 @@ function createPlaylist(user, playlist, appuser, callback){
 function addTracksToPlaylist(spotify, callback){
         console.log('getting songs!');
 
-        var token = localStorage.getItem('token');
+        var token = window.localStorage.getItem('token');
     
         var data = {};
         data.uris = "uris="+spotify.tracks.tracks.map( track => track.uri).join(',').replace(/:/g, '%3A');
@@ -198,7 +198,7 @@ function addTracksToPlaylist(spotify, callback){
 function storeToken(){
     let token = window.location.hash.split('&')[0].split('=')[1];
     if(window.location.hash.includes('token')){
-        localStorage.setItem('token', token);
+        window.localStorage.setItem('token', token);
         console.log(token);
 ui.show('heartbeat');
     }
@@ -209,5 +209,5 @@ ui.show('heartbeat');
 
 function deleteToken(){
     console.log('deleting the token');
-    localStorage.clear();
+    window.localStorage.clear();
 }
