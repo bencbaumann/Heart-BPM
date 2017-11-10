@@ -1,9 +1,7 @@
 // if a user exist in session storage grab it, else create an empty object.
 var user = JSON.parse(window.localStorage.getItem('user')) || {};
 console.log(user);
-console.log(JSON.stringify(ui));
-console.log(ui.states);
-console.log(ui.view);
+
 console.log(ui.view === 'heartbeat');
 // get the final heart rate from heartview page
 if(ui.view ==='heartbeat'){
