@@ -4,6 +4,7 @@ var spotify = {};
 
 if(window.location.hash.includes("token")){
     console.log("There is a token in the url");
+    sessionStorage.setItem('view', 'heartbeat');
     storeToken();
 }
 else{
@@ -199,8 +200,7 @@ function storeToken(){
     if(window.location.hash.includes('token')){
         localStorage.setItem('token', token);
         console.log(token);
-        // window.location.replace('/Heart-BPM');
-        ui.show('heartbeat');
+ui.show('heartbeat');
     }
     else {
         console.log("there's no token in the url");
