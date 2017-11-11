@@ -20,7 +20,7 @@ window.onbeforeunload = ()=>{
 window.onload = ()=>{
     if(window.location.href == sessionStorage.getItem("origin")){
         sessionStorage.clear();
-        ui.show('metrics');
+        ui.show('landing');
     }
 }
 
@@ -35,7 +35,7 @@ ui.show = view => {
 }
 
 if(window.location.href.includes('access_denied')){
-    window.sessionStorage.setItem('view', 'metrics');
+    window.sessionStorage.setItem('view', 'landing');
     window.location = '/Heart-BPM';
 }
 
@@ -48,10 +48,11 @@ if(window.location.href.includes('token')){
     window.location = '/Heart-BPM';
 }
 
-if(ui.view==='metrics'){
+if(ui.view==='landing'){
     console.log('show the default view');
-    ui.show('metrics');
+    ui.show('landing');
 }
+
 
 if(ui.view==='heartbeat'){
     console.log('show the default view');
