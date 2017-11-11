@@ -3,6 +3,21 @@
     height:30%;
 }
 
+.modal { width: 40% !important ; height: 25% !important ; }
+
+
+
+/*Color Style*/
+
+h1, h2, h3, h4, h5, p, a, label, input {
+  color:white;
+}
+
+label {
+  font-size: 1em;
+  background-color: none;
+} 
+
 input{
     color:white;
 }
@@ -14,33 +29,74 @@ input{
   }
 
 
-  .modal { width: 40% !important ; height: 25% !important ; }
+
 
   
- .btn:hover {
-   background-color: white;
-   color:grey;
- }
 
- .material-icons:hover {
+  /*Buttons Style*/
+ 
+
+ /* .material-icons:hover {
    color:grey;
- }
+ } */
 
 input.valid:not([type]), input.valid:not([type]):focus, input[type=text].valid:not(.browser-default), input[type=text].valid:not(.browser-default):focus, input[type=password].valid:not(.browser-default), input[type=password].valid:not(.browser-default):focus, input[type=email].valid:not(.browser-default), input[type=email].valid:not(.browser-default):focus, input[type=url].valid:not(.browser-default), input[type=url].valid:not(.browser-default):focus, input[type=time].valid:not(.browser-default), input[type=time].valid:not(.browser-default):focus, input[type=date].valid:not(.browser-default), input[type=date].valid:not(.browser-default):focus, input[type=datetime].valid:not(.browser-default), input[type=datetime].valid:not(.browser-default):focus, input[type=datetime-local].valid:not(.browser-default), input[type=datetime-local].valid:not(.browser-default):focus, input[type=tel].valid:not(.browser-default), input[type=tel].valid:not(.browser-default):focus, input[type=number].valid:not(.browser-default), input[type=number].valid:not(.browser-default):focus, input[type=search].valid:not(.browser-default), input[type=search].valid:not(.browser-default):focus, textarea.materialize-textarea.valid, textarea.materialize-textarea.valid:focus, .select-wrapper.valid>input.select-dropdown {
-    border-bottom: 3px solid teal !important;
+    border-bottom: 3px solid #1de9b6 !important;
     box-shadow: none;
 }
 
-label {
-  font-size: 1em;
-  background-color: none;
+.btn{
+  background-color:#1de9b6;
+  color:black;
 }
-  
+
+.btn:hover{
+  background-color: #6effe8;
+  color:black;
+}
+
+.btn:active{
+  background-color:#000a12;
+  color:white;
+}
+
+.btn.clicked{
+  background-color:#000a12;
+  color:white;
+}
+
+.material-icons.tooltipped.activity {
+   color:black;
+ } 
+
+ .material-icons.tooltipped.activity:hover {
+   color:black;
+ } 
+
+ .material-icons.tooltipped.activity:active{
+   color:white;
+ }
+
+.material-icons.tooltipped.activity.clicked {
+   color:white;
+ }
+
+ .material-icons.left:hover {
+  color:black;
+} 
+
+.material-icons.left:active{
+  color:black;
+}
+
+
+
+/*Tap Target*/
   .tap-target {
     position: absolute;
     font-size: 1rem;
     border-radius: 50%;
-    background-color: teal;
+    background-color: #1de9b6;
     -webkit-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.14), 0 10px 50px 0 rgba(0, 0, 0, 0.12), 0 30px 10px -20px rgba(0, 0, 0, 0.2);
             box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.14), 0 10px 50px 0 rgba(0, 0, 0, 0.12), 0 30px 10px -20px rgba(0, 0, 0, 0.2);
     width: 100%;
@@ -77,6 +133,12 @@ label {
   }
   
  
+
+
+
+
+
+  /*Pulse Animation*/
   
   .pulse {
     overflow: initial;
@@ -167,3 +229,41 @@ label {
   main {
     flex: 1 0 auto;
   }
+
+  .page-footer {
+    background-color:#4f5b62;
+    border-top: 3px, solid, #6effe8;
+  }
+
+
+  /*Slider Style*/
+  input[type='range'] {
+    -webkit-appearance: none !important;
+    background:#000a12;
+    border:none;
+    height:7px;
+}
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background:#6effe8;
+    height:10px;
+    width:10px;
+}
+
+input[type=range]+.thumb{
+background-color:#6effe8;
+color:black;
+}
+
+.value{
+color:black !important;
+}
+
+.caret{
+  background-color:none;
+  color:#6effe8 !important;
+}
+
+.dropdown-content {
+  #4f5b62
+}
