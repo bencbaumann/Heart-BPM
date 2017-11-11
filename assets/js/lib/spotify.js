@@ -25,6 +25,7 @@ function spotifyAuth(){
 
 
 function getSongs(appuser, callback){
+    Materialize.toast('Getting Songs', 4000,'');
     console.log('getting songs!');
 
     var token = window.sessionStorage.getItem('token');
