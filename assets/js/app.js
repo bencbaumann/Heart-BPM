@@ -87,6 +87,9 @@ $(document).ready(function () {
     $('#home').on('click', function () {
         ui.show('landing');
     });
+    $('#start').on('click', function () {
+        ui.show('metrics');
+    });
 
     //This happens when we click the music icon
     $('#getSongs').on('click', function (e) {
