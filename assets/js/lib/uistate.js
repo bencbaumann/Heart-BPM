@@ -4,6 +4,7 @@ ui.states.push('metrics');
 ui.states.push('heartbeat');
 ui.states.push('players');
 ui.states.push('landing');
+ui.states.push('about');
 
 ui.hide = () => {
     ui.states.map((state)=>{
