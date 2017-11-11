@@ -16,8 +16,8 @@ db.ref('/playlist').limitToLast(3).on("value", function (snapshot) {
     players.forEach(function (playerObj) {
         console.log(playerObj);
         let player = `<iframe src="https://open.spotify.com/embed?uri=${playerObj.player}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>`;
-        let div = $('<div>');
-        div.append(`<h3>${playerObj.genre} playlist for ${playerObj.activity}`);
+        let div = $(`<div class="media col s12 m4 left" style="text-align:center;">`);
+        div.append(`<h4>${playerObj.genre} playlist <br> for ${playerObj.activity}`);
         div.append(player);
         $('#players').append(div);
     });
@@ -101,12 +101,18 @@ $(document).ready(function () {
         });
     });
 
-    $('.btn').click(function () {
+    $('.activity').click(function () {
+        $.each($('.activity'), function( index, value ) {
+            var el = $(value);
+            el.removeClass('clicked');
+            el.parent().removeClass('clicked');
+        });
+        $(this).parent().addClass('clicked');
         $(this).addClass('clicked');
     });
 
-    $('.material-icons').click(function () {
-        $(this).addClass('clicked');
-    });
+    // $('.material-icons').click(function () {
+    //     $(this).addClass('clicked');
+    // });
 
 }); // end document.ready
