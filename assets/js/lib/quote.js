@@ -19,7 +19,7 @@ function parseQuote(response) {
     $(authorLine).append(author);
 
     // put the quote in the div
-    $(quoteBox).append('"' + quote + '"');
+    $(quoteBox).append(`<h4>"${quote}"</h4>`);
     
     // put the author in the div
     $(quoteBox).append(authorLine);
