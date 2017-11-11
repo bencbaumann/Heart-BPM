@@ -13,7 +13,7 @@ ui.hide = () => {
 }
 ui.hide();
 
-ui.view = sessionStorage.getItem('view') || 'metrics';
+ui.view = sessionStorage.getItem('view') || ui.show('landing');
 
 window.onbeforeunload = ()=>{
     sessionStorage.setItem("origin", window.location.href);
