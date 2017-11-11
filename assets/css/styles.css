@@ -13,6 +13,14 @@ h1, h2, h3, h4, h5, p, a, label, input {
   color:white;
 }
 
+h1, h2, h3, {
+  font-size:1.2em;
+}
+
+p {
+  font-size:1.1em;
+  line-height: 30px;
+}
 label {
   font-size: 1em;
   background-color: none;
@@ -29,7 +37,10 @@ input{
   }
 
 
-
+#recent.btn {
+  background-color:black;
+  color:white;
+}
 
   
 
@@ -113,13 +124,18 @@ input.valid:not([type]), input.valid:not([type]):focus, input[type=text].valid:n
   .tap-target-content {
     position: relative;
     display: table-cell;
-    color:white;
+    color:black;
+  }
+
+  p.tap-target-content {
+    color:black;
   }
   
   .tap-target-wave {
     position: absolute;
     border-radius: 50%;
     z-index: 10001;
+    color:black;
   }
   
   .tap-target-wave::before, .tap-target-wave::after {
@@ -130,6 +146,7 @@ input.valid:not([type]), input.valid:not([type]):focus, input[type=text].valid:n
     height: 100%;
     border-radius: 50%;
     background-color: #ffffff;
+    color:black;
   }
   
  

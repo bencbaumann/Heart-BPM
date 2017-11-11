@@ -27,9 +27,14 @@
     <div class="container-fluid">
         <nav>
             <div class="nav-wrapper teal accent-3">
-                <a id="home" href='#' class="brand-logo center">
-                    <i class="material-icons left" style="font-size:40px;">favorite</i>
-                </a>
+                <div class="col l7 text-center">
+                    <a id="home" href='#' class="brand-logo center">
+                        <i class="material-icons left" style="font-size:40px;">favorite</i>
+                    </a>
+                </div>
+                <div id="recent" class="btn col l4 text-right">
+                    Recent Playlists
+                </div>
             </div>
         </nav>
     </div>
@@ -61,18 +66,18 @@
                     <div class="col s4 left" style="text-align:center;">
                         <a class="btn btn-floating pulse btn-large" class="pulsefeature">
                             <i id="target" class="material-icons tooltipped activity" data-activity='weights' data-position="bottom" data-delay="50"
-                                data-tooltip="Weight Lifting" value="weights" style="font-size:30px;">accessibility</i>
+                                data-tooltip="Weight Lifting" value="weights" style="font-size:30px;">fitness_center</i>
                         </a>
                     </div>
                     <div class="col s4 left" style="text-align:center;">
                         <a class="btn btn-floating pulse btn-large" class="pulsefeature">
                             <i class="material-icons tooltipped activity" data-activity='meditate' data-position="bottom" data-delay="50" data-tooltip="Meditate"
-                                value="meditate" style="font-size:30px;">music_note</i>
+                                value="meditate" style="font-size:30px;">nature_people</i>
                         </a>
                     </div>
                     <div class="tap-target" data-activates="target">
                         <div class="tap-target-content" style="width:100px; height:100px; top:100px">
-                            <p>Select an activity to get started</p>
+                            <p style="color:black;">Select an activity to get started</p>
                         </div>
                     </div>
                 </div>
@@ -158,11 +163,12 @@
         </div>
 
 
-`
+        `
 
 
 
-    </div>        <!-- end metrics -->
+    </div>
+    <!-- end metrics -->
 
 
     <div id="heartbeat">
@@ -199,30 +205,56 @@
                 </div>
             </div>
         </div>
- </div><!-- end heartbeat view -->
+    </div>
+    <!-- end heartbeat view -->
 
- <div class="row">
+    <div class="row">
         <div class="col s12" style="text-align:center;">
-                <div id="players">
-                    <h3>"Check out Playlist other Fitness Buffs have made...</h3>
-                </div>
+            <div id="players">
+                <h3>Check out Playlist other Fitness Buffs have made...</h3>
+            </div>
         </div>
- </div>
+    </div>
 
- <div id="landing">
-     <p>Landing page goes in here</p>
- </div>
+    <div id="landing">
+        <p>Landing page goes in here</p>
+    </div>
+
+    <div id="about">
+            <div class="container" style="margin-top:10%;">
+                    <div class="row">
+                        <div class="col s8">
+                            <h2>About HeartBeatz</h2>
+                            <hr>
+                            <p>Your workout is incredibly important to you. Whether you’re trying to hit your next split time, beat your
+                                weightlifting PR, or just zening out with some yoga or meditation, your workout is your time to work
+                                on yourself. You deserve a playlist that can get you in the zone and keep you there. Heartbeatz is the
+                                perfect app for fitness buffs and music junkies alike.
+                                </br></br>HeartBeatz provides custom playlists using tailored health data provided by the user. From your
+                                age, weight and gender along with the level of intensity of your workout HeartBeatz finds your targeted
+                                heart beat range for your workout. Then we generate a playlist to match it in tempo. No more random slow
+                                jams popping up to throw off your game.
+                                </br></br>But what if you need a little extra kick? Use the plus and minus buttons next to your returned suggested
+                                heart beat range to kick up or slow down the tempo of songs in your playlist. Don’t feel like creating
+                                a custom mix? No problem! Visit the library of recently created playlists and jam out to playlists created
+                                by other members of the HeartBeatz community. </p>
+                        </div>
+                        <div class="col s4"></div>
+                    </div>
+        </div>
 
 
 
     <footer class="page-footer">
         <div class="container">
             <div class="row">
-                <div class="col l6 s12">
-                  <a href="aboutthisapp.html"><h5>About this App</h5></a>
+                <div class="col l6 s12" id="aboutbtn">
+                    <a href="">
+                        <h5>About this App</h5>
+                    </a>
                 </div>
-                <div id="recent" class="btn col l4 offset-l2 s12">
-                    Recent Playlists
+                <div id="recent" class="col l4 offset-l2 s12 right">
+                    <h2>Heart Beatz</h2>
                 </div>
             </div>
         </div>
