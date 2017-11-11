@@ -1,0 +1,11 @@
+Your workout is incredibly important to you. Whether you’re trying to hit your next split time, beat your
+                    weightlifting PR, or just zoning out with some yoga or meditation, your workout is your time to work
+                    on yourself. You deserve a playlist that can get you in the zone and keep you there. Heartbeatz is the
+                    perfect app for fitness buffs and music junkies alike. HeartBeatz provides custom playlists using tailored
+                    health data provided by the user. From your age, weight and gender along with the level of intensity
+                    of your workout HeartBeatz finds your targeted heart beat range for your workout. Then we generate a
+                    playlist to match it in tempo. No more random slow jams popping up to throw off your game. But what if
+                    you need a little extra kick? Use the plus and minus buttons next to your returned suggested heart beat
+                    range to kick up or slow down the tempo of songs in your playlist. Don’t feel like creating a custom
+                    mix? No problem! Visit the library of recently created playlists and jam out to playlists created by
+                    other members of the HeartBeatz community.
