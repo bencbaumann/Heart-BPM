@@ -79,6 +79,10 @@ $(document).ready(function () {
         ui.show('players');
     });
 
+    $('#aboutbtn').on('click', function () {
+        ui.show('about');
+    });
+
     // returns us to the home view, needs to be updated to landing page.
     $('#home').on('click', function () {
         ui.show('metrics');
