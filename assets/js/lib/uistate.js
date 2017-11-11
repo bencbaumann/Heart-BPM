@@ -11,6 +11,18 @@ ui.hide = () => {
         $(`${state}`).hide();
     });
 }
+
+ui.show = view => {
+    ui.view = view;
+    window.sessionStorage.setItem('view', ui.view);
+    console.log(`Updating the view to ${ui.view}`);
+    ui.states.filter(function(state){
+        // console.log('state: ' + state + ' view: ' + ui.view);
+        state === ui.view ? $(`#${state}`).show() : $(`#${state}`).hide();
+    });
+}
+
+
 ui.hide();
 
 ui.view = sessionStorage.getItem('view') || ui.show('landing');
@@ -23,16 +35,6 @@ window.onload = ()=>{
         sessionStorage.clear();
         ui.show('landing');
     }
-}
-
-ui.show = view => {
-    ui.view = view;
-    window.sessionStorage.setItem('view', ui.view);
-    console.log(`Updating the view to ${ui.view}`);
-    ui.states.filter(function(state){
-        // console.log('state: ' + state + ' view: ' + ui.view);
-        state === ui.view ? $(`#${state}`).show() : $(`#${state}`).hide();
-    });
 }
 
 if(window.location.href.includes('access_denied')){
