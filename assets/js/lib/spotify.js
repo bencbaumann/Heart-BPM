@@ -25,6 +25,7 @@ function spotifyAuth(){
 
 
 function getSongs(appuser, callback){
+    Materialize.toast('Getting Songs', 500,'');
     console.log('getting songs!');
 
     var token = window.sessionStorage.getItem('token');
@@ -47,6 +48,7 @@ function getSongs(appuser, callback){
         },
         success: function(tracks){
             spotify.tracks = tracks;
+            Materialize.toast('Got Songs', 500,'');
             console.log('got songs from spotify');
             console.log(tracks);
             getUser(function(user){
@@ -54,12 +56,15 @@ function getSongs(appuser, callback){
                 console.log('user & songs both in scope and both callback ified');
                 var playlist = {};
                 createPlaylist(user, playlist, appuser, function(playlist){
+                    Materialize.toast('Creating Playlist', 500,'');
                     spotify.playlist = playlist;
                     console.log(playlist);
                     console.log(spotify);
                     addTracksToPlaylist(spotify, function(res){
+                        Materialize.toast('Adding Songs to Playlist', 500,'');
                         console.log(res);
                         createPlayer(spotify, appuser);
+                        Materialize.toast('Create Player', 500,'');
                     });
                 });
 
