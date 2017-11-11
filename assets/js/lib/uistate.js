@@ -53,6 +53,7 @@ if(ui.view==='landing'){
     ui.show('landing');
 }
 
+
 if(ui.view==='heartbeat'){
     console.log('show the default view');
     ui.show('heartbeat');
