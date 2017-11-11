@@ -85,7 +85,7 @@ $(document).ready(function () {
 
     // returns us to the home view, needs to be updated to landing page.
     $('#home').on('click', function () {
-        ui.show('metrics');
+        ui.show('landing');
     });
 
     //This happens when we click the music icon
