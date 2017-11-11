@@ -1,16 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <!-- Latest compiled and minified JavaScript -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!--Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+
 </head>
-<body>
-    <h1>Hooray!</h1>
-    <a href="https://bencbaumann.github.io/Heart-BPM">return to app</a>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/js/lib/uistate.js"></script>
+
+<body class="blue-grey darken-4">
+
+    <!--navbar-->
+    <div class="container-fluid">
+        <nav>
+            <div class="nav-wrapper teal accent-3">
+                <div class="col l7 text-center">
+                    <a id="home" href='#' class="brand-logo center">
+                        <i class="material-icons left" style="font-size:40px;">favorite</i>
+                    </a>
+                </div>
+                <div id="recent" class="btn col l4 text-right">
+                    Recent Playlists
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!--end navbar-->
+
+    <!-- Views go here -->
+    <div class="container">
+        <div class="topheart">
+            <div="row">
+                <div class="col-lg-12 text-center">
+                    <img="images/images.png">
+                </div>
+        </div>
+    </div>
+
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12" id="aboutbtn">
+                    <a href="#">
+                        <h5>About this App</h5>
+                    </a>
+                </div>
+                <div id="recent" class="col l4 offset-l2 s12 right">
+                    <h2>Heart Beatz</h2>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- materialize.css JS CDN -->
+    <!--Firebase-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+    <script src="assets/js/lib/firedb.js"></script>
+    <!-- <script src="ux.js"></script> -->
+    <script src="assets/js/lib/heartrate.js"></script>
     <script src="assets/js/lib/spotify.js"></script>
+    <script src="assets/js/lib/uistate.js"></script>
+    <script src="assets/js/app.js"></script>
+
 </body>
+
 </html>
