@@ -110,8 +110,8 @@ input.valid:not([type]), input.valid:not([type]):focus, input[type=text].valid:n
     background-color: #1de9b6;
     -webkit-box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.14), 0 10px 50px 0 rgba(0, 0, 0, 0.12), 0 30px 10px -20px rgba(0, 0, 0, 0.2);
             box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.14), 0 10px 50px 0 rgba(0, 0, 0, 0.12), 0 30px 10px -20px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
     opacity: 0;
     -webkit-transform: scale(0);
             transform: scale(0);
