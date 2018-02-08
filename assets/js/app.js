@@ -1,12 +1,10 @@
 // if a user exist in session storage grab it, else create an empty object.
 var user = JSON.parse(window.localStorage.getItem('user')) || {};
 console.log(user);
-console.log(JSON.stringify(ui));
-console.log(ui.states);
-console.log(ui.view);
+
 console.log(ui.view === 'heartbeat');
 // get the final heart rate from heartview page
-if(ui.view ==='heartbeat'){
+if (ui.view === 'heartbeat') {
     $('#adjustedHeartBeat').html(user.targetHeartRate);
     ui.show('heartbeat');
 }
@@ -15,11 +13,11 @@ if(ui.view ==='heartbeat'){
 db.ref('/playlist').limitToLast(3).on("value", function (snapshot) {
     console.log("got a resource from the DB!");
     let players = snapshotToArray(snapshot);
-    players.forEach(function(playerObj) {
+    players.forEach(function (playerObj) {
         console.log(playerObj);
         let player = `<iframe src="https://open.spotify.com/embed?uri=${playerObj.player}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>`;
-        let div =$('<div>');
-        div.append(`<h3>${playerObj.genre} playlist for ${playerObj.activity}`);
+        let div = $(`<div class="media col s12 m4 left" style="text-align:center;">`);
+        div.append(`<h4>${playerObj.genre} playlist <br> for ${playerObj.activity}`);
         div.append(player);
         $('#players').append(div);
     });
@@ -32,7 +30,6 @@ $(document).ready(function () {
 
     $('.activity').on('click', function () {
         user.activity = $(this).attr('data-activity');
-        $(this).attr('style', 'background: red');
     });
 
 
@@ -66,8 +63,6 @@ $(document).ready(function () {
 
     // functionality for target heartrate + and - buttons
 
-    var adjustedHeartRate = 0;
-
     $("#increaseHeartRate").on('click', function () {
         user.targetHeartRate++;
         $("#adjustedHeartBeat").text(user.targetHeartRate);
@@ -79,20 +74,24 @@ $(document).ready(function () {
         $("#adjustedHeartBeat").text(user.targetHeartRate);
     });
 
-    $('#recent').on('click', function (){
+    // this shows the repeating players view
+    $('#recent').on('click', function () {
         ui.show('players');
     });
-    $('#home').on('click', function(){
+
+    $('#aboutbtn').on('click', function () {
+        ui.show('about');
+    });
+
+    // returns us to the home view, needs to be updated to landing page.
+    $('#home').on('click', function () {
+        ui.show('landing');
+    });
+    $('#start').on('click', function () {
         ui.show('metrics');
     });
 
-    /* This stuff is just here for testing */
-
-
-    // $('#submit').on('click', function (e) {
-    //     e.preventDefault();
-    //     spotifyAuth();
-    // });
+    //This happens when we click the music icon
     $('#getSongs').on('click', function (e) {
         e.preventDefault();
         /* this is +/- for Tempo */
@@ -101,29 +100,19 @@ $(document).ready(function () {
             console.log(res);
         });
     });
-    // $('#deleteToken').on('click', function (e) {
-    //     e.preventDefault();
-    //     deleteToken();
+
+    $('.activity').click(function () {
+        $.each($('.activity'), function( index, value ) {
+            var el = $(value);
+            el.removeClass('clicked');
+            el.parent().removeClass('clicked');
+        });
+        $(this).parent().addClass('clicked');
+        $(this).addClass('clicked');
+    });
+
+    // $('.material-icons').click(function () {
+    //     $(this).addClass('clicked');
     // });
-
-    $('#getUser').on('click', function (e) {
-        e.preventDefault();
-        getUser();
-    });
-
-    $('#twitterauth').on('click', function (e) {
-        e.preventDefault();
-        twitter.authorize(function (res) {
-            console.log(res);
-        });
-    });
-
-    $('#tweet').on('click', function (e) {
-        e.preventDefault();
-        twitter.tweet(function (res) {
-            console.log(res);
-        });
-    });
-
 
 }); // end document.ready

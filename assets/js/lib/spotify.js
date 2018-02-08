@@ -1,23 +1,5 @@
 var spotify = {};
-
-
-
-if(window.location.hash.includes("token")){
-    console.log("There is a token in the url");
-    storeToken();
-}
-else{
-    console.log("There is not a token in the url");
-}
-
-// if(window.location.href.includes('spotifycallback')){
-//     ui.showHeartbeat();
-// };
-
-
-var token = window.localStorage.getItem('token');
-
-/* This is for testing only */
+var token = window.sessionStorage.getItem('token');
 
 function spotifyAuth(){
     console.log("trying to auth");
@@ -43,9 +25,11 @@ function spotifyAuth(){
 
 
 function getSongs(appuser, callback){
+    Materialize.toast('Getting Songs', 500,'');
     console.log('getting songs!');
 
-    var token = localStorage.getItem('token');
+    var token = window.sessionStorage.getItem('token');
+    console.log(token);
 
     var minTempo = Math.round(appuser.targetHeartRate - appuser.range);
     var maxTempo = Math.round(appuser.targetHeartRate + appuser.range);
@@ -64,6 +48,7 @@ function getSongs(appuser, callback){
         },
         success: function(tracks){
             spotify.tracks = tracks;
+            Materialize.toast('Got Songs', 500,'');
             console.log('got songs from spotify');
             console.log(tracks);
             getUser(function(user){
@@ -71,12 +56,15 @@ function getSongs(appuser, callback){
                 console.log('user & songs both in scope and both callback ified');
                 var playlist = {};
                 createPlaylist(user, playlist, appuser, function(playlist){
+                    Materialize.toast('Creating Playlist', 500,'');
                     spotify.playlist = playlist;
                     console.log(playlist);
                     console.log(spotify);
                     addTracksToPlaylist(spotify, function(res){
+                        Materialize.toast('Adding Songs to Playlist', 500,'');
                         console.log(res);
                         createPlayer(spotify, appuser);
+                        Materialize.toast('Create Player', 500,'');
                     });
                 });
 
@@ -92,7 +80,7 @@ function getSongs(appuser, callback){
 function getUser(callback){
     console.log('getting user!');
 
-    var token = localStorage.getItem('token');
+    var token = window.sessionStorage.getItem('token');
 
     var baseurl = 'https://api.spotify.com/v1/';
     var url = `${baseurl}me`;
@@ -107,7 +95,7 @@ function getUser(callback){
             'Authorization': `Bearer ${token}`
         },
         success: function(user){
-            localStorage.setItem('userId', user.id);
+            window.localStorage.setItem('userId', user.id);
             console.log('got a reponse from spotify user resource');
             callback(user);
         },
@@ -130,7 +118,7 @@ function createPlayer(spotify, appuser){
 function createPlaylist(user, playlist, appuser, callback){
     console.log('getting songs!');
     
-        var token = localStorage.getItem('token');
+        var token = window.sessionStorage.getItem('token');
     
         playlist.description = `Workout Playlist for ${appuser.activity}`;
         playlist.public = true;
@@ -161,7 +149,7 @@ function createPlaylist(user, playlist, appuser, callback){
 function addTracksToPlaylist(spotify, callback){
         console.log('getting songs!');
 
-        var token = localStorage.getItem('token');
+        var token = window.sessionStorage.getItem('token');
     
         var data = {};
         data.uris = "uris="+spotify.tracks.tracks.map( track => track.uri).join(',').replace(/:/g, '%3A');
@@ -194,20 +182,7 @@ function addTracksToPlaylist(spotify, callback){
         });
 }
 
-function storeToken(){
-    let token = window.location.hash.split('&')[0].split('=')[1];
-    if(window.location.hash.includes('token')){
-        localStorage.setItem('token', token);
-        console.log(token);
-        // window.location.replace('/Heart-BPM');
-        ui.show('heartbeat');
-    }
-    else {
-        console.log("there's no token in the url");
-    }
-}
-
 function deleteToken(){
     console.log('deleting the token');
-    localStorage.clear();
+    window.sessionStorage.clear();
 }

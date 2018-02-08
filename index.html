@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Heart Beatz</title>
     <!-- Latest compiled and minified JavaScript -->
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <!--Import Google Icon Font-->
@@ -16,8 +16,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- need below cloudflare script for quote to generate -->
+    <script type="text/javascript" src="https://ajax.cloudflare.com/cdn-cgi/scripts/84a23a00/cloudflare-static/rocket.min.js"></script>
     <!--Custom CSS-->
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <script src="assets/js/lib/quote.js" type="text/javascript"></script>
 
 </head>
 
@@ -27,17 +30,14 @@
     <div class="container-fluid">
         <nav>
             <div class="nav-wrapper teal accent-3">
-                <a id="home" href='#' class="brand-logo center">
-                    <i class="material-icons left" style="font-size:40px;">favorite</i>
-                </a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li>
-                        <a href="signup.html">Sign Up</a>
-                    </li>
-                    <li>
-                        <a href="signin.html">Sign In</a>
-                    </li>
-                </ul>
+                <div class="col l7 text-center">
+                    <a id="home" href='#' class="brand-logo center">
+                        <i class="material-icons left" style="font-size:40px;">favorite</i>
+                    </a>
+                </div>
+                <div id="recent" class="btn col l4 text-right">
+                    Recent Playlists
+                </div>
             </div>
         </nav>
     </div>
@@ -69,29 +69,23 @@
                     <div class="col s4 left" style="text-align:center;">
                         <a class="btn btn-floating pulse btn-large" class="pulsefeature">
                             <i id="target" class="material-icons tooltipped activity" data-activity='weights' data-position="bottom" data-delay="50"
-                                data-tooltip="Weight Lifting" value="weights" style="font-size:30px;">accessibility</i>
+                                data-tooltip="Weight Lifting" value="weights" style="font-size:30px;">fitness_center</i>
                         </a>
                     </div>
                     <div class="col s4 left" style="text-align:center;">
                         <a class="btn btn-floating pulse btn-large" class="pulsefeature">
                             <i class="material-icons tooltipped activity" data-activity='meditate' data-position="bottom" data-delay="50" data-tooltip="Meditate"
-                                value="meditate" style="font-size:30px;">music_note</i>
+                                value="meditate" style="font-size:30px;">nature_people</i>
                         </a>
                     </div>
                     <div class="tap-target" data-activates="target">
                         <div class="tap-target-content" style="width:100px; height:100px; top:100px">
-                            <p>Select an activity to get started</p>
+                            <p style="color:black;">Select an activity to get started</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
-        <br>
-        <br>
-        <br>
-        <br>
 
         <!--Form-->
         <div class="container">
@@ -99,11 +93,11 @@
                 <br>
                 <div class="row">
                     <div class="range-field">
-                        <input type="range" id="age" min="0" max="100" />
+                        <input type="range" id="age" min="16" max="100" />
                         <label for="age">Age</label>
                     </div>
                     <div class="range-field">
-                        <input type="range" id="weight" min="0" max="350" />
+                        <input type="range" id="weight" min="100" max="350" />
                         <label for="weight">Weight</label>
                     </div>
                 </div>
@@ -121,8 +115,6 @@
                 </div>
                 <br>
                 <br>
-
-
                 <div class="row">
                     <div class="input-field col s12">
                         <select id="genre" name="genre">
@@ -164,24 +156,26 @@
                 </div>
             </form>
         </div>
-
     </div>
     <!-- end metrics -->
 
     <div id="heartbeat">
         <div class="container customize-bpm-page" style="margin-top:10%;">
             <div class="row">
+                <div class="col s12"><h3 style="text-align:center;">Target Heart Rate</h3></div>
+            </div>
+            <div class="row">
                 <div class="col s4 left" style="text-align:center;">
-                    <a id="increaseHeartRate" class="btn btn-floating waves-effect waves-light btn-large">
-                        <i class="material-icons" style="font-size:30px;">add</i>
+                    <a id="decreaseHeartRate" class="btn btn-floating waves-effect waves-light btn-large">
+                        <i class="material-icons" style="font-size:30px;">remove</i>
                     </a>
                 </div>
                 <div class="col s4 left" style="text-align:center;">
                     <h3 id="adjustedHeartBeat" style="color:white;">100</h3>
                 </div>
                 <div class="col s4 left" style="text-align:center;">
-                    <a id="decreaseHeartRate" class="btn btn-floating waves-effect waves-light btn-large">
-                        <i class="material-icons" style="font-size:30px;">remove</i>
+                    <a id="increaseHeartRate" class="btn btn-floating waves-effect waves-light btn-large">
+                        <i class="material-icons" style="font-size:30px;">add</i>
                     </a>
                 </div>
             </div>
@@ -212,15 +206,81 @@
             </div>
         </div>
     </div>
+                <h3>Check out Playlist other Fitness Buffs have made</h3>
+            </div>
+        </div>
+    </div>
+
+    <div id="landing">
+        <div class="container-fluid">
+            <div class="row center">
+                <h1>Heart Beatz</h1>
+            </div>
+
+            <div class="row" style="margin-top:2%;">
+                <div class="col s12 center">
+                    <div id="landingpage">
+                    </div>
+                    <a id="start" class="waves-effect waves-light btn">
+                        <i class="material-icons right">favorite</i>Get Started</a>
+                </div>
+            </div>
+
+            <div class="row" style="margin:10% 10% 0 10%; padding-bottom:200px;">
+                <div class="col s4 center">
+                    <i class="material-icons" style="font-size:75px; color:#6effe8;">loop</i>
+                    <p style="color:white;">Creating a playlist only takes seconds. You'll never get bored of your playlist again.</p>
+                </div>
+                <div class="col s4 center">
+                    <i class="material-icons" style="font-size:75px; color:#63ffe8;">tune</i>
+                    <p style="color:white;">Choose from 20 different genres.</p>
+                </div>
+                <div class="col s4 center">
+                    <i class="material-icons" style="font-size:75px; color:#6effe8;">phone_iphone</i>
+                    <p style="color:white;">Take your music on the go. Heart Beatz adds your created playlist to your Spotify app so you have it
+                        wherever you go.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="about">
+        <div class="container" style="margin-top:10%;">
+            <div class="row">
+                <div class="col s8">
+                    <h2>About HeartBeatz</h2>
+                    <hr>
+                    <p>Your workout is incredibly important to you. Whether you’re trying to hit your next split time, beat
+                        your weightlifting PR, or just zening out with some yoga or meditation, your workout is your time
+                        to work on yourself. You deserve a playlist that can get you in the zone and keep you there. Heartbeatz
+                        is the perfect app for fitness buffs and music junkies alike.
+                        </br>
+                        </br>HeartBeatz provides custom playlists using tailored health data provided by the user. From your age,
+                        weight and gender along with the level of intensity of your workout HeartBeatz finds your targeted
+                        heart beat range for your workout. Then we generate a playlist to match it in tempo. No more random
+                        slow jams popping up to throw off your game.
+                        </br>
+                        </br>But what if you need a little extra kick? Use the plus and minus buttons next to your returned suggested
+                        heart beat range to kick up or slow down the tempo of songs in your playlist. Don’t feel like creating
+                        a custom mix? No problem! Visit the library of recently created playlists and jam out to playlists
+                        created by other members of the HeartBeatz community. </p>
+                </div>
+                <div class="col s4"></div>
+            </div>
+        </div>
+    </div>
+
     <footer class="page-footer">
         <div class="container">
             <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Footer Content</h5>
-                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                <div class="col l6 s12" id="aboutbtn">
+                    <a href="#">
+                        <h5>About this App</h5>
+                    </a>
                 </div>
-                <div id="recent" class="btn col l4 offset-l2 s12">
-                    Recent Playlists
+                <div id="recent" class="col l4 offset-l2 s12 right">
+                    <h2>Heart Beatz</h2>
                 </div>
             </div>
         </div>
@@ -230,6 +290,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
     <script src="assets/js/lib/firedb.js"></script>
+    <!-- need this script for quote to generate  -->
+    <script type="text/rocketscript" data-rocketsrc="https://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=parseQuote"></script>
     <!-- <script src="ux.js"></script> -->
     <script src="assets/js/lib/heartrate.js"></script>
     <script src="assets/js/lib/spotify.js"></script>

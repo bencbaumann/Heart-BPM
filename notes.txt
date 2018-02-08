@@ -1,0 +1,4 @@
+Ajax (also AJAX; /ˈeɪdʒæks/; short for "asynchronous JavaScript and XML") is a set of Web development techniques 
+using many Web technologies on the client side to create asynchronous Web applications.
+
+RocketLoader 
